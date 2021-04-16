@@ -2,6 +2,7 @@
 marp: true
 theme: nf-theme
 paginate: true
+title: Java Bootcamp - Week 2
 ---
 
 # Übersicht: Montag
