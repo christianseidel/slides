@@ -388,7 +388,7 @@ Sendet Änderungen Richtung remote
 -   von Microsoft 2018 für 7,5 Milliarden $ gekauft
 -   Hilft beim Einstieg: https://lab.github.com/
 
-![bg right w:400px h:400px](../img/octocat.png)
+![bg right w:400px h:400px](img/octocat.png)
 
 ---
 
@@ -418,13 +418,13 @@ Sendet Änderungen Richtung remote
 -   Netzwerk aus Servern
 -   Server bekommen IP Adressen
 
-![](../img/internet.png)
+![](img/internet.png)
 
 ---
 
 ## Webanwendung
 
-![](../img/web-architecture.png)
+![](img/web-architecture.png)
 
 ---
 
@@ -441,7 +441,7 @@ Sendet Änderungen Richtung remote
 
 ## Plattformunabhängig
 
-![](../img/jvm.png)
+![](img/jvm.png)
 
 ---
 
@@ -693,7 +693,7 @@ boolean result = someInt < someOtherInt;
 -   Eingabe Parameter und Rückgabe Parameter
 -   Wiederverwendbar
 
-![](../img/methode.png)
+![](img/methode.png)
 
 ---
 

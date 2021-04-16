@@ -7,7 +7,7 @@ title: Java Bootcamp - Welcome
 
 # Willkommen bei
 
-![](../img/nf-logo.png)
+![](img/nf-logo.png)
 
 ---
 

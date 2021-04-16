@@ -13,7 +13,7 @@ title: Java Bootcamp - Week 3
 
 Wo stehen wir?
 
-![](../img/web-architecture-2.png)
+![](img/web-architecture-2.png)
 
 ---
 
@@ -21,7 +21,7 @@ Wo stehen wir?
 
 Wo stehen wir?
 
-![](../img/web-architecture-3.png)
+![](img/web-architecture-3.png)
 
 ---
 
@@ -145,7 +145,7 @@ Wo stehen wir?
 -   Open Source
 -   Entwickelt seit 2002
 
-![](../img/spring.png)
+![](img/spring.png)
 
 ---
 
@@ -158,7 +158,7 @@ Wo stehen wir?
     -   Dependency Injection
 -   Riesige Bibliothek von Modulen (LDAP, Mongo, MessageQueues etc.)
 
-![](../img/spring.png)
+![](img/spring.png)
 
 ---
 
@@ -172,7 +172,7 @@ Wo stehen wir?
 -   Trennung von Geschäftslogik und Funktionalität
 -   Beispiel: Logging
 
-![](../img/aspektorientiert.png)
+![](img/aspektorientiert.png)
 
 ---
 
@@ -182,7 +182,7 @@ Wo stehen wir?
 
 Vereinfacht Aufsetzen eines neue Projekts
 
-![](../img/spring.png)
+![](img/spring.png)
 
 ---
 
