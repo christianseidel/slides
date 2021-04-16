@@ -4,7 +4,7 @@
 
 -   `brew install tree`
 
--   install [Marp for VSCode](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) from the maret place.
+-   install [Marp for VSCode](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) from the market place.
 
 -   clone this repo and install the dependencies, you know the _jazz.._
 
