@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d dist"
+    "deploy": "sh scripts/build-index.sh && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
