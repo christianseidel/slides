@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "sh scripts/build.sh && gh-pages -d dist"
+    "build": "sh scripts/build.sh",
+    "deploy": "npm run build  && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
