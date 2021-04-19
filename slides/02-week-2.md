@@ -2,6 +2,7 @@
 marp: true
 theme: nf-theme
 paginate: true
+title: Java Bootcamp - Week 2
 ---
 
 # Übersicht: Montag
@@ -557,7 +558,7 @@ public class ComputerScienceStudent extends Student {
 
 Element zeigt auf das nächste Element.
 
-![](../img/linked-list.png)
+![](img/linked-list.png)
 
 ---
 
@@ -584,7 +585,7 @@ Schreibe entsprechende Tests!
     -   `List` implementierung mit index
     -   `Generic<T>` spezifiziert den Typ der Objekte
 
-![](../img/collections.png)
+![](img/collections.png)
 
 ---
 
@@ -637,7 +638,7 @@ Ersetze in deiner StudentDB das Array durch eine `ArrayList`.
 -   `HashMap`
 -   `Generic<K,V>` spezifiziert den Typ des Keys/Values
 
-![](../img/map.png)
+![](img/map.png)
 
 ---
 
@@ -645,7 +646,7 @@ Ersetze in deiner StudentDB das Array durch eine `ArrayList`.
 
 ## Verwendung Hashmap
 
-![](../img/hashmap.png)
+![](img/hashmap.png)
 
 ```Java
 // create map
@@ -794,7 +795,7 @@ Schreibe in deiner StudentDB eine Methode printIds welche alle Ids auf der Konso
 
 Schreibe ein Bestellsystem (**mit Tests!**).
 
-![](../img/order-system.png)
+![](img/order-system.png)
 
 ---
 
