@@ -94,9 +94,9 @@ paginate: true
 
 ## Aufgaben: Shell
 
-1. Mach dich mit der Shell vertraut indem du über die shell
+1. Mach dich mit der Shell vertraut, indem du über die shell
    - einen Ordner für zukünftige Projekte anlegst
-   - neue unter Ordner anlegst und wieder löscht
+   - neue Unterordner anlegst und wieder löscht
 2. Schreibe ein Skript das “Hallo World” ausgibt
 3. Erweiter das Skript um eine Nutzereingabe mittels der folgenden Zeilen und versuche die Funktion nachzuvollziehen
 
@@ -280,7 +280,7 @@ Liste aller branches anzeigen
 git branch
 ```
 
-Auf branch mit Namen `<somebranch>` wechseln
+Branch mit Namen `<somebranch>` erstellen
 
 ```shell
 git branch <somebranch>
@@ -366,14 +366,14 @@ Sendet Änderungen Richtung remote
 
 ## Git workflow (Feature branch)
 
-1.  pull master
-2.  checkout master
+1.  pull main
+2.  checkout main
 3.  branch von main erzeugen (feature branch)
 4.  entwickeln auf branch (commit & push to branch)
     - checkout main & pull
     - checkout feature & merge main in feature
 5.  merge request/pull request erstellen
-6.  nach Review in master mergen
+6.  nach Review in main mergen
 7.  feature branch löschen
 
 ---
