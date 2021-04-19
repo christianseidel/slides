@@ -151,7 +151,7 @@ Wekstudentin Student Services CGN
 
 ## Sina Stulpe
 
-Admission & Student Services Manager HH
+Student Services & Admission Managerin HH
 
 ![bg right](https://ca.slack-edge.com/TTHG21AH3-U01677P02KW-705a3d94fdbe-512)
 
@@ -159,7 +159,7 @@ Admission & Student Services Manager HH
 
 ## Sarah Müller
 
-Managerin Student Services & Admission HH
+Student Services & Admission Managerin HH
 
 ![bg right](https://ca.slack-edge.com/TTHG21AH3-U016XEQMNKY-cc499a7f70f0-512)
 
