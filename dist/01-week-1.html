@@ -136,10 +136,10 @@
 <h2>Aufgaben: Shell</h2>
 <ol>
 <li>
-<p>Mach dich mit der Shell vertraut indem du über die shell</p>
+<p>Mach dich mit der Shell vertraut, indem du über die shell</p>
 <ul>
 <li>einen Ordner für zukünftige Projekte anlegst</li>
-<li>neue unter Ordner anlegst und wieder löscht</li>
+<li>neue Unterordner anlegst und wieder löscht</li>
 </ul>
 </li>
 <li>
@@ -295,7 +295,7 @@ echo Hallo $varname
 <p>Liste aller branches anzeigen</p>
 <pre><code class="language-shell"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>git branch
 </span></span></foreignObject></svg></code></pre>
-<p>Auf branch mit Namen <code>&lt;somebranch&gt;</code> wechseln</p>
+<p>Branch mit Namen <code>&lt;somebranch&gt;</code> erstellen</p>
 <pre><code class="language-shell"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>git branch &lt;somebranch&gt;
 </span></span></foreignObject></svg></code></pre>
 </section>
@@ -359,8 +359,8 @@ echo Hallo $varname
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-theme="nf-theme" data-marpit-pagination="34" data-marpit-pagination-total="93" style="--paginate:true;--theme:nf-theme;">
 <h2>Git workflow (Feature branch)</h2>
 <ol>
-<li>pull master</li>
-<li>checkout master</li>
+<li>pull main</li>
+<li>checkout main</li>
 <li>branch von main erzeugen (feature branch)</li>
 <li>entwickeln auf branch (commit &amp; push to branch)
 <ul>
@@ -369,7 +369,7 @@ echo Hallo $varname
 </ul>
 </li>
 <li>merge request/pull request erstellen</li>
-<li>nach Review in master mergen</li>
+<li>nach Review in main mergen</li>
 <li>feature branch löschen</li>
 </ol>
 </section>
@@ -993,17 +993,17 @@ System.out.println(someArray[<span class="hljs-number">0</span>]);
 <span class="hljs-attr">on:</span> <span class="hljs-string">push</span>
 
 <span class="hljs-attr">jobs:</span>
-    <span class="hljs-attr">build:</span>
-        <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+  <span class="hljs-attr">build:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
 
-        <span class="hljs-attr">steps:</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Set</span> <span class="hljs-string">up</span> <span class="hljs-string">JDK</span> <span class="hljs-number">14</span>
-              <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-java@v1</span>
-              <span class="hljs-attr">with:</span>
-                  <span class="hljs-attr">java-version:</span> <span class="hljs-string">&quot;14&quot;</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">with</span> <span class="hljs-string">Maven</span>
-              <span class="hljs-attr">run:</span> <span class="hljs-string">mvn</span> <span class="hljs-string">-B</span> <span class="hljs-string">verify</span> <span class="hljs-string">--file</span> <span class="hljs-string">pom.xml</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Set</span> <span class="hljs-string">up</span> <span class="hljs-string">JDK</span> <span class="hljs-number">14</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-java@v1</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">java-version:</span> <span class="hljs-string">&quot;14&quot;</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">with</span> <span class="hljs-string">Maven</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">mvn</span> <span class="hljs-string">-B</span> <span class="hljs-string">verify</span> <span class="hljs-string">--file</span> <span class="hljs-string">pom.xml</span>
 </span></span></foreignObject></svg></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="93" data-paginate="true" data-theme="nf-theme" data-marpit-pagination="93" data-marpit-pagination-total="93" style="--paginate:true;--theme:nf-theme;">
