@@ -536,11 +536,11 @@ führt die main Methode auf der JVM aus
 - können Werte zugewiesen werden
 - kann ausgelesen werden
 - System.out.println(variable);
-- Java ist streng typisiert
+- Java ist **streng** typisiert
 - beim Anlegen muss der Type angegeben werden (muss eindeutig sein)
 - Variablen können nur passenden Typen zugewiesen werden
 
-```java
+```Java
 String someVariable;
 someVariable = "Hallo Kurs!";
 
@@ -553,7 +553,7 @@ System.out.println(anotherVariable);
 
 ---
 
-## Datentyp Boolean
+## Datentyp boolean
 
 - kann nur zwei Werte haben `true` oder `false`
 - andere Werte führen zu einem Compilerfehler
@@ -566,7 +566,7 @@ System.out.println(boolValue);
 
 ---
 
-## Datentyp Integer
+## Datentyp int (Integer)
 
 - Ganzzahlwerte zwischen -2<sup>31</sup> bis 2<sup>31-1</sup>
 - Speicherbedarf: 32 Bits
@@ -596,7 +596,7 @@ System.out.println(result);
 ## String Operatoren
 
 - Strings können mittels `+` zu neuen `String`s vereint werden
-- Strings können mit anderen Werten zu neuen `String`s vereint werden, `Integer` wird mittels Cast zu `String`
+- Strings können mit anderen Werten zu neuen `String`s vereint werden, z.B. wird `Integer` mittels Cast zu `String`
 
 ```java
 String result = "text" + "zusammen";
@@ -676,7 +676,7 @@ boolean result = someInt < someOtherInt;
 2. Prüfe die Werte auf
    - größer
    - kleiner
-   - gleichheit
+   - Gleichheit
 3. Gib das Ergebnis aus
 
 ---
@@ -736,7 +736,7 @@ int result = duplicate(3);
 ## String Methoden
 
 - Aufruf von vordefinierten Methoden auf String
-- Methodenaufruf auf nicht primitiven Datentypen möglich
+- Methodenaufruf auf _nicht primitiven_ Datentypen möglich
 
 ```java
 someString.contains("test")
@@ -753,19 +753,6 @@ Schreibe eine Methode, die prüft, ob ein String
 
 ---
 
-# Testing / JUnit
-
----
-
-## Motivation
-
-Sicherstellen von
-
-- verhalten bei/nach der Implementieren
-- verhalten nach Änderungen
-
----
-
 # Maven
 
 ---
@@ -776,21 +763,24 @@ Sicherstellen von
 - project object model (pom)
 - dependencies
 - build process
-- archetype für default setup
+
+Archetyp für default Setup:
 
 ```xml
-<project .....>
-<modelVersion>4.0.0</modelVersion>
-<groupId>de.neuefische</groupId> <artifactId>maven-example</artifactId> <version>1.0-SNAPSHOT</version>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.neuefische</groupId> 
+  <artifactId>maven-example</artifactId>
+  <version>1.0-SNAPSHOT</version>
 .....
-</project .....>
+</project>
 ```
 
 ---
 
 ## Maven Befehle
 
-- führen ein maven script aus, Syntax: `mvn <command>`
+- führen ein maven Script aus, Syntax: `mvn <command>`
 - führen in der pom.xml spezifizierten Prozess aus
 
 | Befehl    | Effekt                                                                   |
@@ -811,21 +801,25 @@ Sicherstellen von
 
 ---
 
-# J-Unit
+# Testing / JUnit
 
-- Sicherstellen von
-- verhalten bei/nach der Implementieren
-- verhalten nach Änderungen
+---
+
+## Motivation
+
+Sicherstellen von
+
+- Verhalten bei/nach dem Implementieren
+- Verhalten nach Änderungen
 - Fehler können teuer sein z.B. [Ariane 5 Flight 501](https://www-users.math.umn.edu/~arnold/disasters/ariane.html)
   - 8 Milliarden Dollar
   - 64-bit nummer in einem 16-bit Feld
 
 ---
 
-## Tests in Java (J-Unit)
+# J-Unit
 
-- Meist J-Unit Testing Framework
-- J-Unit
+- Meist genutzes Unit-Testing Framework
 - stellt Funktionalität bereit um einfach Tests zu schreiben
 - Integration in Entwicklungsumgebung
 
@@ -836,8 +830,7 @@ Sicherstellen von
 ## J-Unit Test
 
 - Eigene Datei für Tests
-- Methoden definieren einen Test
-- Mit @Test annotieren
+- Methoden definieren einen Test mit `@Test` Annotation
 - Bedingungen werden mit asserts verifiziert
 
 ```java
@@ -852,7 +845,7 @@ public void shouldAnswerWithTrue()
 
 ## Aufgabe: J-Unit
 
-Schreibe unit Tests für
+Schreibe Unit-Tests für
 
 1.  deine addieren Methode
 2.  eine Methode die Prüft ob ein Wert größer als 100 ist
@@ -875,8 +868,7 @@ Schreibe unit Tests für
 
 ## if else
 
-Änderung des Control flows
-
+Abzweigungen und bedingte Ausführung
 ```java
 if (i > 0){
   // dann...
@@ -891,12 +883,13 @@ if (i > 0){
 
 Schreibe eine Funktion die überprüft ob zu viele Personen im Laden sind
 
-1. Wenn die Anzahl über 30 liegt, gib den Wert “Zu viele Personen zurück”
-2. Wenn die Anzahl unter 30 liegt, gib den Wert “Maximale Personenzahl
-   nicht überschritten”
+1. Wenn die Anzahl über 30 liegt, gib den String “Zu viele Personen zurück”
+2. Wenn die Anzahl unter 30 liegt, gib den String “Maximale Personenzahl
+   nicht überschritten” zurück
 
-- Überlege dir zunächst die Methodensignatur
-- Schreibe erst einen Test und dann die entsprechende Funktionalität
+Überlege dir zunächst die Methodensignatur
+
+Schreibe **erst** einen Test und dann die entsprechende Funktionalität
 
 ---
 
@@ -904,7 +897,7 @@ Schreibe eine Funktion die überprüft ob zu viele Personen im Laden sind
 
 ## Switch
 
-- control-flow auf basis von festen werten
+- Control-flow auf Basis von festen Werten
 - `case` Werte: `int`, `String`, `enum`
 - `break` beendet switch statement
 - **wichtig**: ohne `break` oder `return` wird nächster case ausgeführt (fall through)
@@ -935,6 +928,7 @@ Erweitere deine Alarm funktion um einen Parameter Alarmstufe
 - Alarmstufe “grün” max 60 Personen erlaubt
 
 Passe deine vorhandenen Tests an.
+
 Schreibe jeweils **erst** einen Test und dann die entsprechende Funktionalität
 
 ---
@@ -948,7 +942,7 @@ for(int i = 0; i< 100; i++){
 ```
 
 - `i=0` => initialisierung
-- `i < 100` => Anweisung, bis wann Schleife durchlaufen wird
+- `i < 100` => Abbruchbedingung, bei der Schleife beendet wird
 - `i++` => bei jedem Durchlauf wird i um 1 erhöht
 - wenn `i` größer gleich 100 wird die Schleife nicht mehr
   ausgeführt
@@ -958,7 +952,7 @@ for(int i = 0; i< 100; i++){
 
 ## Aufgabe: Fakultät
 
-Schreibe eine Funktion welche die Fakultät einer Zahl berechnet. Nutze dafür eine for Schleife.
+Schreibe eine Funktion, welche die Fakultät einer Zahl berechnet. Nutze dafür eine for Schleife.
 
 Starte mit den Tests für folgende Fälle
 
@@ -989,24 +983,26 @@ Schreibe die Fakultätsfunktion mit Hilfe einer `while` Schleife. Nutze die vorh
 
 ---
 
+<!-- _class: hsplit-->
 ## Rekursion
 
+- Methode ruft sich selbst auf
+- Verkleinerung des Problems pro Aufruf
+- Abbruch Bedingung muss vorhanden sein!
+- Beispiel: Berechnung bei `value = 3`
+
+  ```
+  0 + 1 + 2 + 3 = 6
+  ```
+
 ```java
-public int calc(int value){
+public int calculateSum(int value){
   if(value < 1){
     return 0;
     }
   return calc(value - 1) + value;
 }
 ```
-
-- Verkleinerung des Problems pro Aufruf
-- Abbruch Bedingung muss vorhanden sein
-- Berechnung bei `value = 3`
-
-  ```
-  0 + 1 + 2 + 3 = 6
-  ```
 
 ---
 
@@ -1027,7 +1023,7 @@ Nutze Rekursion um die Fakultät zu berechnen.
 - Datenstruktur
 - Feste Größe (Länge)
 - Muss vor Verwendung erzeugt werden
-- Zugriff und setzen von Werten über Array Index
+- Zugriff und setzen von Werten über Index
 - Index muss zwischen 0 und Arraylänge - 1 liegen
 - **Achtung** bei nicht gesetztem Wert => `null`
 
@@ -1050,7 +1046,7 @@ Nutze Tests um die Funktionalität zu überprüfen
 
 ---
 
-# CI
+# CI <br/>(Continuos Integration)
 
 ---
 
@@ -1059,9 +1055,9 @@ Nutze Tests um die Funktionalität zu überprüfen
 ## github actions
 
 - ermöglicht Ausführen von Actions
-- tests können automatisiert laufen
+- Tests können automatisiert laufen
 - vor merge werden Tests ausgeführt
-- deployment kann automatisiert erfolgen
+- Deployment kann automatisiert erfolgen
 
 ```yml
 name: Java CI with Maven
