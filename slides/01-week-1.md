@@ -660,7 +660,7 @@ boolean someBoolean = false;
 
 # Relationale und Gleichheitsoperatoren
 
-- `==`, `<`, `>`, `<=`, `>=`
+- `==`, `!=`, `<`, `>`, `<=`, `>=`
 - nur auf primitiven Typen möglich
 - Typen werden von einen in den anderen Typen “überführt” (Casting)
 
