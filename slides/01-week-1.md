@@ -753,6 +753,19 @@ Schreibe eine Methode, die prüft, ob ein String
 
 ---
 
+# Testing / JUnit
+
+---
+
+## Motivation
+
+Sicherstellen von korrektem Verhalten der Anwendung
+
+- bei der Entwicklung von neuen Features
+- nach Änderungen des Codes
+
+---
+
 # Maven
 
 ---
@@ -769,7 +782,7 @@ Archetyp für default Setup:
 ```xml
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>de.neuefische</groupId> 
+  <groupId>de.neuefische</groupId>
   <artifactId>maven-example</artifactId>
   <version>1.0-SNAPSHOT</version>
 .....
@@ -869,6 +882,7 @@ Schreibe Unit-Tests für
 ## if else
 
 Abzweigungen und bedingte Ausführung
+
 ```java
 if (i > 0){
   // dann...
@@ -984,6 +998,7 @@ Schreibe die Fakultätsfunktion mit Hilfe einer `while` Schleife. Nutze die vorh
 ---
 
 <!-- _class: hsplit-->
+
 ## Rekursion
 
 - Methode ruft sich selbst auf
@@ -1004,6 +1019,14 @@ public int calculateSum(int value){
 }
 ```
 
+- Verkleinerung des Problems pro Aufruf
+- Abbruchbedingung muss vorhanden sein
+- Berechnung bei `value = 3`
+
+  ```
+  0 + 1 + 2 + 3 = 6
+  ```
+
 ---
 
 ## Aufgabe: Fakultät Rekursion
@@ -1023,7 +1046,10 @@ Nutze Rekursion um die Fakultät zu berechnen.
 - Datenstruktur
 - Feste Größe (Länge)
 - Muss vor Verwendung erzeugt werden
+
+- Zugriff und Setzen von Werten über Array Index
 - Zugriff und setzen von Werten über Index
+
 - Index muss zwischen 0 und Arraylänge - 1 liegen
 - **Achtung** bei nicht gesetztem Wert => `null`
 
