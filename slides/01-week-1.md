@@ -753,7 +753,6 @@ Schreibe eine Methode, die prüft, ob ein String
 
 ---
 
-
 # Testing / JUnit
 
 ---
@@ -766,8 +765,6 @@ Sicherstellen von korrektem Verhalten der Anwendung
 - nach Änderungen des Codes
 
 ---
-
-=======
 
 # Maven
 
@@ -785,7 +782,7 @@ Archetyp für default Setup:
 ```xml
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>de.neuefische</groupId> 
+  <groupId>de.neuefische</groupId>
   <artifactId>maven-example</artifactId>
   <version>1.0-SNAPSHOT</version>
 .....
@@ -885,6 +882,7 @@ Schreibe Unit-Tests für
 ## if else
 
 Abzweigungen und bedingte Ausführung
+
 ```java
 if (i > 0){
   // dann...
@@ -1000,6 +998,7 @@ Schreibe die Fakultätsfunktion mit Hilfe einer `while` Schleife. Nutze die vorh
 ---
 
 <!-- _class: hsplit-->
+
 ## Rekursion
 
 - Methode ruft sich selbst auf
@@ -1020,7 +1019,6 @@ public int calculateSum(int value){
 }
 ```
 
-
 - Verkleinerung des Problems pro Aufruf
 - Abbruchbedingung muss vorhanden sein
 - Berechnung bei `value = 3`
@@ -1028,8 +1026,6 @@ public int calculateSum(int value){
   ```
   0 + 1 + 2 + 3 = 6
   ```
-
-
 
 ---
 
