@@ -759,10 +759,10 @@ Schreibe eine Methode, die prüft, ob ein String
 
 ## Motivation
 
-Sicherstellen von
+Sicherstellen von korrektem Verhalten der Anwendung
 
-- verhalten bei/nach der Implementieren
-- verhalten nach Änderungen
+- bei der Entwicklung von neuen Features
+- nach Änderungen des Codes
 
 ---
 
@@ -1001,7 +1001,7 @@ public int calc(int value){
 ```
 
 - Verkleinerung des Problems pro Aufruf
-- Abbruch Bedingung muss vorhanden sein
+- Abbruchbedingung muss vorhanden sein
 - Berechnung bei `value = 3`
 
   ```
@@ -1027,7 +1027,7 @@ Nutze Rekursion um die Fakultät zu berechnen.
 - Datenstruktur
 - Feste Größe (Länge)
 - Muss vor Verwendung erzeugt werden
-- Zugriff und setzen von Werten über Array Index
+- Zugriff und Setzen von Werten über Array Index
 - Index muss zwischen 0 und Arraylänge - 1 liegen
 - **Achtung** bei nicht gesetztem Wert => `null`
 
