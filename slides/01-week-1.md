@@ -1046,10 +1046,7 @@ Nutze Rekursion um die Fakultät zu berechnen.
 - Datenstruktur
 - Feste Größe (Länge)
 - Muss vor Verwendung erzeugt werden
-
-- Zugriff und Setzen von Werten über Array Index
 - Zugriff und setzen von Werten über Index
-
 - Index muss zwischen 0 und Arraylänge - 1 liegen
 - **Achtung** bei nicht gesetztem Wert => `null`
 
