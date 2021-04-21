@@ -7,8 +7,8 @@ title: Java Bootcamp - Week 2
 
 # Übersicht: Montag
 
--   Wiederholung der Freitagsaufgabe
--   Klassen / Objekte
+- Wiederholung der Freitagsaufgabe
+- Klassen / Objekte
 
 ---
 
@@ -36,9 +36,9 @@ class Student {
 
 ## Objekt
 
--   wird aus einer Klasse erstellt
--   die Klasse ist die Vorlage des Objekts
--   Objekte sind Referenztypen
+- wird aus einer Klasse erstellt
+- die Klasse ist die Vorlage des Objekts
+- Objekte sind Referenztypen
 
 ```Java
 class Student {
@@ -97,8 +97,8 @@ System.out.println(student.getName());
 
 ## Getter/Setter
 
--   `private` Variablen sind nur innerhalb des Objekts sichtbar
--   Zugriff und Änderung über "getter" und "setter" Methoden
+- `private` Variablen sind nur innerhalb der Klasse sichtbar
+- Zugriff und Änderung über "getter" und "setter" Methoden
 
 ```Java
 class Student {
@@ -162,9 +162,9 @@ System.out.println(student.getName());
 
 ## Konstruktor
 
--   Initialisierung des Objekts
--   wird einmalig beim Erzeugen aufgerufen
--   Name des Konstruktors = Name der Klasse
+- Initialisierung des Objekts
+- wird einmalig beim Erzeugen aufgerufen
+- Name des Konstruktors = Name der Klasse
 
 ```Java
 class Student {
@@ -195,8 +195,8 @@ System.out.println(student.getName());
 
 ## packages
 
--   Ordnerstruktur im Projekt
--   Strukturierung und Kapselung des Projekts
+- Ordnerstruktur im Projekt
+- Strukturierung und Kapselung des Projekts
 
 ```Java
 // file:AppMain.java
@@ -236,16 +236,16 @@ class Student {
 
 ## Sichtbarkeiten
 
--   `private`
-    -   nur in eigener Klasse
-    -   wenn möglich immer private
--   `protected`
-    -   Klassen im gleichen Paket (Ordner)
-    -   Kindklassen (später)
-    -   eher selten verwendet
--   `public`
-    -   Global sichtbar
-    -   nur für öffentliche API
+- `private`
+  - nur in eigener Klasse
+  - wenn möglich immer private
+- `protected`
+  - Klassen im gleichen Paket (Ordner)
+  - Kindklassen (später)
+  - eher selten verwendet
+- `public`
+  - Global sichtbar
+  - nur für öffentliche API
 
 ```Java
 package model;
@@ -298,14 +298,14 @@ public static void main(String[] args) {
 
 ## Objekt-Methoden
 
--   `equals`
-    -   überprüft Objekt auf Gleichheit
--   `hashCode`
-    -   generiert Hashwert für das Objekt
-    -   Datenstrukturen (`HashMap`)
-    -   immer überschreiben, wenn `equals` überschrieben wird
--   `toString`
-    -   gibt Objekt als String aus
+- `equals`
+  - überprüft Objekt auf Gleichheit
+- `hashCode`
+  - generiert Hashwert für das Objekt
+  - Datenstrukturen (`HashMap`)
+  - immer überschreiben, wenn `equals` überschrieben wird
+- `toString`
+  - gibt Objekt als String aus
 
 ---
 
@@ -334,9 +334,9 @@ Schreibe für alle Methoden Tests (bis auf randomStudent() )
 
 # Übersicht Dienstag
 
--   Objektorientierung
--   Interfaces
--   Vererbung
+- Objektorientierung
+- Interfaces
+- Vererbung
 
 ---
 
@@ -346,10 +346,10 @@ Schreibe für alle Methoden Tests (bis auf randomStudent() )
 
 ## Paradigmen
 
--   Encapsulation
--   Abstraction
--   Polymorphism
--   Inheritance
+- Encapsulation
+- Abstraction
+- Polymorphism
+- Inheritance
 
 ---
 
@@ -361,28 +361,28 @@ Kapselung von Logik & Daten.
 
 ## Polymorphism
 
--   Objekte können verschiedene Formen annehmen
--   Ergebnis eines Aufrufs hängt von der jeweiligen Form ab
--   Beispie: Student
-    -   Informatik Student
-    -   Chemie Student
+- Objekte können verschiedene Formen annehmen
+- Ergebnis eines Aufrufs hängt von der jeweiligen Form ab
+- Beispiel: Student
+  - Informatik Student
+  - Chemie Student
 
 ---
 
 ## Inheritance / Vererbung
 
--   Objekte können voneinadern erben (Daten & Verhalten)
--   Beispiel: Informatik Student erbt alle Eigenschaften von Student
--   **Wichtig**: Das erbende Objekt muss sein Eltern-Objekt erweitern!
--   **Nicht** zum Code sparen!!
+- Objekte können voneinadern erben (Daten & Verhalten)
+- Beispiel: Informatik Student erbt alle Eigenschaften von Student
+- **Wichtig**: Das erbende Objekt muss sein Eltern-Objekt erweitern!
+- **Nicht** zum Code sparen!!
 
 ---
 
 ## Encapsulation in Java
 
--   Packages & Access modifier
--   Methoden
--   Klassen
+- Packages & Access modifier
+- Methoden
+- Klassen
 
 ---
 
@@ -390,9 +390,9 @@ Kapselung von Logik & Daten.
 
 ## Abstraction in Java
 
--   Methoden beschreiben nur _was_, nicht _wie_
--   das _wie_ kann geändert werden, ohne andere Teile zu ändern
--   Interfaces abstrahieren konkrete Klassen
+- Methoden beschreiben nur _was_, nicht _wie_ etwas gemacht werden soll
+- das _wie_ kann geändert werden, ohne andere Teile zu ändern
+- Interfaces abstrahieren konkrete Klassen
 
 ```Java
 package model;
@@ -419,10 +419,10 @@ class Student {
 
 ## Interface
 
--   `interface` definiert Signatur von Methoden
--   per default sind alle Methoden `public`
--   Klassen können (mehrere) Interfaces implementieren
--   Signatur muss übereinstimmen
+- `interface` definiert Signatur von Methoden
+- per default sind alle Methoden `public`
+- Klassen können (mehrere) Interfaces implementieren
+- Signatur muss übereinstimmen
 
 ```Java
 public interface Student {
@@ -493,10 +493,10 @@ static String printStudentCourse(Student student) {
 
 ## Vererbung
 
--   Beispiel: `Student` in verschiedener Form erweitert
--   alle Eigenschaften von `Student` hat auch `ComputerScience` Student
--   **Nicht nutzen** um Code zu sparen
--   Überschreiben von Funktionalität ebenfalls möglich
+- Beispiel: `Student` in verschiedener Form erweitert
+- alle Eigenschaften von `Student` hat auch `ComputerScience` Student
+- **Nicht nutzen** um Code zu sparen
+- Überschreiben von Funktionalität ebenfalls möglich
 
 ```Java
 // file: Student.java
@@ -520,8 +520,8 @@ public class ComputerScienceStudent extends Student {
 
 ## Abstract
 
--   von `abstract` Klassen können keine Objekte direkt erzeugt werden
--   Klassen die `abstract` Klassen erweitern, müssen abstrakte Methoden implementieren oder ebenfalls abstract sein
+- von `abstract` Klassen können keine Objekte direkt erzeugt werden
+- Klassen die `abstract` Klassen erweitern, müssen abstrakte Methoden implementieren oder ebenfalls abstract sein
 
 ```Java
 public abstract class Student {
@@ -545,7 +545,7 @@ public class ComputerScienceStudent extends Student {
 ## Aufgabe: Vererbung
 
 1. Mache aus deinem Student Interface eine Klasse und lasse zwei Klassen von dieser erben
-2. Überlege was die Unterschiede zwischen der Verwendung eines Interfaces und Vererbung sind und schreibe vor und nachteile auf
+2. Überlege was die Unterschiede zwischen der Verwendung eines Interfaces und Vererbung sind und schreibe Vor- und Nachteile auf
 3. Mache aus deiner Student Klasse eine Abstrakte Klasse mit einer Abstrakten Methode “anzahlModule”.
 
 ---
@@ -565,11 +565,11 @@ Element zeigt auf das nächste Element.
 ## Aufgabe: LinkedList
 
 1. Schreibe eine Klasse `AnimalListItem` mit
-    1. einer Variable `value` von Type `Animal`
-    2. einer Variable `next` von Typ `AnimalListItem`
-    3. einem Konstruktor mit `value` als Parameter
-    4. eine Methode `add` die ein Element ans Ende anhängt
-2. Schreibe eine Methode welche die Liste, wenn sie die Elemente a,b und c enthält wie folgt als String zurückgibt “a -> b -> c”
+   1. einer Variable `value` von Type `Animal`
+   2. einer Variable `next` von Typ `AnimalListItem`
+   3. einem Konstruktor mit `value` als Parameter
+   4. eine Methode `add` die ein Element ans Ende anhängt
+2. Schreibe eine Methode welche die Liste, wenn sie die Elemente a,b und c enthält, wie folgt als String zurückgibt “a -> b -> c”
 3. Implementiere eine Methode `remove` welche alle Elemente mit einem entsprechenden Wert entfernt.
 
 Schreibe entsprechende Tests!
@@ -580,10 +580,10 @@ Schreibe entsprechende Tests!
 
 ## Collections in Java
 
--   `Iterable` Interface
--   `ArrayList`
-    -   `List` implementierung mit index
-    -   `Generic<T>` spezifiziert den Typ der Objekte
+- `Iterable` Interface
+- `ArrayList`
+  - `List` implementierung mit index
+  - `Generic<T>` spezifiziert den Typ der Objekte
 
 ![](img/collections.png)
 
@@ -593,11 +593,11 @@ Schreibe entsprechende Tests!
 
 ## ArrayList
 
--   Implementiert `Iterable`
--   Generic Type
--   Zugriff über index möglich
--   hinzufügen über `add`
--   Länge über `size()`
+- Implementiert `Iterable`
+- Generic Type
+- Zugriff über index möglich
+- hinzufügen über `add`
+- Länge über `size()`
 
 ```Java
 // Erzeugen
@@ -634,9 +634,9 @@ Ersetze in deiner StudentDB das Array durch eine `ArrayList`.
 
 ## Key-Value Datenstruktur
 
--   `Map` Interface
--   `HashMap`
--   `Generic<K,V>` spezifiziert den Typ des Keys/Values
+- `Map` Interface
+- `HashMap`
+- `Generic<K,V>` spezifiziert den Typ des Keys/Values
 
 ![](img/map.png)
 
@@ -664,8 +664,8 @@ Student studentFromMap = mapOfStudents.get("student4");
 
 ## Aufgabe: Map
 
--   Ersetzte in deiner Student Db die Liste durch eine Map
--   Überlege was für eine Map und was für eine Verwaltung in der Liste spricht
+- Ersetzte in deiner StudentDb die Liste durch eine Map
+- Überlege was für eine Map und was für eine Arraylist spricht
 
 ---
 
@@ -675,8 +675,8 @@ Student studentFromMap = mapOfStudents.get("student4");
 
 ## Exceptions
 
--   Wird bei unerwartetem, fehlerhaften Verhalten geworfen
--   beendet normalen Programmablauf
+- Wird bei unerwartetem, fehlerhaften Verhalten geworfen
+- beendet normalen Programmablauf
 
 ```Java
 throw new RuntimeException( "Hier lief etwas schief!!");
@@ -688,8 +688,8 @@ throw new RuntimeException( "Hier lief etwas schief!!");
 
 ## try / catch
 
--   Fängt Exception
--   Verhalten im Exception-Fall kann definiert werden
+- Fängt Exception
+- Verhalten im Exception-Fall kann definiert werden
 
 ```Java
 try{
@@ -706,12 +706,12 @@ try{
 
 ## Runtime vs Checked Exceptions
 
--   Checked Exceptions
-    -   müssen angegeben werden
-    -   müssen behandelt werden
--   Runtime Exceptions
-    -   können immer auftreten
-    -   müssen nicht behandelt werden
+- Checked Exceptions
+  - müssen angegeben werden
+  - müssen behandelt werden
+- Runtime Exceptions
+  - können immer auftreten
+  - müssen nicht behandelt werden
 
 ```Java
 public String method(int value) throws Exception{
@@ -735,9 +735,9 @@ public String method(int value) throws Exception{
 
 ## Optional
 
--   `null` führt häufig zu Fehlern
--   `Optional` deutet auf optionalen Wert hin
--   Zugriff über Optional sicher
+- `null` führt häufig zu Fehlern
+- `Optional` deutet auf optionalen Wert hin
+- Zugriff über Optional sicher
 
 ```Java
 public Optional<Student> method(int value) {
@@ -774,8 +774,8 @@ Schreibe einen entsprechenden Test!
 
 ## For each
 
--   Iterieren über Iterable
--   ausführen von Aktionen auf allen Objekten
+- Iterieren über Iterable
+- ausführen von Aktionen auf allen Objekten
 
 ```Java
 students.forEach(student -> {
@@ -804,10 +804,10 @@ Schreibe ein Bestellsystem (**mit Tests!**).
 Schreibe ein Bestellsystem (**mit Tests!**).
 
 1. Verwalte zu bestellende Produkte in einer `ProductDb` (muss nicht veränderbar sein)
-2. Gebe alle Produkte in der `AppMain` aus
+2. Gib alle Produkte in der `AppMain` aus
 3. Verwalte Bestellungen über eine `OrderDb`
 4. Füge eine Bestellung über einen `OrderService` hinzu
-5. Gebe alle Bestellungen aus
+5. Gib alle Bestellungen aus
 6. nutze für die `get` Methoden als Rückgabewert ein `Optional`
 7. `throw` eine Exception wenn Produkte bestellt werden sollen die nicht existieren
 8. Nutze anstelle einer `Product` Klasse ein Interface und implementiere verschiedene Ausführungen
@@ -816,9 +816,9 @@ Schreibe ein Bestellsystem (**mit Tests!**).
 
 # Freitagsaufgabe: Bonus
 
-Mache aus deiner OrderDb ein Interface und 2 Implementierung
+Mache aus deiner OrderDb ein Interface und 2 Implementierungen
 
--   eine Version, welche die Bestellungen wie zuvor im Speicher hält
--   eine Version, welche den Jackson-ObjectMapper nutzt um Bestellungen auf die Festplatte zu speichern
--   schaue dir `hamcrest` an
--   Nutze in deiner `AppMain` einen `Scanner` um interaktiv zu bestellen
+- eine Version, welche die Bestellungen wie zuvor im Speicher hält
+- eine Version, welche den Jackson-ObjectMapper nutzt um Bestellungen auf die Festplatte zu speichern
+- schaue dir `hamcrest` an
+- Nutze in deiner `AppMain` einen `Scanner` um interaktiv zu bestellen
