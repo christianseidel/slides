@@ -873,7 +873,6 @@ Schreibe Unit-Tests für
 
 - if /else
 - switch
-- Schleifen
 - for
 - while
 
@@ -895,7 +894,7 @@ if (i > 0){
 
 ## Aufgabe: Alarm
 
-Schreibe eine Funktion die überprüft ob zu viele Personen im Laden sind
+Schreibe eine Funktion die überprüft, ob zu viele Personen im Laden sind
 
 1. Wenn die Anzahl über 30 liegt, gib den String “Zu viele Personen zurück”
 2. Wenn die Anzahl unter 30 liegt, gib den String “Maximale Personenzahl
@@ -935,11 +934,11 @@ switch (i){
 
 ## Aufgabe 2: Alarm
 
-Erweitere deine Alarm funktion um einen Parameter Alarmstufe
+Erweitere deine Alarmfunktion um einen Parameter "Alarmstufe"
 
-- Alarmstufe “rot” keine Personen erlaubt
-- Alarmstufe “gelb” max 30 Personen erlaubt
-- Alarmstufe “grün” max 60 Personen erlaubt
+- Alarmstufe “rot”: keine Personen erlaubt
+- Alarmstufe “gelb”: max 30 Personen erlaubt
+- Alarmstufe “grün”: max 60 Personen erlaubt
 
 Passe deine vorhandenen Tests an.
 
@@ -955,7 +954,7 @@ for(int i = 0; i< 100; i++){
 }
 ```
 
-- `i=0` => initialisierung
+- `i=0` => Initialisierung
 - `i < 100` => Abbruchbedingung, bei der Schleife beendet wird
 - `i++` => bei jedem Durchlauf wird i um 1 erhöht
 - wenn `i` größer gleich 100 wird die Schleife nicht mehr
