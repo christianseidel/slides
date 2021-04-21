@@ -31,13 +31,13 @@ Wo stehen wir?
 
 ## Hypertext Transfer Protocol
 
--   Standard um im WWW zu kommunizieren
--   Aufruf einer URL mit
-    -   GET (Abfrage von Ressourcen)
-    -   POST (Hinzufügen einer Ressource)
-    -   PUT (Ändern/ Hinzufügen einer Ressource)
-    -   DELETE (Löschen einer Ressource)
--   URL = Uniform Resource Location
+- Standard, um im WWW zu kommunizieren
+- Aufruf einer URL mit
+  - GET (Abfrage von Ressourcen)
+  - POST (Hinzufügen einer Ressource)
+  - PUT (Ändern/ Hinzufügen einer Ressource)
+  - DELETE (Löschen einer Ressource)
+- URL = Uniform Resource Location
 
 ---
 
@@ -45,30 +45,30 @@ Wo stehen wir?
 
 [https://www.google.com/search?q=rest)](https://www.google.com/search?q=rest)
 
--   Path
-    -   www.google.com/search
--   Protokoll
-    -   https
--   Parameter
-    -   q = rest
+- Path
+  - www.google.com/search
+- Protokoll
+  - https
+- Parameter
+  - q = rest
 
 ---
 
 ## Body
 
--   Senden von Daten
--   Meist nur bei
-    -   POST
-    -   PUT
+- Senden von Daten
+- Meist nur bei
+  - POST
+  - PUT
 
 ---
 
 ## Header
 
--   Mitgeben von Zusatzinformationen
-    -   Authorization
-    -   Content
-    -   etc pp
+- Mitgeben von Zusatzinformationen
+  - Authorization
+  - Content
+  - etc pp
 
 ---
 
@@ -76,13 +76,13 @@ Wo stehen wir?
 
 ## JSON (JavaScript Object Notation)
 
--   Representation von Daten
--   Objekt { … }
-    -   properties mit value
-    -   “name” : “Frank”
-    -   “age” : 29
--   Array von Objekten [{ … }, { … } ]
--   Property values können wieder Objekte/Arrays sein
+- Repräsentation von Daten
+- Objekt { … }
+  - properties mit value
+  - “name” : “Frank”
+  - “age” : 29
+- Array von Objekten [{ … }, { … } ]
+- Property values können wieder Objekte/Arrays sein
 
 ```json
 [
@@ -117,15 +117,15 @@ Wo stehen wir?
 
 ## Postman
 
--   [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
--   vereinfacht Requests
--   ermöglicht Workspaces
+- [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
+- vereinfacht Requests
+- ermöglicht Workspaces
 
 ---
 
 ## Aufgabe REST Postman
 
-1.  Lade die corona api Dokumentation in deinen Postman
+1.  Lade die Corona api Dokumentation in deinen Postman
 2.  Frage die Daten für Deutschland der letzten 7 Tage ab
 
 ---
@@ -138,12 +138,12 @@ Wo stehen wir?
 
 ## Spring
 
--   Quelloffenes Framework für die Java Plattform
--   Ziele
-    -   Vereinfachung der Java Entwicklung
-    -   Förderung guter Programmierpraktiken
--   Open Source
--   Entwickelt seit 2002
+- Quelloffenes Framework für die Java Plattform
+- Ziele
+  - Vereinfachung der Java Entwicklung
+  - Förderung guter Programmierpraktiken
+- Open Source
+- Entwickelt seit 2002
 
 ![](img/spring.png)
 
@@ -153,10 +153,10 @@ Wo stehen wir?
 
 ## Spring
 
--   Setzt auf
-    -   Aspekt-Orientierte Programmierung
-    -   Dependency Injection
--   Riesige Bibliothek von Modulen (LDAP, Mongo, MessageQueues etc.)
+- Setzt auf
+  - Aspekt-Orientierte Programmierung
+  - Dependency Injection
+- Riesige Bibliothek von Modulen (LDAP, Mongo, MessageQueues etc.)
 
 ![](img/spring.png)
 
@@ -166,11 +166,11 @@ Wo stehen wir?
 
 ## Aspekt-Orientierte Programmierung
 
--   Hinzufügen von Funktionalität
-    -   Klassen / Projekt übergreifend
-    -   zwischen Methoden
--   Trennung von Geschäftslogik und Funktionalität
--   Beispiel: Logging
+- Hinzufügen von Funktionalität
+  - Klassen / Projekt übergreifend
+  - zwischen Methoden
+- Trennung von Geschäftslogik und Funktionalität
+- Beispiel: Logging
 
 ![](img/aspektorientiert.png)
 
@@ -188,10 +188,10 @@ Vereinfacht Aufsetzen eines neue Projekts
 
 ## Annotationen
 
--   Bereits in Tests verwendet
--   Klassen können auf Annotationen “gescannt” werden
-    -   Logik kann hinzugefügt werden
--   Spring nutzt Annotationen um Logik zu erweitern
+- Bereits in Tests verwendet
+- Klassen können auf Annotationen “gescannt” werden
+  - Logik kann hinzugefügt werden
+- Spring nutzt Annotationen um Logik zu erweitern
 
 ```java
 @SpringBootApplication
@@ -214,13 +214,13 @@ public class DemoApplication {
 
 ## Rest Controller
 
--   Bereitstellen von Rest Endpunkten
--   `@RequestMapping`
-    -   gibt path an
--   `@GetMapping`
-    -   stellt Get Rest Endpunkt bereit
-    -   ruft Methode auf
-    -   gibt Object als Json zurück
+- Bereitstellen von Rest Endpunkten
+- `@RequestMapping`
+  - gibt path an
+- `@GetMapping`
+  - stellt Get Rest Endpunkt bereit
+  - ruft Methode auf
+  - gibt Object als Json zurück
 
 ```java
 @RestController
@@ -247,10 +247,10 @@ public class StudentController {
 
 # Service
 
--   Kapselung von Business Logik
--   Unabhängig von Rest Endpunkt
--   Logik isoliert testbar
--   Wiederverwendbar
+- Kapselung von Business Logik
+- Unabhängig von Rest Endpunkt
+- Logik isoliert testbar
+- Wiederverwendbar
 
 ```java
 @Service
@@ -265,8 +265,8 @@ public class StudentService {
 
 ## Path Variable
 
--   "{id}" Path variable
--   `@PathVariable` path variable
+- "{id}" Path variable
+- `@PathVariable` path variable
 
 ```java
 @GetMapping(path = "{id}")
@@ -279,8 +279,8 @@ public Student getStudent(@PathVariable String id) {
 
 ## Request Param
 
--   `@RequestParam` parameter
--   `url?q=someName&other=value`
+- `@RequestParam` parameter
+- `url?q=someName&other=value`
 
 ```java
 @GetMapping
@@ -293,9 +293,9 @@ public List<Student> search(@RequestParam String q) {
 
 # Post/Put Resource
 
--   `@PostMapping` fügt POST Endpunkt hinzu
--   `@PutMapping` fügt PUT Endpunkt hinzu
--   `@RequestBody` Daten im request body
+- `@PostMapping` fügt POST Endpunkt hinzu
+- `@PutMapping` fügt PUT Endpunkt hinzu
+- `@RequestBody` Daten im request body
 
 ---
 
@@ -314,8 +314,8 @@ public List<Student> search(@RequestParam String q) {
 
 ## Dependency Injection (DI)
 
--   Dependency Injection Container kümmert sich um Abhängigkeiten
--   Inversion of Control (IoC)
+- Dependency Injection Container kümmert sich um Abhängigkeiten
+- Inversion of Control (IoC)
 
 ```java
 @RestController
@@ -342,7 +342,7 @@ public class StudentController {
 ## Aufgabe Dependency Injection
 
 1.  Schreibe eine Klasse `StudentService`, auf die aus dem Controller zugegriffen wird
-    -   nutze DI und kein `new StudentService`
+    - nutze DI und kein `new StudentService`
 2.  Schreibe eine Klasse `StudentDatabase`, welche sich um die Datenverwaltung kümmert
 
 ---
@@ -362,10 +362,10 @@ public class StudentController {
 
 ## Mock Unit testing
 
--   Mocking ermöglicht unit testen
--   mock(...class)
-    -   Verhalten kann mit when definiert werden
-    -   Aufruf kann mit verify sichergestellt werden
+- Mocking ermöglicht unit testen
+- mock(...class)
+  - Verhalten kann mit `when` definiert werden
+  - Aufruf kann mit `verify` sichergestellt werden
 
 ```java
 ProductDb productDbMock = mock(ProductDb.class);
@@ -388,8 +388,8 @@ verify(productDbMock).getById("someId");
 
 ## Rest Template
 
--   Ansprechen von Rest Endpunkten
--   Parsen von Daten / Response
+- Ansprechen von Rest Endpunkten
+- Parsen von Daten / Response
 
 ```java
 public ApiData getApiData() {
@@ -403,8 +403,8 @@ public ApiData getApiData() {
 
 ## Aufgabe REST Template
 
-1.  Nutze das Rest Template um Daten von corona api abzurufen
-2.  Stelle einen Endpunkt bereit der die durchschnittlichen Neuinfizierten der letzte 7 Tage für ein übergebenes Land zurück gibt
+1.  Nutze das Rest Template um Daten von der Corona API abzurufen
+2.  Stelle einen Endpunkt bereit, der die durchschnittliche Anzahl von Neuinfizierten der letzte 7 Tage für ein übergebenes Land zurückgibt
 3.  Stelle einen Endpunkt bereit der angibt ob Präsenzunterricht möglich ist. Präsenzunterricht soll möglich sein, wenn über die letzten 7 Tage weniger als 100 Neuinfizierte pro Tag registriert wurden
 
 ---
@@ -415,10 +415,10 @@ public ApiData getApiData() {
 
 ## Spring context
 
--   Testet ob context startet
--   Fährt alles hoch
--   Dauert lange
--   Integrationstests
+- Testet ob context startet
+- Fährt alles hoch
+- Dauert lange
+- Integrationstests
 
 ```java
 @SpringBootTest
@@ -437,9 +437,9 @@ class ApplicationTest {
 
 ## Controller Integration Test
 
--   Integration test startet Spring context
--   Sendet rest request an server
--   Endpunkt startet mit Random Port
+- Integration test startet Spring context
+- Sendet rest request an server
+- Endpunkt startet mit Random Port
 
 ```java
 @SpringBootTest(webEnvironment =
@@ -465,14 +465,14 @@ ResponseEntity<TodoItem> response =
 
 ## Controller Test
 
--   Schreibe für deine Controller Integration tests
+- Schreibe für deine Controller Integration tests
 
 ---
 
 ## Test Inject
 
--   Bean kann über `@Autowired` injected werden
--   Bean muss im Context sein
+- Bean kann über `@Autowired` injected werden
+- Bean muss im Context sein
 
 ```java
 @SpringBootTest(classes = TodoService.class)
@@ -486,9 +486,9 @@ class TodoServiceTest {
 
 ## Mock Bean Inject
 
--   Beans können gemockt werden
--   Definition von Verhalten über when
--   Verifizierung ob Aufruf stattgefunden hat
+- Beans können gemockt werden
+- Definition von Verhalten über `when`
+- Verifizierung ob Aufruf stattgefunden hat
 
 ```java
 @MockBean
@@ -507,28 +507,28 @@ verify(repository).save(
 
 ## Mock Bean
 
-Schreibe Tests für deinen Corona Service indem du
+Schreibe Tests für deinen Corona Service, indem du
 
--   den Service über Autowire in deinen Test einbindest
--   für die Api Anbindung eine MockBean verwendest
--   verifizierst, dass die Api Klasse aufgerufen wird
--   verifizierst, dass die Daten korrekt zurückgegeben werden
+- den Service über Autowire in deinen Test einbindest
+- für die Api Anbindung eine MockBean verwendest
+- verifizierst, dass die Api Klasse aufgerufen wird
+- verifizierst, dass die Daten korrekt zurückgegeben werden
 
 ---
 
 ## Integration vs Unit test
 
--   Integration Test
+- Integration Test
 
-    -   fährt Server/Context hoch
-    -   dauert länger
-    -   testet Zusammenspiel von Software Komponenten
+  - fährt Server/Context hoch
+  - dauert länger
+  - testet Zusammenspiel von Software Komponenten
 
--   Unit Test
-    -   testet kleinen Teil
-    -   fährt Server nicht hoch
-    -   sehr schnell
-    -   testet nicht das Zusammenspiel von Software Komponenten
+- Unit Test
+  - testet kleinen Teil
+  - fährt Server nicht hoch
+  - sehr schnell
+  - testet nicht das Zusammenspiel von Software Komponenten
 
 ---
 
@@ -538,9 +538,9 @@ Schreibe Tests für deinen Corona Service indem du
 
 ## Swagger client
 
--   Swagger gibt Übersicht über Endpunkte
--   [https://swagger.io/tools/swagger-ui/](https://swagger.io/tools/swagger-ui/)
--   Ausführung ähnlich zu Postman
+- Swagger gibt Übersicht über Endpunkte
+- [https://swagger.io/tools/swagger-ui/](https://swagger.io/tools/swagger-ui/)
+- Ausführung ähnlich zu Postman
 
 ---
 
@@ -548,9 +548,9 @@ Schreibe Tests für deinen Corona Service indem du
 
 ## Swagger Setup
 
--   Maven dependency
--   Config
--   [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+- Maven dependency
+- Config
+- [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
 ```xml
 <dependency>
@@ -591,10 +591,10 @@ public class SwaggerConfig {
 
 ## Enum
 
--   feste Anzahl von Ausprägungen
--   häufig mit switch
--   Ausprägungen können Member und Methoden haben
--   nicht public Konstruktur
+- feste Anzahl von Ausprägungen
+- häufig mit switch
+- Ausprägungen können Member und Methoden haben
+- nicht public Konstruktur
 
 ```Java
 public enum Directions {
@@ -625,10 +625,10 @@ Refactor die Alarm Klasse von letzter Woche und nutze ein Enum statt String-Kons
 
 ## Generic function
 
--   Ermöglicht Methode für unterschiedliche Objekte zu schreiben
--   Angabe durch Typeparameter `<T>`
--   Buchstabe frei wählbar, best practice: T,U,V..
--   `T extends Student` => T muss Interface oder Klasse Student implementieren
+- Ermöglicht Methode für unterschiedliche Objekte zu schreiben
+- Angabe durch Typeparameter `<T>`
+- Buchstabe frei wählbar, best practice: T,U,V..
+- `T extends Student` => T muss Interface oder Klasse Student implementieren
 
 ```Java
 private <T> T someGenericFunction(T value){
@@ -664,9 +664,9 @@ public class HashMap<K,V>
 
 ## Übersicht
 
--   Seit Java 1.8
--   Operationen auf Iterable
--   Functional Programming (FP) Ansatz
+- Seit Java 1.8
+- Operationen auf Iterable
+- Functional Programming (FP) Ansatz
 
 ```java
 list.stream().filter(element -> element.contains("sub"));
@@ -676,17 +676,17 @@ list.stream().filter(element -> element.contains("sub"));
 
 ## Stream Methods
 
--   forEach
--   map
--   collect
--   filter
--   findFirst
--   peek
--   sorted
--   min
--   max
--   distinct
--   and many more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
+- forEach
+- map
+- collect
+- filter
+- findFirst
+- peek
+- sorted
+- min
+- max
+- distinct
+- and many more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
 
 ---
 
