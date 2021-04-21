@@ -944,7 +944,7 @@ ausgeführt</li>
   <span class="hljs-keyword">if</span>(value &lt; <span class="hljs-number">1</span>){
     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
     }
-  <span class="hljs-keyword">return</span> calc(value - <span class="hljs-number">1</span>) + value;
+  <span class="hljs-keyword">return</span> calculateSum(value - <span class="hljs-number">1</span>) + value;
 }
 </span></span></foreignObject></svg></code></pre>
 </section>
@@ -993,23 +993,21 @@ System.out.println(someArray[<span class="hljs-number">0</span>]);
 </ul>
 <pre><code class="language-yml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">project</span> <span class="hljs-string">with</span> <span class="hljs-string">maven</span>
 
-<span class="hljs-attr">on:</span>
-  <span class="hljs-string">push</span>
+<span class="hljs-attr">on:</span> <span class="hljs-string">push</span>
 
 <span class="hljs-attr">jobs:</span>
   <span class="hljs-attr">build:</span>
-
     <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
 
     <span class="hljs-attr">steps:</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Set</span> <span class="hljs-string">up</span> <span class="hljs-string">JDK</span> <span class="hljs-number">15</span>
-      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-java@v2</span>
-      <span class="hljs-attr">with:</span>
-        <span class="hljs-attr">java-version:</span> <span class="hljs-string">&#x27;15&#x27;</span>
-        <span class="hljs-attr">distribution:</span> <span class="hljs-string">&#x27;adopt&#x27;</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">with</span> <span class="hljs-string">Maven</span>
-      <span class="hljs-attr">run:</span> <span class="hljs-string">mvn</span> <span class="hljs-string">-B</span> <span class="hljs-string">package</span> <span class="hljs-string">--file</span> <span class="hljs-string">pom.xml</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Set</span> <span class="hljs-string">up</span> <span class="hljs-string">JDK</span> <span class="hljs-number">15</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-java@v2</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">java-version:</span> <span class="hljs-string">&quot;15&quot;</span>
+          <span class="hljs-attr">distribution:</span> <span class="hljs-string">&quot;adopt&quot;</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">with</span> <span class="hljs-string">Maven</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">mvn</span> <span class="hljs-string">-B</span> <span class="hljs-string">package</span> <span class="hljs-string">--file</span> <span class="hljs-string">pom.xml</span>
 </span></span></foreignObject></svg></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="94" data-paginate="true" data-theme="nf-theme" data-marpit-pagination="94" data-marpit-pagination-total="94" style="--paginate:true;--theme:nf-theme;">
