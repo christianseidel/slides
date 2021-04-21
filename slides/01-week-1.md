@@ -1014,7 +1014,7 @@ public int calculateSum(int value){
   if(value < 1){
     return 0;
     }
-  return calc(value - 1) + value;
+  return calculateSum(value - 1) + value;
 }
 ```
 
@@ -1074,7 +1074,7 @@ Nutze Tests um die Funktionalität zu überprüfen
 - Deployment kann automatisiert erfolgen
 
 ```yml
-name: Java CI with Maven
+name: Build project with maven
 
 on: push
 
@@ -1084,12 +1084,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 14
-        uses: actions/setup-java@v1
+      - name: Set up JDK 15
+        uses: actions/setup-java@v2
         with:
-          java-version: "14"
+          java-version: "15"
+          distribution: "adopt"
       - name: Build with Maven
-        run: mvn -B verify --file pom.xml
+        run: mvn -B package --file pom.xml
 ```
 
 ---
