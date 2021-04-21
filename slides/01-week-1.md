@@ -1019,14 +1019,6 @@ public int calculateSum(int value){
 }
 ```
 
-- Verkleinerung des Problems pro Aufruf
-- Abbruchbedingung muss vorhanden sein
-- Berechnung bei `value = 3`
-
-  ```
-  0 + 1 + 2 + 3 = 6
-  ```
-
 ---
 
 ## Aufgabe: Fakultät Rekursion
