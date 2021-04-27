@@ -562,17 +562,24 @@ Element zeigt auf das nächste Element.
 
 ---
 
-## Aufgabe: LinkedList
+## Aufgabe: LinkedList I
 
-1. Schreibe eine Klasse `AnimalListItem` mit
+Schreibe eine Klasse `AnimalListItem` mit
    1. einer Variable `value` von Type `Animal`
    2. einer Variable `next` von Typ `AnimalListItem`
    3. einem Konstruktor mit `value` als Parameter
-   4. eine Methode `add` die ein Element ans Ende anhängt
-2. Schreibe eine Methode welche die Liste, wenn sie die Elemente a,b und c enthält, wie folgt als String zurückgibt “a -> b -> c”
-3. Implementiere eine Methode `remove` welche alle Elemente mit einem entsprechenden Wert entfernt.
 
-Schreibe entsprechende Tests!
+---
+
+## Aufgabe: LinkedList II
+
+Schreibe eine Klasse `AnimalList` mit
+    1. einer Variable `head` vom Typ `AnimalListItem`, die den Anfang der Liste speichert
+    2. einer Methode `toString`, welche die Liste, wenn sie die Elemente a,b und c enthält, wie folgt als String zurückgibt “a -> b -> c”
+    3. einer Methode `add` mit einem `Animal` als Paramter, die ein Element anhängt
+    4. einer Methode `remove` mit einem `Animal` als Parameter, die alle dieser Animals entfernt
+
+**Schreibe entsprechende Tests!**
 
 ---
 
