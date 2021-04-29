@@ -583,42 +583,6 @@ public class SwaggerConfig {
 
 ---
 
-# Enums
-
----
-
-<!-- _class: hsplit-->
-
-## Enum
-
-- feste Anzahl von Ausprägungen
-- häufig mit switch
-- Ausprägungen können Member und Methoden haben
-- nicht public Konstruktur
-
-```Java
-public enum Directions {
-   NORTH("N"),
-   EAST("E"),
-   SOUTH("S"),
-   WEST("W");
-
-   public final String abbreviation;
-
-   Directions(String abbreviation){
-       this.abbreviation = abbreviation;
-   }
-}
-```
-
----
-
-## Aufgabe: Enums
-
-Refactor die Alarm Klasse von letzter Woche und nutze ein Enum statt String-Konstanten.
-
----
-
 # Generics
 
 ---
