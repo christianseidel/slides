@@ -43,7 +43,7 @@ Wo stehen wir?
 
 ## URL
 
-[https://www.google.com/search?q=rest)](https://www.google.com/search?q=rest)
+[https://www.google.com/search?q=rest](https://www.google.com/search?q=rest)
 
 - Path
   - www.google.com/search
