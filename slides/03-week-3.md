@@ -43,7 +43,7 @@ Wo stehen wir?
 
 ## URL
 
-[https://www.google.com/search?q=rest)](https://www.google.com/search?q=rest)
+[https://www.google.com/search?q=rest](https://www.google.com/search?q=rest)
 
 - Path
   - www.google.com/search
@@ -382,7 +382,7 @@ verify(productDbMock).getById("someId");
 
 ---
 
-## Rest request Spring
+# Rest request Spring
 
 ---
 
@@ -409,7 +409,7 @@ public ApiData getApiData() {
 
 ---
 
-## Spring Testing
+# Spring Testing
 
 ---
 
@@ -515,20 +515,24 @@ Schreibe Tests für deinen Corona Service, indem du
 - verifizierst, dass die Daten korrekt zurückgegeben werden
 
 ---
-
+<!-- _class: hsplit-->
 ## Integration vs Unit test
 
-- Integration Test
+<div>
+Integration Test:
 
   - fährt Server/Context hoch
   - dauert länger
   - testet Zusammenspiel von Software Komponenten
+</div>
+<div>
+Unit Test:
 
-- Unit Test
   - testet kleinen Teil
   - fährt Server nicht hoch
   - sehr schnell
   - testet nicht das Zusammenspiel von Software Komponenten
+</div>
 
 ---
 
@@ -548,9 +552,12 @@ Schreibe Tests für deinen Corona Service, indem du
 
 ## Swagger Setup
 
+<div>
+
 - Maven dependency
 - Config
 - [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
 
 ```xml
 <dependency>
@@ -564,6 +571,9 @@ Schreibe Tests für deinen Corona Service, indem du
    <version>2.9.2</version>
 </dependency>
 ```
+
+</div>
+
 
 ```java
 @Configuration
@@ -640,17 +650,7 @@ list.stream().filter(element -> element.contains("sub"));
 
 ## Stream Methods
 
-- forEach
-- map
-- collect
-- filter
-- findFirst
-- peek
-- sorted
-- min
-- max
-- distinct
-- and many more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
+`forEach`, `map`, `collect`, `filter`, `findFirst`, `peek`, `sorted`, `min`, `max`, `distinct`, and *many* more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
 
 ---
 
