@@ -590,6 +590,41 @@ public class SwaggerConfig {
  }
 }
 ```
+---
+
+# Enums
+
+---
+
+<!-- _class: hsplit-->
+
+## Enum
+
+- feste Anzahl von Ausprägungen
+- häufig mit switch
+- Ausprägungen können Member und Methoden haben
+- nicht public Konstruktur
+
+```Java
+public enum Directions {
+   NORTH("N"),
+   EAST("E"),
+   SOUTH("S"),
+   WEST("W");
+
+   public final String abbreviation;
+
+   Directions(String abbreviation){
+       this.abbreviation = abbreviation;
+   }
+}
+```
+
+---
+
+## Aufgabe: Enums
+
+Refactor die Alarm Klasse aus Woche 1 und nutze ein Enum statt String-Konstanten.
 
 ---
 
@@ -656,9 +691,8 @@ list.stream().filter(element -> element.contains("sub"));
 
 ## Aufgabe: Streams
 
-1. Nutze Streammapping, um die von der Corona Api erhalten Collection Daten auf dein internes Datenschema zu mappen
-2. Nutze die stream `filter` Methode um alle Tage am Wochenende heraus zu filtern
-3. Nutze die `findAny` Methode, um zurück zu geben ob eine spezifizierte Anzahl cases überschritten wurde
+1. Nutze Streams um die `for` loops in der OrderDb zu ersetzen.
+2. Stelle einen Endpunkt um Produkte nach ihrem Namen zu suchen bereit, nutze die `filter` Methode.
 
 ---
 
