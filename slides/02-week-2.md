@@ -13,7 +13,6 @@ title: Java Bootcamp - Week 2
 ---
 
 # Wiederholung Freitagsaufgabe
-
 ---
 
 # Klassen / Objekte
