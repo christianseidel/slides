@@ -180,4 +180,29 @@ Einbinden über `script` Tag im `head` des HTML Dokuments
 
 ---
 
+## JS Aufgabe 1 - JS Basics
+
+- erstelle eine function add und multiply methode
+- erstelle eine function faculty welche die fakultät berechnet
+
+---
+
+## JS Aufgabe 2 - JS Objects
+
+- erstelle eine studenten object das einem namen und id hat
+- erstelle eine studenten array
+- schreibe eine function, die einen studenten in einem array findet und den namen updated
+
+---
+
+## JS Aufgabe 3 - Array Methods
+
+Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/) api, um filter alle lebenden menschen
+
+---
+## JS Aufgabe 4 - fetch
+
+Frage die [Rick and Morty](https://rickandmortyapi.com/) api mit fetch ab und ersetzt deine statischen daten aus Aufgabe 3
+
+---
 ## 
