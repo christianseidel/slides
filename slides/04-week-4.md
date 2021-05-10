@@ -144,3 +144,40 @@ Placeholder für die Bilder findest du bei
 
 - https://source.unsplash.com/200x400?capybara
 
+---
+
+# JS
+
+- **J**ava**S**cript oder ECMA-Script
+
+- Standartisierte Versionen, ES2020, ESNext
+
+- schwach typisierte, dynamische Skriptsprache
+
+![bg right contain](img/javascript.webp)
+
+---
+
+## JS for Java Developers
+
+[Language Basics Demo](https://codepen.io/jamarob/pen/mdWyXLz)
+
+**Ressourcen:**
+- [MDN: Javascript Referenz](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [The Modern Javascipt Tutorials](https://javascript.info/)
+
+---
+
+## JS Dateien
+
+Einbinden über `script` Tag im `head` des HTML Dokuments
+
+```html
+    <script type="module" src="js/script.js"></script>
+```
+
+`module` type ermöglicht ES module syntax (später) und verzögert das Ausführen des Skripts bis das HTML vollständig geladen ist.
+
+---
+
+## 
