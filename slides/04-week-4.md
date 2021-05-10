@@ -77,7 +77,7 @@ Einbinden über `link` Tag im `head` des html Dokuments.
 **Alternativen:**
 
 - `style` Tag im `head` (gut um FOUC zu verhindern)
-- inline über `style` Attribut von HTML Elementen (beste Performance, aber hohe Maintenance-Kosten, nur unbedingt notwendig) 
+- inline über `style` Attribut von HTML Elementen (beste Performance, aber hohe Maintenance-Kosten - nur wenn unbedingt notwendig) 
 
 ---
 
