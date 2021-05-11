@@ -144,3 +144,74 @@ Placeholder für die Bilder findest du bei
 
 - https://source.unsplash.com/200x400?capybara
 
+---
+
+# JS
+
+- **J**ava**S**cript oder ECMA-Script
+
+- Standartisierte Versionen, ES2020, ESNext
+
+- schwach typisierte, dynamische Skriptsprache
+
+![bg right contain](img/javascript.webp)
+
+---
+
+## JS for Java Developers
+
+[Language Basics Demo](https://codepen.io/jamarob/pen/mdWyXLz)
+
+**Ressourcen:**
+- [MDN: Javascript Referenz](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [The Modern Javascipt Tutorials](https://javascript.info/)
+
+---
+
+## JS Dateien
+
+Einbinden über `script` Tag im `head` des HTML Dokuments
+
+```html
+    <script type="module" src="js/script.js"></script>
+```
+
+`module` type ermöglicht ES module syntax (später) und verzögert das Ausführen des Skripts bis das HTML vollständig geladen ist.
+
+---
+
+## JS Aufgabe 1 - JS Basics
+
+- erstelle eine function `add` und `multiply` methode
+- erstelle eine function `faculty` welche die fakultät berechnet
+
+---
+
+## JS Aufgabe 2 - JS Objects
+
+- erstelle ein Studenten object das einem namen und id hat
+- erstelle einen Studenten array
+- schreibe eine function, die einen Studenten in einem Array findet und seinen Namen updated
+- verändere deinen function so, dass das urpsrüngliche Objekt nicht geändert wird, sondern ein neues erstellt wird
+ 
+---
+
+## JS Aufgabe 3 - Array Methods
+
+Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentation/#character) api (erstmal Antwort einfach als json speichern)
+- schreibe eine function, die ein neues Array nur mit den lebenden Menschen erstellt
+- schreibe eine function, die ein Array mit allen Namen zurück gibt
+- schreibe eine function, die ein Array mit Objekten der Form 
+    ```jacascript
+    {
+        name: "some-name",
+        origin: "name-of-origin"
+    }
+    ```
+    zurück gibt
+    
+---
+
+## JS Aufgabe 4 - fetch
+
+Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) api mit fetch ab und ersetzt deine statischen daten aus Aufgabe 3
