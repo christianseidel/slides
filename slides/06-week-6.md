@@ -97,7 +97,7 @@ Projekt aufsetzen
 
 - Blueprint für Container
 - besteht aus mehreren Layern
-- hub stellt bereits viele Images Bereit
+- hub stellt bereits viele Images bereit
 
 ![bg right 50% contain](img/docker-layers.png)
 
