@@ -114,7 +114,7 @@ Projekt aufsetzen
 
 ## Docker vs VM
 
-- benötigt wesentlich weniger ressourcen
+- benötigt wesentlich weniger Ressourcen
 - startet schneller
 - einfacher zu skalieren
 
