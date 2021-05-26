@@ -401,7 +401,7 @@ MongoDB, DynamoDb, Cassandra
 - Relationen zwischen Objekten
 - Daten Strukturiert wie Knoten und Kanten
 - Leicht Skalierbar (Menge von Knoten)
-- Häufig Probleme mit Großen Knoten
+- Häufig Probleme mit großen Knoten
 
 Beispiele:
 Neo4J, ArangoDB, Amazon Neptune
