@@ -560,7 +560,7 @@ Füge zum Projekt ein Repository hinzu, welches repos
 
 - Embedded MongoDB für Tests
 - Wenn Repository im Test Context
-  - Datenbank wird vor Test Hochgefahren
+  - Datenbank wird vor Test hochgefahren
   - Nach Test runter gefahren
 
 ```xml
