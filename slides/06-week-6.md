@@ -493,7 +493,7 @@ db.students.updateMany({ name: { $eq: "Frank" } }, { $set: { name: "Franz" } });
 
 - update von ein oder mehreren Dokumenten
 - suche über query
-- update über $set
+- update über `$set`
 
 ---
 
