@@ -174,7 +174,7 @@ docker stop 324
 docker rm 324
 ```
 
-Entfernt den container mit id 324
+Entfernt den Container mit id 324
 
 ```shell
 docker image rm some-image
