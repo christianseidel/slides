@@ -180,7 +180,7 @@ Entfernt den Container mit id 324
 docker image rm some-image
 ```
 
-Entfernt das image mit id some-image
+Entfernt das Image mit id some-image
 
 ---
 
