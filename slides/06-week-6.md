@@ -480,7 +480,7 @@ db.collection.find({ name: { $eq: "Frank" } }).limit(5);
 
 - find gibt Liste zurück
 - über `query` kann Ergebnis eingegrenzt werden
-- limit setzt maximale Anzahl an zurückgegebenen Dokumenten
+- `limit` setzt maximale Anzahl an zurückgegebenen Dokumenten
 - Projection ermöglicht nur Teile zurück zu geben
 
 ---
