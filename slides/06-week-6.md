@@ -57,7 +57,7 @@ Projekt aufsetzen
 
 ---
 
-## Wie bekommen wir den nun diesen Server Online 🌍 🎉🙌
+## Wie bekommen wir denn nun diesen Server online? 🌍 🎉🙌
 
 ![](img/webarchitektur-komplex.png)
 
