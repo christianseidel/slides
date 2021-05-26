@@ -187,7 +187,7 @@ Entfernt das Image mit id some-image
 ## images
 
 ```shell
-docker mages
+docker images
 ```
 
 listet alle images
