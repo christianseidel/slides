@@ -63,7 +63,7 @@ Projekt aufsetzen
 
 ---
 
-## Aber ich möchte kein Admin werden 🤬 <br/>Geht das nicht einfacher 🤯
+## Aber ich möchte kein Admin werden 🤬 <br/>Geht das nicht einfacher? 🤯
 
 ---
 
