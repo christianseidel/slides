@@ -190,7 +190,7 @@ Entfernt das Image mit id some-image
 docker images
 ```
 
-listet alle images
+listet alle Images
 
 ---
 
