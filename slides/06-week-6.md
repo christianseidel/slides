@@ -400,7 +400,7 @@ MongoDB, DynamoDb, Cassandra
 
 - Relationen zwischen Objekten
 - Daten strukturiert wie Knoten und Kanten
-- Leicht Skalierbar (Menge von Knoten)
+- Leicht skalierbar (Menge von Knoten)
 - Häufig Probleme mit großen Knoten
 
 Beispiele:
