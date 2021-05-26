@@ -654,7 +654,7 @@ public class SomeConfiguration {
 
 1. Konfiguriere deinen Server Port über eine application.yml
 2. Konfiguriere deinen Server Port über eine Environment variable
-3. Ändere dein Dashboard code sodass die api url über das environment gesetzt werden kann
+3. Ändere dein Dashboard code, sodass die api url über das environment gesetzt werden kann
 
 ---
 
