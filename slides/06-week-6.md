@@ -276,7 +276,7 @@ Hosting Provider.
 
 **Vorteile**
 
-- Vereinfacht Hosting von Anwendungen auch ohne Große Kenntnis nutzbar
+- Vereinfacht Hosting von Anwendungen, also auch ohne groß Kenntnis nutzbar
 - Kosten transparent
 
 **Nachteile**
