@@ -125,7 +125,7 @@ Projekt aufsetzen
 ## run
 
 ```shell
-docker run --name some-mongo -p 37017:27017 -d mongo:tag
+docker run --name some-mongo -p 37017:27017 -d mongo:latest
 ```
 
 `docker run` startet einen Container mit einem Image
@@ -450,7 +450,7 @@ Neo4J, ArangoDB, Amazon Neptune
 ## MongoDB laufen lassen
 
 ```shell
-   docker run --name some-mongo -p 37017:27017 -d mongo:tag
+   docker run --name some-mongo -p 27017:27017 -d mongo
 ```
 
 ---
