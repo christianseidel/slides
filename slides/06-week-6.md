@@ -87,7 +87,7 @@ Projekt aufsetzen
 
 - Plattform um Apps in definierter Umgebung laufen zu lassen (Container)
 - Container wird aus Vorlage erstellt (Image)
-- Container werden auf Plattform ausgeführt
+- Container wird auf Plattform ausgeführt
 
 ![bg right contain](img/docker.png)
 
