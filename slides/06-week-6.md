@@ -612,7 +612,7 @@ spring.data.mongodb:
 
 ## conf value
 
-Ließt einen Wert aus der Konfiguration.
+Liest einen Wert aus der Konfiguration.
 
 ```java
 @Value("{spring.data.mongodb.host}")
