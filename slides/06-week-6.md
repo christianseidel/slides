@@ -515,7 +515,7 @@ db.students.deleteOne({ name: { $eq: "Frank" } });
 3. Füge ein Dokument über Robo 3T und ein Dokument über die cli hinzu
 4. Ändere den Namen eines Repos, indem du einmal Robo 3T und einmal die cli verwendest
 5. lösche ein Repo aus der Datenbank
-6. Füge mindestens 5 repos hinzu mit verschiedenen ownern und stelle eine Abfrage die nach einem ownern filtert
+6. Füge mindestens 5 Repos hinzu mit verschiedenen ownern und stelle eine Abfrage die nach einem owner filtert
 
 ---
 
