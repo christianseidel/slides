@@ -289,7 +289,7 @@ Hosting Provider.
 
 ## Heroku
 
-- Heroku erwartet das Anwendung auf einem bestimmten Port startet.
+- Heroku erwartet, dass Anwendung auf einem bestimmten Port startet.
 - Port wird über environment variable PORT bereitgestellt
 - Docker file:
   ```
