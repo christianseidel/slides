@@ -399,7 +399,7 @@ MongoDB, DynamoDb, Cassandra
 ## Graph Datenbanken
 
 - Relationen zwischen Objekten
-- Daten Strukturiert wie Knoten und Kanten
+- Daten strukturiert wie Knoten und Kanten
 - Leicht Skalierbar (Menge von Knoten)
 - Häufig Probleme mit großen Knoten
 
