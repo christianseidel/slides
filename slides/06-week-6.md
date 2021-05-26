@@ -666,7 +666,7 @@ public class SomeConfiguration {
 
 - [mongodb altas](https://www.mongodb.com)
 - hosten von mongo cluster
-- kostenlos bis zu einem gewissen kontingent
+- kostenlos bis zu einem gewissen Kontingent
 
 ---
 
