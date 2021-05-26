@@ -105,7 +105,7 @@ Projekt aufsetzen
 
 ## Docker-Container
 
-- Stellt definierte Laufzeitumgebung bereit
+- stellt definierte Laufzeitumgebung bereit
 - läuft auf Docker Plattform
 
 ![bg right 50% contain](img/docker-container.png)
