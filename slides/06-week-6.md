@@ -716,6 +716,6 @@ public class ReactRoutingForwarding {
 }
 ```
 
-- matching path wird abgefangen wenn durch restcontroller dieser durch controller nicht bedient wird
+- matching path wird abgefangen, wenn durch Restcontroller dieser durch den Controller nicht bedient wird
 - request wird weiter geleitet
 - durch forward wird route nicht verändert
