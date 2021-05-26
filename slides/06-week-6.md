@@ -118,14 +118,14 @@ Projekt aufsetzen
 - startet schneller
 - einfacher zu skalieren
 
-![bg right contain](img/docker-vs-vms.png)
+![bg right contain](img/container-vs-vm.png)
 
 ---
 
 ## run
 
 ```shell
-docker run --name some-mongo -p 37017:27017 -d mongo:tag
+docker run --name some-mongo -p 37017:27017 -d mongo:latest
 ```
 
 `docker run` startet einen Container mit einem Image
@@ -447,7 +447,17 @@ Neo4J, ArangoDB, Amazon Neptune
 
 ---
 
-## Robo 3T
+## MongoDB laufen lassen
+
+```shell
+   docker run --name some-mongo -p 27017:27017 -d mongo
+```
+
+---
+
+## MongoDB Compass
+
+[Download](https://downloads.mongodb.com/compass/mongodb-compass-1.26.1-darwin-x64.dmg)
 
 Grafikoberfläche für Interaktionen:
 
@@ -510,12 +520,13 @@ db.students.deleteOne({ name: { $eq: "Frank" } });
 
 ## Aufgabe: MongoDB
 
-1. Installiere MongoDB Doc und Robo 3T
-2. Erstelle eine DB githubRoulette und Collection repos
-3. Füge ein Dokument über Robo 3T und ein Dokument über die cli hinzu
-4. Ändere den Namen eines Repos, indem du einmal Robo 3T und einmal die cli verwendest
-5. lösche ein Repo aus der Datenbank
-6. Füge mindestens 5 Repos hinzu mit verschiedenen ownern und stelle eine Abfrage die nach einem owner filtert
+1. Lade dir MongoDB Compass herunter
+2. Lasse ein docker image mit mongodb laufen
+3. Erstelle eine DB **githubRoulette** und eine Collection **repos**
+4. Füge ein Dokument über MongoDB Compass und ein Dokument über die CLI hinzu
+5. Ändere den Namen eines Repos, indem du einmal MongoDB Compass und einmal die CLI verwendest
+6. Lösche ein Repo aus der Datenbank
+7. Füge mindestens 5 Repos hinzu mit verschiedenen Ownern und stelle eine Abfrage die nach einem Owner filtert
 
 ---
 
@@ -528,6 +539,18 @@ db.students.deleteOne({ name: { $eq: "Frank" } });
 - Ermöglicht CRUD Operationen
 - grundlegende Funktionalität bereits vorhanden
 - Automatisches parsen von Daten: Object Relational Model (ORM)
+
+---
+
+## Maven dependency
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-mongodb</artifactId>
+    <version>2.5.0</version>
+</dependency>
+```
 
 ---
 
