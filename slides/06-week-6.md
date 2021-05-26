@@ -128,7 +128,7 @@ Projekt aufsetzen
 docker run --name some-mongo -p 37017:27017 -d mongo:tag
 ```
 
-docker `run` startet einen Container mit einem Image
+`docker run` startet einen Container mit einem Image
 
 | option           | description                                     |
 | ---------------- | ----------------------------------------------- |
