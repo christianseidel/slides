@@ -305,7 +305,7 @@ Hosting Provider.
 
 1. Melde dich bei Heroku an
 2. Installiere dir die CLI
-3. Lese dir die Heroku docker Getting started durch
+3. Lies dir die _Heroku docker Getting started_ durch
 4. Deploy deine Java Anwendung
 
 ---
