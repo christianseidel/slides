@@ -156,7 +156,7 @@ listet alle Container.
 
 ## start / stop
 
-Startet oder Stoppt einen Container.
+Startet oder stoppt einen Container.
 
 ```shell
 docker start 324
