@@ -504,7 +504,7 @@ db.students.deleteOne({ name: { $eq: "Frank" } });
 ```
 
 - Löschen von Dokumenten auf Basis einer Query
-- Löschen von einzelnen oder mehreren Dokument möglich
+- Löschen von einzelnen oder mehreren Dokumenten möglich
 
 ---
 
