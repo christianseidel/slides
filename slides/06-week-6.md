@@ -653,7 +653,7 @@ public class SomeConfiguration {
 ## Aufgabe: Konfiguration
 
 1. Konfiguriere deinen Serverport über eine application.yml
-2. Konfiguriere deinen Server Port über eine Environment variable
+2. Konfiguriere deinen Serverport über eine Environment variable
 3. Ändere dein Dashboard code, sodass die api url über das environment gesetzt werden kann
 
 ---
