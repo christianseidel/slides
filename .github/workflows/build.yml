@@ -11,10 +11,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: 14
-
     steps:
     - uses: actions/checkout@v2
     - name: Use node
