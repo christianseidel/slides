@@ -11,21 +11,17 @@ title: Java Bootcamp - Welcome
 
 ---
 
-# 🎉 Happy Birthday Oli 🎉
-
----
-
 # Java Web Developer
 
 ---
 
 ## Übersicht heute
 
--   Start
--   Kennenlernen
--   Setup
--   Shell basic
--   Git
+- Start
+- Kennenlernen
+- Setup
+- Shell basic
+- Git
 
 ---
 
@@ -35,58 +31,58 @@ title: Java Bootcamp - Welcome
 
 ## Was erwartet euch? 😱
 
--   Täglich Neues, viel Stoff
--   Einzel-, Paar- und Gruppenaufgaben
--   Selbständig Arbeiten und Lernen
--   Stress, schlaflose Nächte, Zweifel
--   Misserfolge, Frust, schlechte Laune
--   Erfolge, Erkenntnisse, Selbstvertrauen
--   Gemeinschaft
+- Täglich Neues, viel Stoff
+- Einzel-, Paar- und Gruppenaufgaben
+- Selbständig Arbeiten und Lernen
+- Stress, schlaflose Nächte, Zweifel
+- Misserfolge, Frust, schlechte Laune
+- Erfolge, Erkenntnisse, Selbstvertrauen
+- Gemeinschaft
 
 ---
 
 ## Tipps 🤫
 
--   Vertrauen, nicht alles verstehen
--   Stolz wegpacken und fragen
--   Handschriftliche Notizen
--   Viel Wasser trinken
--   Nicht zu viel Kaffee, kein Energy
--   Leichtes Mittagessen
--   Ab 22:00 weg vom Computer/Handy
--   Schlaflosigkeit akzeptieren
--   Zweifel akzeptieren
--   Party hard, but don't drink hard
+- Vertrauen, nicht alles verstehen
+- Stolz wegpacken und fragen
+- Handschriftliche Notizen
+- Viel Wasser trinken
+- Nicht zu viel Kaffee, kein Energy
+- Leichtes Mittagessen
+- Ab 22:00 weg vom Computer/Handy
+- Schlaflosigkeit akzeptieren
+- Zweifel akzeptieren
+- Party hard, but don't drink hard
 
 ---
 
 ## Modus Operandi 😘
 
--   Respektvoll
--   Wohlwollend
--   Geduldig
--   Hilfsbereit
--   Gemeinschaftlich
+- Respektvoll
+- Wohlwollend
+- Geduldig
+- Hilfsbereit
+- Gemeinschaftlich
 
 ---
 
 ## Wochenübersicht
 
--   Woche 1 Programmier Basics
--   Woche 2-3 Backend Start
--   Woche 3-4 Frontend Start
--   Woche 5-8 Fullstack Projekt
--   Woche 9-12 Capstone Projekt
+- Woche 1 Programmier Basics
+- Woche 2-3 Backend Start
+- Woche 3-4 Frontend Start
+- Woche 5-8 Fullstack Projekt
+- Woche 9-12 Capstone Projekt
 
 ---
 
 ## Tagesablauf
 
--   09:00 Protokoll Besprechung
--   09:30 Theorie & Übungen
--   13:00 Mittag
--   14:00 Theorie & Übungen
--   Flexibel Übungen
+- 09:00 Protokoll Besprechung
+- 09:30 Theorie & Übungen
+- 13:00 Mittag
+- 14:00 Theorie & Übungen
+- Flexibel Übungen
 
 ---
 
@@ -167,6 +163,6 @@ Student Services & Admission Managerin HH
 
 ## Und Ihr?
 
--   Wie heißt du?
--   Was hast du vor dem Bootcamp gemacht?
--   Warum machst du diesen Kurs?
+- Wie heißt du?
+- Was hast du vor dem Bootcamp gemacht?
+- Warum machst du diesen Kurs?
