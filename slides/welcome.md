@@ -123,41 +123,25 @@ Coach bei Neue Fische
 
 ## Oliver Fohrmann
 
-Manager Student Services & Partner Management CGN
+Manager Student Services & Partner Management
 
 ![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01D4U9FGG7-fa88a7c96ee1-512)
 
 ---
 
-## Anne Buss
-
-Student Services CGN
-
-![bg right 75%](https://nf-talent-app-pubic-image-prod.s3.eu-central-1.amazonaws.com/anne/400/image.jpeg)
-
----
-
 ## Shari Holte
 
-Wekstudentin Student Services CGN
+Student Service & Admissions
 
 ![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01C35GU36U-ae1d2b910988-512)
 
 ---
 
-## Sina Stulpe
+## Andre Vennemann
 
-Student Services & Admission Managerin HH
+Manager Career Services & Partner Management
 
-![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01677P02KW-705a3d94fdbe-512)
-
----
-
-## Sarah Müller
-
-Student Services & Admission Managerin HH
-
-![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U016XEQMNKY-cc499a7f70f0-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01CUKLFY69-489a35d639e6-512)
 
 ---
 
