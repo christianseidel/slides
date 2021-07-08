@@ -98,11 +98,11 @@ Gründerin & CEO
 
 ---
 
-## Fabian Schmauder
+## Stefan Lautner
 
 Freiberuflicher IT-Berater / Coach
 
-![bg right](https://ca.slack-edge.com/TTHG21AH3-U010JB81H9B-217b8c4203b0-512)
+![bg right](https://ca.slack-edge.com/TTHG21AH3-U0241K3U1E3-4491f8071e2c-512)
 
 ---
 
