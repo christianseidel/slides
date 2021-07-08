@@ -94,7 +94,7 @@ title: Java Bootcamp - Welcome
 
 Gründerin & CEO
 
-![bg right](https://ca.slack-edge.com/TTHG21AH3-UU9RYNP51-09802cc691a2-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-UU9RYNP51-09802cc691a2-512)
 
 ---
 
@@ -102,7 +102,7 @@ Gründerin & CEO
 
 Freiberuflicher IT-Berater / Coach
 
-![bg right](https://ca.slack-edge.com/TTHG21AH3-U0241K3U1E3-4491f8071e2c-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U0241K3U1E3-4491f8071e2c-512)
 
 ---
 
@@ -110,14 +110,14 @@ Freiberuflicher IT-Berater / Coach
 
 Coach bei Neue Fische
 
-![bg right](https://ca.slack-edge.com/TTHG21AH3-U017Z3Z7K1D-186af2d9a067-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U017Z3Z7K1D-186af2d9a067-512)
 
 ---
 
 ## Christopher Siem
 
 Coach bei Neue Fische
-![bg right](https://ca.slack-edge.com/TTHG21AH3-U01CR83AB08-51a7515bb12a-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01CR83AB08-51a7515bb12a-512)
 
 ---
 
@@ -125,7 +125,7 @@ Coach bei Neue Fische
 
 Manager Student Services & Partner Management CGN
 
-![bg right](https://ca.slack-edge.com/TTHG21AH3-U01D4U9FGG7-fa88a7c96ee1-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01D4U9FGG7-fa88a7c96ee1-512)
 
 ---
 
@@ -133,7 +133,7 @@ Manager Student Services & Partner Management CGN
 
 Student Services CGN
 
-![bg right](https://nf-talent-app-pubic-image-prod.s3.eu-central-1.amazonaws.com/anne/400/image.jpeg)
+![bg right 75%](https://nf-talent-app-pubic-image-prod.s3.eu-central-1.amazonaws.com/anne/400/image.jpeg)
 
 ---
 
@@ -141,7 +141,7 @@ Student Services CGN
 
 Wekstudentin Student Services CGN
 
-![bg right](https://ca.slack-edge.com/TTHG21AH3-U01C35GU36U-ae1d2b910988-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01C35GU36U-ae1d2b910988-512)
 
 ---
 
@@ -149,7 +149,7 @@ Wekstudentin Student Services CGN
 
 Student Services & Admission Managerin HH
 
-![bg right](https://ca.slack-edge.com/TTHG21AH3-U01677P02KW-705a3d94fdbe-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01677P02KW-705a3d94fdbe-512)
 
 ---
 
@@ -157,7 +157,7 @@ Student Services & Admission Managerin HH
 
 Student Services & Admission Managerin HH
 
-![bg right](https://ca.slack-edge.com/TTHG21AH3-U016XEQMNKY-cc499a7f70f0-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U016XEQMNKY-cc499a7f70f0-512)
 
 ---
 
