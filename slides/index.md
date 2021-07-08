@@ -4,6 +4,8 @@ theme: nf-theme
 title: Java Bootcamp - Index
 ---
 
+# Java slides
+
 - [welcome](./welcome.html)
 - [week 1](./week-1.html)
 - [week 2](./week-2.html)
