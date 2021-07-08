@@ -5,10 +5,6 @@ paginate: true
 title: Java Bootcamp - Template
 ---
 
-# 🎉🎉🎉 Happy Birthday Michael 🎉🎉🎉
-
----
-
 # Woche 7
 
 ---
