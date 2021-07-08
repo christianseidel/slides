@@ -12,3 +12,4 @@ title: Java Bootcamp - Index
 - [week 3](./week-3.html)
 - [week 4](./week-4.html)
 - [week 6](./week-6.html)
+- [week 7](./week-7.html)
