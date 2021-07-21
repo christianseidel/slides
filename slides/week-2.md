@@ -13,6 +13,7 @@ title: Java Bootcamp - Week 2
 ---
 
 # Wiederholung Freitagsaufgabe
+
 ---
 
 # Klassen / Objekte
@@ -564,19 +565,16 @@ Element zeigt auf das nächste Element.
 ## Aufgabe: LinkedList I
 
 Schreibe eine Klasse `AnimalListItem` mit
-   1. einer Variable `value` vom Typ `Animal`
-   2. einer Variable `next` vom Typ `AnimalListItem`
-   3. einem Konstruktor mit `value` als Parameter
+
+1.  einer Variable `value` vom Typ `Animal`
+2.  einer Variable `next` vom Typ `AnimalListItem`
+3.  einem Konstruktor mit `value` als Parameter
 
 ---
 
 ## Aufgabe: LinkedList II
 
-Schreibe eine Klasse `AnimalList` mit
-    1. einer Variable `head` vom Typ `AnimalListItem`, die den Anfang der Liste speichert
-    2. einer Methode `toString`, welche die Liste, wenn sie die Elemente a,b und c enthält, wie folgt als String zurückgibt “a -> b -> c”
-    3. einer Methode `add` mit einem `Animal` als Paramter, die ein Element and die Liste anhängt
-    4. einer Methode `remove` mit einem `Animal` als Parameter, die alle dieser Animals entfernt
+Schreibe eine Klasse `AnimalList` mit 1. einer Variable `head` vom Typ `AnimalListItem`, die den Anfang der Liste speichert 2. einer Methode `toString`, welche die Liste, wenn sie die Elemente a,b und c enthält, wie folgt als String zurückgibt “a -> b -> c” 3. einer Methode `add` mit einem `Animal` als Paramter, die ein Element and die Liste anhängt 4. einer Methode `remove` mit einem `Animal` als Parameter, die alle dieser Animals entfernt
 
 **Schreibe entsprechende Tests!**
 
@@ -822,9 +820,4 @@ Schreibe ein Bestellsystem (**mit Tests!**).
 
 # Freitagsaufgabe: Bonus
 
-Mache aus deiner OrderDb ein Interface und 2 Implementierungen
-
-- eine Version, welche die Bestellungen wie zuvor im Speicher hält
-- eine Version, welche den Jackson-ObjectMapper nutzt um Bestellungen auf die Festplatte zu speichern
-- schaue dir `hamcrest` an
-- Nutze in deiner `AppMain` einen `Scanner` um interaktiv zu bestellen
+- schaue dir `hamcrest` an und nutze die hamcrest matchers in deinen Tests
