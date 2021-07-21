@@ -574,7 +574,12 @@ Schreibe eine Klasse `AnimalListItem` mit
 
 ## Aufgabe: LinkedList II
 
-Schreibe eine Klasse `AnimalList` mit 1. einer Variable `head` vom Typ `AnimalListItem`, die den Anfang der Liste speichert 2. einer Methode `toString`, welche die Liste, wenn sie die Elemente a,b und c enthält, wie folgt als String zurückgibt “a -> b -> c” 3. einer Methode `add` mit einem `Animal` als Paramter, die ein Element and die Liste anhängt 4. einer Methode `remove` mit einem `Animal` als Parameter, die alle dieser Animals entfernt
+Schreibe eine Klasse `AnimalList` mit
+
+1. einer Variable `head` vom Typ `AnimalListItem`, die den Anfang der Liste speichert
+2. einer Methode `toString`, welche die Liste, wenn sie die Elemente a,b und c enthält, wie folgt als String zurückgibt “a -> b -> c”
+3. einer Methode `add` mit einem `Animal` als Paramter, die ein Element and die Liste anhängt
+4. einer Methode `remove` mit einem `Animal` als Parameter, die alle dieser Animals entfernt
 
 **Schreibe entsprechende Tests!**
 
