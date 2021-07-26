@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "marp --input-dir slides",
+    "build": "marp --input-dir slides --html true",
     "deploy": "npm run build && gh-pages -d slides"
   },
   "repository": {
