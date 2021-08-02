@@ -5,7 +5,7 @@ paginate: true
 title: Java Bootcamp - Template
 ---
 
-# Fontend intro
+# Frontend intro
 
 ---
 
@@ -15,7 +15,9 @@ title: Java Bootcamp - Template
 
 **Dienstag:** JavaScript, Array-Methoden, Netzwerkrequests, Promises & async/await
 
-**Mittwoch:** Create react app, functional components, Data flow, Formulare
+**Mittwoch:** Create react app, functional components, Data flow
+
+**Donnerstag:** Formulare, mapping, fetch
 
 **Freitag:** Kanban Frontend
 
