@@ -45,70 +45,72 @@ title: Java Bootcamp - Template
 - `npm init` - legt ein neues npm project an
 - `npm install --save-dev vite` - installiert vite bundler
 - start script in `package.json` hinzufügen
-    ```json
-        "start": "vite",
-    ```
+  ```json
+      "start": "vite",
+  ```
 - `index.html` anlegen
 - `npm run start` & BÄM Hot-Reloading
 
 ---
 
 ## Aufgabe: Personal Blog
+
 - Erstelle einen Blog
 - Wird ohne CSS etwas grotesk aussehen, ist aber okay. Wir konzentrieren uns auf korrekte Verschachtelung und Semantik
-- www.allthetags.com hilft dir die passenden Tags zu finden ;)  
+- www.allthetags.com hilft dir die passenden Tags zu finden ;)
 
 ![bg right contain](img/blog.png)
 
 ---
 
-# **C**ascading **S**tyle **S**heets 
-
+# **C**ascading **S**tyle **S**heets
 
 ![bg right](img/css.gif)
 
 ---
+
 ## CSS-Dateien
 
 Einbinden über `link` Tag im `head` des html Dokuments.
 
 ```html
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css" />
 ```
 
 **Alternativen:**
 
 - `style` Tag im `head` (gut um FOUC zu verhindern)
-- inline über `style` Attribut von HTML Elementen (beste Performance, aber hohe Maintenance-Kosten - nur wenn unbedingt notwendig) 
+- inline über `style` Attribut von HTML Elementen (beste Performance, aber hohe Maintenance-Kosten - nur wenn unbedingt notwendig)
 
 ---
 
 <!-- _class: hsplit-->
+
 ## Rulesets
 
 **Selectors** wählen 1 oder mehrere Elemente aus und wenden darauf verschiedene **Rules** an.
 
 ```css
 body {
-    font-size: 112.5%;
-    font-family: sans-serif;
-    background: #333;
-    color: whitesmoke;
+  font-size: 112.5%;
+  font-family: sans-serif;
+  background: #333;
+  color: whitesmoke;
 }
 
 .box {
-    width: 100px;
-    height: 100px;
-    background: hotpink;
-    border: 25px solid limegreen;
+  width: 100px;
+  height: 100px;
+  background: hotpink;
+  border: 25px solid limegreen;
 }
 
-.border-box{
-    box-sizing: border-box;
+.border-box {
+  box-sizing: border-box;
 }
 
-.content-box{
-    box-sizing: content-box;
+.content-box {
+  box-sizing: content-box;
 }
 ```
 
@@ -124,7 +126,7 @@ Wenn du nicht weiterkommst: [mdn is dein Freund](https://developer.mozilla.org/e
 
 ## Layout I: Alles auf die Reihe kriegen (Flexbox)
 
-Spiele  https://flexboxfroggy.com/ um dich mit flexbox vertraut zu machen.
+Spiele https://flexboxfroggy.com/ um dich mit flexbox vertraut zu machen.
 
 - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
@@ -165,6 +167,7 @@ Placeholder für die Bilder findest du bei
 [Language Basics Demo](https://codepen.io/jamarob/pen/mdWyXLz)
 
 **Ressourcen:**
+
 - [MDN: Javascript Referenz](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [The Modern Javascipt Tutorials](https://javascript.info/)
 
@@ -175,7 +178,7 @@ Placeholder für die Bilder findest du bei
 Einbinden über `script` Tag im `head` des HTML Dokuments
 
 ```html
-    <script type="module" src="js/script.js"></script>
+<script type="module" src="js/script.js"></script>
 ```
 
 `module` type ermöglicht ES module syntax (später) und verzögert das Ausführen des Skripts bis das HTML vollständig geladen ist.
@@ -184,36 +187,37 @@ Einbinden über `script` Tag im `head` des HTML Dokuments
 
 ## JS Aufgabe 1 - JS Basics
 
-- erstelle eine function `add` und `multiply` methode
-- erstelle eine function `faculty` welche die fakultät berechnet
+- erstelle eine `add` und `multiply` function `add`
+- erstelle eine `factorial` function welche die fakultät berechnet
 
 ---
 
 ## JS Aufgabe 2 - JS Objects
 
-- erstelle ein Studenten object das einem namen und id hat
-- erstelle einen Studenten array
+- erstelle ein Studenten Object das einem namen und id hat
+- erstelle einen Studenten Array
 - schreibe eine function, die einen Studenten in einem Array findet und seinen Namen updated
-- verändere deinen function so, dass das urpsrüngliche Objekt nicht geändert wird, sondern ein neues erstellt wird
- 
+- schreibe eine weitere function, die den Namen eines Studenten updated, aber das ursprüngliche Array und Object nicht ändertdass das urpsrüngliche Objekt nicht ändert
+
 ---
 
 ## JS Aufgabe 3 - Array Methods
 
 Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentation/#character) api (erstmal Antwort einfach als json speichern)
+
 - schreibe eine function, die ein neues Array nur mit den lebenden Menschen erstellt
 - schreibe eine function, die ein Array mit allen Namen zurück gibt
-- schreibe eine function, die ein Array mit Objekten der Form 
-    ```jacascript
-    {
-        name: "some-name",
-        origin: "name-of-origin"
-    }
-    ```
-    zurück gibt
-    
+- schreibe eine function, die ein Array mit Objekten der Form
+  ```jacascript
+  {
+      name: "some-name",
+      origin: "name-of-origin"
+  }
+  ```
+  zurück gibt
+
 ---
 
 ## JS Aufgabe 4 - fetch
 
-Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) api mit fetch ab und ersetzt deine statischen daten aus Aufgabe 3
+Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) api mit fetch ab und ersetzt deine statischen Daten aus Aufgabe 3
