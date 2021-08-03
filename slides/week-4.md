@@ -197,7 +197,7 @@ Einbinden über `script` Tag im `head` des HTML Dokuments
 - erstelle ein Studenten Object das einem namen und id hat
 - erstelle einen Studenten Array
 - schreibe eine function, die einen Studenten in einem Array findet und seinen Namen updated
-- schreibe eine weitere function, die den Namen eines Studenten updated, aber das ursprüngliche Array und Object nicht ändertdass das urpsrüngliche Objekt nicht ändert
+- schreibe eine weitere function, die den Namen eines Studenten updated, aber das ursprüngliche Array und Object nicht ändert
 
 ---
 
