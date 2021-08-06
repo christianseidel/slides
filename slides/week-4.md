@@ -197,7 +197,11 @@ Einbinden über `script` Tag im `head` des HTML Dokuments
 - erstelle ein Studenten Object das einem namen und id hat
 - erstelle einen Studenten Array
 - schreibe eine function, die einen Studenten in einem Array findet und seinen Namen updated
+<<<<<<< Updated upstream
 - schreibe eine weitere function, die den Namen eines Studenten updated, aber das ursprüngliche Array und Object nicht ändert
+=======
+- verändere deinen function so, dass das urpsrüngliche Objekt nicht geändert wird, sondern ein neues erstellt wird
+>>>>>>> Stashed changes
 
 ---
 
@@ -221,3 +225,20 @@ Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentati
 ## JS Aufgabe 4 - fetch
 
 Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) api mit fetch ab und ersetzt deine statischen Daten aus Aufgabe 3
+<<<<<<< Updated upstream
+=======
+
+---
+
+# Freitagsaufgabe
+
+Baue das Frontend der Kanban App.
+
+1. Forke dir das repo `git@github.com:christophersiem/todo-app.git``
+2. Erstelle eine neue React App im `frontend` Ordner.
+3. Installiere prettier.
+
+**Tip:** Mach dir ein Scribble vom Interface.
+
+**Tip:** Schaue dir [axios](https://github.com/axios/axios) an und nutze es um deine Anfragen zu senden.
+>>>>>>> Stashed changes
