@@ -225,8 +225,6 @@ Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentati
 ## JS Aufgabe 4 - fetch
 
 Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) api mit fetch ab und ersetzt deine statischen Daten aus Aufgabe 3
-<<<<<<< Updated upstream
-=======
 
 ---
 
@@ -241,4 +239,3 @@ Baue das Frontend der Kanban App.
 **Tip:** Mach dir ein Scribble vom Interface.
 
 **Tip:** Schaue dir [axios](https://github.com/axios/axios) an und nutze es um deine Anfragen zu senden.
->>>>>>> Stashed changes
