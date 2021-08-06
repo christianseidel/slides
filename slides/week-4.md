@@ -228,7 +228,7 @@ Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) api mit fe
 
 Baue das Frontend der Kanban App.
 
-1. Forke dir das repo `git@github.com:christophersiem/todo-app.git``
+1. Forke dir das repo `git@github.com:christophersiem/todo-app.git`
 2. Erstelle eine neue React App im `frontend` Ordner.
 3. Installiere prettier.
 
