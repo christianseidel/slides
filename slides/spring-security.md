@@ -248,8 +248,6 @@ Cookie: JSESSIONID 1A6A3EBA81C6A738A18D736AA838587A
 
 ---
 
-<!-- _class: hsplit -->
-
 ## JSON Web Token
 
 ```json
@@ -262,19 +260,14 @@ Cookie: JSESSIONID 1A6A3EBA81C6A738A18D736AA838587A
   "name": "John Doe",
   "iat": 1516239022
 }
-
-HMACSHA256(
-  base64UrlEncode(header) + "." +
-  base64UrlEncode(payload),
-  secret
 ```
 
 ```
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
-.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI
-6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDI
-yfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6y
-JV_adQssw5c
+HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload),secret
+```
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 ```
 
 ---
@@ -305,7 +298,6 @@ JV_adQssw5c
 
 ## Login controller bauen
 
-- erreichbar unter `auth/login`
 - AuthenticationManager kümmert sich um password Validierung
 - jwtService Helper für jwt actions
 
@@ -314,21 +306,18 @@ JV_adQssw5c
 @RestController
 @RequestMapping("auth/login")
 public class LoginController {
-
     private final AuthenticationManager authenticationManager;
     private final JWTUtils jwtService;
-
-    @Autowired
-    public LoginController(AuthenticationManager authenticationManager, JWTUtils jwtService) {
-        this.authenticationManager = authenticationManager;
-        this.jwtService = jwtService;
-    }
-
+    //..
     @PostMapping
     public String login(@RequestBody LoginData data) {
         try {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(data.getName(), data.getPassword()));
-            return jwtService.createToken(new HashMap<>(), data.getName());
+            authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                    data.getName(),
+                    data.getPassword())
+                );
+            return jwtService.createToken(data.getName());
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "invalid credentials");
         }
@@ -342,14 +331,16 @@ public class LoginController {
 
 - in Spring verfügbar machen
 - Bean notation um inject ausführen zu können
-- Config einfügen:
-  ```java
+
+`SecurityConfig`
+
+```java
   @Override
   @Bean
   public AuthenticationManager authenticationManagerBean() throws Exception {
       return super.authenticationManagerBean();
   }
-  ```
+```
 
 ---
 
@@ -374,10 +365,6 @@ public class LoginController {
 ---
 
 ## JWT erzeugen
-
-- erzeugen von jwt token
-- 4 Stunden valide
-- Festlegen von Algorithmus
 
 ```java
 @Service
