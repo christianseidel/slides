@@ -125,7 +125,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ---
 
-# Spring Security mongodb
+# Spring Security Jpa
 
 ---
 
