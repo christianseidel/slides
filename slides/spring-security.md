@@ -298,11 +298,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 ## Login controller bauen
 
-- AuthenticationManager kümmert sich um password Validierung
-- jwtService Helper für jwt actions
-
 ```java
-
 @RestController
 @RequestMapping("auth/login")
 public class LoginController {
@@ -386,18 +382,42 @@ public class JWTUtils {
 
 ---
 
-## Endpunkt erreichbar machen
+## Swagger Security Context konfigurieren
 
-Alle Endpunkte außer api frei zugänglich.
+`SwaggerConfig`
 
 ```java
-@Override
-protected void configure(HttpSecurity http) throws Exception {
-    http
-        .authorizeRequests()
-        .antMatchers("/api/**").authenticated()
-        .antMatchers("/**").permitAll();
-}
+    private ApiKey apiKey() {
+        return new ApiKey("JWT", "Authorization", "header");
+    }
+
+    private SecurityContext securityContext() {
+        return SecurityContext.builder().securityReferences(defaultAuth()).build();
+    }
+
+    private List<SecurityReference> defaultAuth() {
+        AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
+        AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
+        authorizationScopes[0] = authorizationScope;
+        return Arrays.asList(new SecurityReference("JWT", authorizationScopes));
+    }
+```
+
+---
+
+## Security context in Swagger einbinden
+
+`SwaggerConfig`
+
+```java
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .securityContexts(Arrays.asList(securityContext()))
+                .securitySchemes(Arrays.asList(apiKey()))
+                .select()
+                //...
+    }
 ```
 
 ---
@@ -431,81 +451,100 @@ protected void configure(HttpSecurity http) throws Exception {
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
 
-    private final JWTUtils jwtUtils;
-    private final MongoUserDetailsService service;
+    private final JwtService jwtService;
 
     @Autowired
-    public JwtAuthFilter(JWTUtils jwtUtils, MongoUserDetailsService service) {
-        this.jwtUtils = jwtUtils;
-        this.service = service;
+    public JwtAuthFilter(JwtService jwtService) {
+        this.jwtService = jwtService;
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
-        String token = getToken(httpServletRequest);
-        String userName = token != null ? jwtUtils.extractUserName(token) : null;
-        if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
 
-            UserDetails userDetails = service.loadUserByUsername(userName);
+        String token = getAuthToken(request);
 
-            if (jwtUtils.validateToken(token, userDetails.getUsername())) {
-
-                UsernamePasswordAuthenticationToken token =
-               new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities();
-
-                token
-                .setDetails(new WebAuthenticationDetailsSource().
-                buildDetails(httpServletRequest));
-                SecurityContextHolder.getContext().setAuthentication(token);
+        if(token != null && !token.isBlank()) {
+            try {
+                Claims claims = jwtService.parseClaims(token);
+                setSecurityContext(claims.getSubject());
+            }catch (Exception e){
+                throw new ResponseStatusException(HttpStatus.FORBIDDEN, "invalid token");
+            }
         }
-   }
-   filterChain.doFilter(httpServletRequest, httpServletResponse);
- }
 
- private String getToken(HttpServletRequest httpServletRequest) {
-   String authHeader = httpServletRequest.getHeader("Authorization");
-   if (authHeader != null) {
-     return authHeader.replace("Bearer", "").trim();
-   }
-   return null;
- }
+        filterChain.doFilter(request, response);
+    }
 }
 ```
 
 ---
 
-## jwt Metods
+`JwtAuthFilter`
 
 ```java
+    private String getAuthToken(HttpServletRequest request) {
+        String authorization = request.getHeader("Authorization");
+        if (authorization != null) {
+            return authorization.replace("Bearer", "").trim();
+        }
+        return null;
+    }
 
-public String extractUserName(String token) {
-    Claims claims = extractAllClaims(token);
-    return claims.getSubject();
-}
+    private void setSecurityContext(String subject) {
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(subject, "", List.of());
+        SecurityContextHolder.getContext().setAuthentication(token);
+    }
+```
 
-private Claims extractAllClaims(String token) {
-    return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
-}
+---
 
-private Boolean isTokenExpired(String token) {
-    Claims claims = extractAllClaims(token);
-    return claims.getExpiration().before(new Date());
-}
+## JWT decodieren
 
-public Boolean validateToken(String token, String username) {
-    String userName = extractUserName(token);
-    return (userName.equals(username) && !isTokenExpired(token));
+```java
+public Claims extractClaims(String token) {
+    return Jwts.parser()
+        .setSigningKey(JWT_SECRET)
+        .parseClaimsJws(token)
+        .getBody();
 }
 ```
 
 ---
 
-## Security context
-
-Principal enthält Nutzerdaten
+## Filter einhängen
 
 ```java
+@Override
+    protected void configure(HttpSecurity http) throws Exception {
+            http
+                //..
+                .and()
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    }
+```
 
-@PutMapping
-public Idea addToDo(@RequestBody @Valid AddIdeaDto data, Principal principal) {
+---
+
+# Security Testing
+
+**Testendpunkt**
+
+```java
+@GetMapping("me")
+public String getLoggedInUser(Principal principal){
+    return principal.getName();
+}
+```
+
+**RestTemplate** hat beim testen einen Timeout bei `401 UNAUTHORIZED`zum testen binden wir httpclient ein (wird von RestTemplate) genutztz.
+
+```xml
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.11</version>
+            <scope>test</scope>
+        </dependency>
 ```
