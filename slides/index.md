@@ -8,6 +8,7 @@ title: Java Bootcamp - Index
 
 - [spring security](./spring-security.html)
 - [capstone](./capstone.html)
+- [oauth](./oauth.html)
 
 - [welcome](./welcome.html)
 - [week 1](./week-1.html)
