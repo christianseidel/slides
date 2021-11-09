@@ -43,23 +43,25 @@ Wo stehen wir?
 
 ## URL
 
-[https://www.google.com/search?q=rest](https://www.google.com/search?q=rest)
+[https://www.google.com/search?q=neuefische](https://www.google.com/search?q=neuefische)
 
 - Path
   - www.google.com/search
 - Protokoll
   - https
 - Parameter
-  - q = rest
+  - q = neuefische
 
 ---
 
+<!-- _class: hsplit-->
+
 ## Body
 
-- Senden von Daten
-- Meist nur bei
-  - POST
-  - PUT
+- Senden/Empfangen von Daten
+- Gut zu wissen: ein GET Request hat keinen Body 
+
+![](img/http-header-body.png)
 
 ---
 
@@ -117,15 +119,23 @@ Wo stehen wir?
 
 ## Postman
 
-- [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
-- vereinfacht Requests
-- ermöglicht Workspaces
+- GET Request im Browser sind umständlich: 
+  
+  https://api.predic8.de/shop/products/
+
+
+- Postman erleichtert Umgang mit Rest APIs 
+  - Download: [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
+  - vereinfacht Requests
+  - ermöglicht Workspaces
 
 ---
 
 ## Aufgabe REST Postman
 
-1.  Lade die Corona api Dokumentation in deinen Postman
+Corona API: https://documenter.getpostman.com/view/10808728/SzS8rjbc
+
+1.  Lade die Corona API Dokumentation in deinen Postman
 2.  Frage die Daten für Deutschland der letzten 7 Tage ab
 
 ---
@@ -153,10 +163,8 @@ Wo stehen wir?
 
 ## Spring
 
-- Setzt auf
-  - Aspekt-Orientierte Programmierung
-  - Dependency Injection
 - Riesige Bibliothek von Modulen (LDAP, Mongo, MessageQueues etc.)
+- Bietet Dependency Injection
 
 ![](img/spring.png)
 
@@ -164,23 +172,11 @@ Wo stehen wir?
 
 <!-- _class: hsplit-->
 
-## Aspekt-Orientierte Programmierung
-
-- Hinzufügen von Funktionalität
-  - Klassen / Projekt übergreifend
-  - zwischen Methoden
-- Trennung von Geschäftslogik und Funktionalität
-- Beispiel: Logging
-
-![](img/aspektorientiert.png)
-
----
-
-<!-- _class: hsplit-->
-
 ## Spring initializr
 
-Vereinfacht Aufsetzen eines neue Projekts
+Vereinfacht Aufsetzen eines neuen Projekts.
+
+https://start.spring.io
 
 ![](img/spring.png)
 
@@ -191,7 +187,7 @@ Vereinfacht Aufsetzen eines neue Projekts
 - Bereits in Tests verwendet
 - Klassen können auf Annotationen “gescannt” werden
   - Logik kann hinzugefügt werden
-- Spring nutzt Annotationen um Logik zu erweitern
+- Spring nutzt Annotationen, um Logik zu erweitern
 
 ```java
 @SpringBootApplication
@@ -301,8 +297,8 @@ public List<Student> search(@RequestParam String q) {
 
 ## REST Controller Post
 
-1.  Füge einen GET Endpunkt hinzu der einen spezifischen Studenten zurück gibt
-2.  Füge einen PUT Endpunkt hinzu um einen Studenten hinzuzufügen
+1.  Füge einen GET Endpunkt hinzu, der einen spezifischen Studenten zurückgibt
+2.  Füge einen PUT Endpunkt hinzu, um einen Studenten hinzuzufügen
 
 ---
 
@@ -339,11 +335,15 @@ public class StudentController {
 
 ---
 
+<!-- _class: hsplit-->
+
 ## Aufgabe Dependency Injection
 
 1.  Schreibe eine Klasse `StudentService`, auf die aus dem Controller zugegriffen wird
     - nutze DI und kein `new StudentService`
 2.  Schreibe eine Klasse `StudentDatabase`, welche sich um die Datenverwaltung kümmert
+
+![](img/layer-architecture.png)
 
 ---
 
@@ -382,6 +382,14 @@ verify(productDbMock).getById("someId");
 
 ---
 
+# Aufgabe: Unit Tests mit Mockito
+
+- Nutze Mockito, um deine Services zu testen - ohne dabei auf die `Repo` Klassen zuzugreifen. Suche dir dafür ein passendes Projekt. 
+  - Option A: StudentService 
+  - Option B: ShopService
+
+---
+
 # Rest request Spring
 
 ---
@@ -403,9 +411,8 @@ public ApiData getApiData() {
 
 ## Aufgabe REST Template
 
-1.  Nutze das Rest Template um Daten von der Corona API abzurufen
-2.  Stelle einen Endpunkt bereit, der die durchschnittliche Anzahl von Neuinfizierten der letzte 7 Tage für ein übergebenes Land zurückgibt
-3.  Stelle einen Endpunkt bereit der angibt ob Präsenzunterricht möglich ist. Präsenzunterricht soll möglich sein, wenn über die letzten 7 Tage weniger als 100 Neuinfizierte pro Tag registriert wurden
+1. Nutze das Rest Template, um Daten von der Covid API abzurufen. 
+2. Stelle einen Endpunkt bereit, der zu jedem Datum die Anzahl der Covid-Infektionen ausgibt. 
 
 ---
 
@@ -437,9 +444,9 @@ class ApplicationTest {
 
 ## Controller Integration Test
 
-- Integration test startet Spring context
-- Sendet rest request an server
-- Endpunkt startet mit Random Port
+- Integrations-Test startet den Spring context
+- Sendet Rest Request an Server
+- Endpunkt startet mit einem zufälligen Port
 
 ```java
 @SpringBootTest(webEnvironment =
@@ -465,7 +472,7 @@ ResponseEntity<TodoItem> response =
 
 ## Controller Test
 
-- Schreibe für deine Controller Integration tests
+- Schreibe für deinen Covid Controller Integrations-Tests
 
 ---
 
@@ -488,7 +495,7 @@ class TodoServiceTest {
 
 - Beans können gemockt werden
 - Definition von Verhalten über `when`
-- Verifizierung ob Aufruf stattgefunden hat
+- Verifizierung, ob Aufruf stattgefunden hat
 
 ```java
 @MockBean
@@ -507,7 +514,7 @@ verify(repository).save(
 
 ## Mock Bean
 
-Schreibe Tests für deinen Corona Service, indem du
+Schreibe Tests für deinen Corona-Service, indem du
 
 - den Service über Autowire in deinen Test einbindest
 - für die Api Anbindung eine MockBean verwendest
@@ -533,6 +540,12 @@ Unit Test:
   - sehr schnell
   - testet nicht das Zusammenspiel von Software Komponenten
 </div>
+
+--- 
+
+## Test-Pyramide
+
+![](img/test-pyramide.png)
 
 ---
 
@@ -603,7 +616,7 @@ public class SwaggerConfig {
 - feste Anzahl von Ausprägungen
 - häufig mit switch
 - Ausprägungen können Member und Methoden haben
-- nicht public Konstruktur
+- nicht public Konstruktor
 
 ```Java
 public enum Directions {
@@ -624,7 +637,7 @@ public enum Directions {
 
 ## Aufgabe: Enums
 
-Refactor die Alarm Klasse aus Woche 1 und nutze ein Enum statt String-Konstanten.
+Refactor die Alarm-Klasse aus Woche 1 und nutze ein Enum statt String-Konstanten.
 
 ---
 
@@ -635,17 +648,19 @@ Refactor die Alarm Klasse aus Woche 1 und nutze ein Enum statt String-Konstanten
 ## Generic function
 
 - Ermöglicht Methode für unterschiedliche Objekte zu schreiben
-- Angabe durch Typeparameter `<T>`
+- Angabe durch Type-Parameter `<T>`
 - Buchstabe frei wählbar, best practice: T,U,V..
-- `T extends Student` => T muss Interface oder Klasse Student implementieren
+- `T extends Student` => T muss Interface oder Klasse `Student` implementieren
 
 ```Java
-private <T> T someGenericFunction(T value){
- // some code
- return value;
-}
-
-private <T extends Student> T someGenericFunction(T value){
+List list = new ArrayList();
+        list.add("hello");
+        String s = (String) list.get(0);
+```
+```Java
+List<String> list = new ArrayList<String>();
+        list.add("hello");
+        String s = list.get(0);   // no cast
 ```
 
 ---
@@ -685,7 +700,10 @@ list.stream().filter(element -> element.contains("sub"));
 
 ## Stream Methods
 
-`forEach`, `map`, `collect`, `filter`, `findFirst`, `peek`, `sorted`, `min`, `max`, `distinct`, and *many* more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
+`filter`, `map`, `collect`, `forEach`, `findFirst`, `peek`, `sorted`, `min`, `max`, `distinct`, and *many* more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
+
+![](img/stream-api.png)
+Quelle: toptal
 
 ---
 

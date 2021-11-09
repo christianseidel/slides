@@ -13,13 +13,13 @@ title: Java Bootcamp - Template
 
 **Montag:** Besprechung Freitagsaufgabe, HTML, CSS intro, Layout: flexbox & grid
 
-**Dienstag:** JavaScript, Array-Methoden, Netzwerkrequests, Promises & async/await
+**Dienstag:** JavaScript, Array-Methoden, Netzwerk-Requests, Promises & async/await
 
 **Mittwoch:** Create react app, functional components, Data flow
 
 **Donnerstag:** Formulare, mapping, fetch
 
-**Freitag:** Kanban Frontend
+**Freitag:** Todo-App Frontend
 
 ---
 
@@ -27,7 +27,7 @@ title: Java Bootcamp - Template
 
 ---
 
-# **H**yper**t**ext **M**arkup **L**anguuage
+# **H**yper**t**ext **M**arkup **L**anguage
 
 ![bg contain right](img/html-strip.webp)
 
@@ -36,20 +36,6 @@ title: Java Bootcamp - Template
 - XML ähnliche Tags
 - `<h1>Fancy heading</h1>`
 - Let's explore some HTML on [mdn](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
-
----
-
-## Website tooling
-
-- **npm** node package manager, kommt mit node Installation
-- `npm init` - legt ein neues npm project an
-- `npm install --save-dev vite` - installiert vite bundler
-- start script in `package.json` hinzufügen
-  ```json
-      "start": "vite",
-  ```
-- `index.html` anlegen
-- `npm run start` & BÄM Hot-Reloading
 
 ---
 
@@ -154,7 +140,7 @@ Placeholder für die Bilder findest du bei
 
 - **J**ava**S**cript oder ECMA-Script
 
-- Standartisierte Versionen, ES2020, ESNext
+- Standardisierte Versionen, ES2020, ESNext
 
 - schwach typisierte, dynamische Skriptsprache
 
@@ -164,12 +150,12 @@ Placeholder für die Bilder findest du bei
 
 ## JS for Java Developers
 
-[Language Basics Demo](https://codepen.io/jamarob/pen/mdWyXLz)
+[Language Basics Demo](https://codepen.io/cman1609/pen/qBjLPMK)
 
 **Ressourcen:**
 
 - [MDN: Javascript Referenz](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [The Modern Javascipt Tutorials](https://javascript.info/)
+- [The Modern Javascript Tutorials](https://javascript.info/)
 
 ---
 
@@ -187,26 +173,26 @@ Einbinden über `script` Tag im `head` des HTML Dokuments
 
 ## JS Aufgabe 1 - JS Basics
 
-- erstelle eine `add` und `multiply` function `add`
-- erstelle eine `factorial` function welche die fakultät berechnet
+- erstelle eine `add` und `multiply` function
+- erstelle eine `factorial` function welche die Fakultät berechnet
 
 ---
 
 ## JS Aufgabe 2 - JS Objects
 
-- erstelle ein Studenten Object das einem namen und id hat
-- erstelle einen Studenten Array
+- erstelle ein Studenten Object das einen Namen und eine Id hat
+- erstelle ein Studenten Array
 - schreibe eine function, die einen Studenten in einem Array findet und seinen Namen updated
-- verändere deinen function so, dass das urpsrüngliche Objekt nicht geändert wird, sondern ein neues erstellt wird
+- verändere deine function so, dass das ursprüngliche Objekt nicht verändert, sondern ein neues erstellt wird
 
 ---
 
 ## JS Aufgabe 3 - Array Methods
 
-Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentation/#character) api (erstmal Antwort einfach als json speichern)
+Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentation/#character) API (erstmal Antwort einfach als json speichern)
 
 - schreibe eine function, die ein neues Array nur mit den lebenden Menschen erstellt
-- schreibe eine function, die ein Array mit allen Namen zurück gibt
+- schreibe eine function, die ein Array mit allen Namen zurückgibt
 - schreibe eine function, die ein Array mit Objekten der Form
   ```jacascript
   {
@@ -214,24 +200,24 @@ Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentati
       origin: "name-of-origin"
   }
   ```
-  zurück gibt
+  zurückgibt
 
 ---
 
 ## JS Aufgabe 4 - fetch
 
-Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) api mit fetch ab und ersetzt deine statischen Daten aus Aufgabe 3
+Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) API mit fetch ab und ersetze deine statischen Daten aus Aufgabe 3
 
 ---
 
 # Freitagsaufgabe
 
-Baue das Frontend der Kanban App.
+Baue das Frontend der Todo-App.
 
-1. Forke dir das repo `git@github.com:christophersiem/todo-app.git`
+1. Forke dir das repo `git@github.com:christophersiem/rem-21-4-todo-app.git`
 2. Erstelle eine neue React App im `frontend` Ordner.
-3. Installiere prettier.
+3. Füge in der `package.json` den Eintrag ` "proxy": "http://localhost:8080"` hinzu.
 
 **Tip:** Mach dir ein Scribble vom Interface.
 
-**Tip:** Schaue dir [axios](https://github.com/axios/axios) an und nutze es um deine Anfragen zu senden.
+**Bonus:** Schaue dir [axios](https://github.com/axios/axios) an und nutze es um deine Anfragen zu senden.

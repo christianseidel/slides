@@ -6,10 +6,6 @@ title: Java Bootcamp - Index
 
 # Java slides
 
-- [spring security](./spring-security.html)
-- [capstone](./capstone.html)
-- [oauth](./oauth.html)
-
 - [welcome](./welcome.html)
 - [week 1](./week-1.html)
 - [week 2](./week-2.html)

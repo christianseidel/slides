@@ -9,6 +9,9 @@ title: Java Bootcamp - Week 2
 
 - Wiederholung der Freitagsaufgabe
 - Klassen / Objekte
+  
+
+- Weitere Erklärungen und Übungen zu Java und OOP: https://www.w3schools.com/java/java_oop.asp
 
 ---
 
@@ -22,7 +25,8 @@ title: Java Bootcamp - Week 2
 
 ## Klasse
 
-Kapselung von Logik und Daten.
+- Kapselung von Logik und Daten.
+- Ein abstraktes "Modell der Realität"
 
 ```Java
 class Student {
@@ -39,6 +43,12 @@ class Student {
 - wird aus einer Klasse erstellt
 - die Klasse ist die Vorlage des Objekts
 - Objekte sind Referenztypen
+
+
+- Ein Objekt hat immer: 
+  - Identität
+  - Zustand
+  - Verhalten
 
 ```Java
 class Student {
@@ -153,7 +163,7 @@ System.out.println(student.getName());
 ## Aufgabe: Klassen 1
 
 1. Lege eine Klasse `Student` an und überlege dir drei Eigenschaften
-2. Schreibe Methoden um die Eigenschaften zu setzen und abzufragen
+2. Schreibe Methoden, um die Eigenschaften zu setzen und abzufragen
 3. Schreibe für jede Methode einen Test
 
 ---
@@ -234,19 +244,16 @@ class Student {
 
 <!-- _class: hsplit-->
 
-## Sichtbarkeiten
+## Sichtbarkeiten (Access Modifiers)
 
-- `private`
-  - nur in eigener Klasse
-  - wenn möglich immer private
-- `protected`
-  - Klassen im gleichen Paket (Ordner)
-  - Kindklassen (später)
-  - eher selten verwendet
-- `public`
-  - Global sichtbar
-  - nur für öffentliche API
+|     Modifier    |     Class    |     Package    |     Subclass    |     World    |
+|-----------------|:------------:|:--------------:|:---------------:|:------------:|
+| public          | ✅           | ✅              | ✅              | ✅            |
+| protected       | ✅           | ✅              | ✅              | ❌            |
+| (no modifier)   | ✅           | ✅              | ❌              | ❌            |
+| private         | ✅           | ❌              | ❌              | ❌            |
 
+  
 ```Java
 package model;
 
@@ -346,35 +353,12 @@ Schreibe für alle Methoden Tests (bis auf randomStudent() )
 
 ## Paradigmen
 
-- Encapsulation
-- Abstraction
-- Polymorphism
-- Inheritance
-
----
-
-## Encapsulation
-
-Kapselung von Logik & Daten.
-
----
-
-## Polymorphism
-
-- Objekte können verschiedene Formen annehmen
-- Ergebnis eines Aufrufs hängt von der jeweiligen Form ab
-- Beispiel: Student
-  - Informatik Student
-  - Chemie Student
-
----
-
-## Inheritance / Vererbung
-
-- Objekte können voneinadern erben (Daten & Verhalten)
-- Beispiel: Informatik Student erbt alle Eigenschaften von Student
-- **Wichtig**: Das erbende Objekt muss sein Eltern-Objekt erweitern!
-- **Nicht** zum Code sparen!!
+| Paradigma |  Beschreibung                                                                                                                                                                                                                                 |  
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Encapsulation | **Verbergen von Implementierungsdetails.** Auf die interne Datenstruktur kann nicht direkt zugegriffen werden, sondern nur über definierte Schnittstellen.                                                                                                                                                                                                                                   |  
+| Inheritance   | **Klassen können von einer "Elternklasse" abgeleitet werden.** Sie "erben" dann deren Attribute und Methoden |    
+| Abstraction   | **Methoden beschreiben nur _was_, nicht _wie_ etwas gemacht werden soll.** Das _wie_ kann geändert werden, ohne die Methoden-Signatur zu ändern.                                                                                                 |   
+| Polymorphism  | Wenn Methoden überschrieben werden, wird zur Laufzeit immer **die "speziellste" Methode aufgerufen**.                                                                              | 
 
 ---
 
@@ -384,6 +368,46 @@ Kapselung von Logik & Daten.
 - Methoden
 - Klassen
 
+
+---
+
+## Vererbung (Inheritance)
+
+- Objekte können voneinander erben (Daten & Verhalten)
+- Beispiel: Informatik Student erbt alle Eigenschaften von Student
+- **Wichtig**: Das erbende Objekt muss sein Eltern-Objekt erweitern! 
+  - Das Kind-Element ist eine _Spezialisierung_ des Eltern-Elements 
+- Hinweis: Nicht nur zum Code sparen. Vererbung nur verwenden, wenn in Hinblick auf die Geschäftslogik sinnvoll.
+
+
+---
+
+<!-- _class: hsplit-->
+
+## Vererbung: Beispiel
+
+- Beispiel: `Student` wird erweitert
+- alle Eigenschaften von `Student` hat auch `ComputerScience` Student
+
+```Java
+// file: Student.java
+public class Student {
+    //...
+
+    public String getName() {
+       return name;
+    }
+}
+
+// file: ComputerScienceStudent.java
+public class ComputerScienceStudent extends Student {
+    public int getProgrammingSkill() {
+       return programmingSkill;
+    }
+}
+```
+
+
 ---
 
 <!-- _class: hsplit-->
@@ -392,7 +416,7 @@ Kapselung von Logik & Daten.
 
 - Methoden beschreiben nur _was_, nicht _wie_ etwas gemacht werden soll
 - das _wie_ kann geändert werden, ohne andere Teile zu ändern
-- Interfaces abstrahieren konkrete Klassen
+- Interfaces oder abstrakte Klassen abstrahieren konkrete Klassen
 
 ```Java
 package model;
@@ -411,107 +435,6 @@ class Student {
 
     public void setName(String name){
         this.name = name;
-    }
-}
-```
-
----
-
-## Interface
-
-- `interface` definiert Signatur von Methoden
-- per default sind alle Methoden `public`
-- Klassen können (mehrere) Interfaces implementieren
-- Signatur muss übereinstimmen
-
-```Java
-public interface Student {
-    String getCourse();
-}
-
-public class ComputerScienceStudent implements Student {
-    public String getCourse() {
-        return “Computer Science”;
-    }
-}
-```
-
----
-
-## Interface
-
-Interfaces können den Typ einer Variablen angeben.
-
-```Java
-public interface Student {
-    String getCourse();
-}
-
-public class ComputerScienceStudent implements Student {
-    public String getCourse() {
-        return “Computer Science”;
-    }
-}
-
-// Object creation
-Student student = new ComputerScienceStudent();
-
-// Method parameter
-static String printStudentCourse(Student student) {
-    return "Course " + student.getCourse();
-}
-```
-
----
-
-## Polymorphism
-
-Student kann in verschiedenen Formen implementiert sein.
-
-```Java
-// Object creation
-Student student = new ComputerScienceStudent();
-
-
-// Method parameter
-static String printStudentCourse(Student student) {
-    return "Course " + student.getCourse();
-}
-```
-
----
-
-## Aufgabe: Interface
-
-1. Mache deine Student Klasse zu einem Interface
-2. Füge eine Methode zu Student hinzu, die zwei Studenten (z.B. Informatik-/ Geschichtsstudent ) verschieden implementieren würden und schreibe die entsprechenden Klassen
-3. Schreibe eine Methode die auf dem Interface das Ergebnis der Methode auf der Konsole ausgibt
-
----
-
-<!-- _class: hsplit-->
-
-## Vererbung
-
-- Beispiel: `Student` in verschiedener Form erweitert
-- alle Eigenschaften von `Student` hat auch `ComputerScience` Student
-- **Nicht nutzen** um Code zu sparen
-- Überschreiben von Funktionalität ebenfalls möglich
-
-```Java
-// file: Student.java
-public class Student {
-    //...
-
-    public String getName() {
-       return name;
-    }
-}
-
-// file: ComputerScienceStudent.java
-public class ComputerScienceStudent extends Student {
-    public int getProgrammingSkill() {
-       return programmingSkill;
     }
 }
 ```
@@ -542,11 +465,109 @@ public class ComputerScienceStudent extends Student {
 
 ---
 
+## Interface
+
+- `interface` definiert Signatur von Methoden
+- per default sind alle Methoden `public`
+- Java unterstützt keine Mehrfachvererbung von Klassen. Aber: 
+  Klassen können (mehrere) Interfaces implementieren
+- Signatur muss übereinstimmen
+
+```Java
+public interface Student {
+    String getCourse();
+}
+
+public class ComputerScienceStudent implements Student {
+    public String getCourse() {
+        return "Computer Science";
+    }
+}
+```
+
+---
+
+## Interface
+
+Best practice: Die Objekt-Referenz ist vom Typ des Interfaces.
+
+```Java
+public interface Student {
+    String getCourse();
+}
+
+public class ComputerScienceStudent implements Student {
+    public String getCourse() {
+        return "Computer Science";
+    }
+}
+
+// Object creation: Type of the variable is the Student interface
+Student student = new ComputerScienceStudent();
+
+// Method parameter
+static String printStudentCourse(Student student) {
+    return "Course " + student.getCourse();
+}
+```
+
+---
+
+## Aufgabe: Interface
+
+1. Mache deine Student-Klasse zu einem Interface
+2. Lasse zwei konkrete Klassen das Student-Interface implementieren (z.B. Informatik-/ Geschichtsstudent)
+3. Füge eine Methode zu Student hinzu, die von den zwei implementierenden Klassen verschieden implementiert werden. 
+
+
+---
+
 ## Aufgabe: Vererbung
 
 1. Mache aus deinem Student Interface eine Klasse und lasse zwei Klassen von dieser erben
 2. Überlege was die Unterschiede zwischen der Verwendung eines Interfaces und Vererbung sind und schreibe Vor- und Nachteile auf
-3. Mache aus deiner Student Klasse eine Abstrakte Klasse mit einer Abstrakten Methode “anzahlModule”.
+3. Mache aus deiner Student-Klasse eine Abstrakte Klasse mit einer Abstrakten Methode “anzahlModule”.
+
+
+---
+
+<!-- _class: hsplit-->
+
+## Polymorphism
+
+- Objekte können verschiedene Formen annehmen
+- Ergebnis eines Aufrufs hängt von der jeweiligen Form ab
+
+```Java
+class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Animal myAnimal = new Animal();  // Create a Animal object
+    Animal myPig = new Pig();  // Create a Pig object
+    Animal myDog = new Dog();  // Create a Dog object
+    myAnimal.animalSound();
+    myPig.animalSound();
+    myDog.animalSound();
+  }
+}
+```
 
 ---
 
@@ -577,11 +598,19 @@ Schreibe eine Klasse `AnimalListItem` mit
 Schreibe eine Klasse `AnimalList` mit
 
 1. einer Variable `head` vom Typ `AnimalListItem`, die den Anfang der Liste speichert
-2. einer Methode `toString`, welche die Liste, wenn sie die Elemente a,b und c enthält, wie folgt als String zurückgibt “a -> b -> c”
-3. einer Methode `add` mit einem `Animal` als Paramter, die ein Element and die Liste anhängt
-4. einer Methode `remove` mit einem `Animal` als Parameter, die alle dieser Animals entfernt
+2. einer Methode `toString`, welche die Liste, wenn sie die Elemente a, b und c enthält, wie folgt als String zurückgibt: “a -> b -> c”
+3. einer Methode `add` mit einem `Animal` als Parameter, die ein Element an die Liste anhängt
+
+
+4. 🏋️ BONUS: einer Methode `remove` mit einem `Animal` als Parameter, die alle entsprechenden Animals entfernt
 
 **Schreibe entsprechende Tests!**
+
+---
+
+## Optional: Klassendiagram AnimalList
+
+![](img/animal-linkedlist.png)
 
 ---
 
@@ -594,7 +623,8 @@ Schreibe eine Klasse `AnimalList` mit
   - `List` implementierung mit index
   - `Generic<T>` spezifiziert den Typ der Objekte
 
-![](img/collections.png)
+![](img/java-collection-hierarchy.png)
+(https://techvidvan.com/tutorials/java-collection-framework/)
 
 ---
 
@@ -661,12 +691,12 @@ Ersetze in deiner StudentDB das Array durch eine `ArrayList`.
 // create map
 Map<String, Student> mapOfStudents = new HashMap<>();
 
-// add values
-mapOfStudents.put("student1", student);
-mapOfStudents.put("student4", student2);
+// add key/values
+mapOfStudents.put("MNR0001", student);
+mapOfStudents.put("MNR0002", student2);
 
 // get values
-Student studentFromMap = mapOfStudents.get("student4");
+Student studentFromMap = mapOfStudents.get("MNR0002");
 ```
 
 ---
@@ -796,33 +826,43 @@ students.forEach(student -> {
 
 ## Aufgabe: For each
 
-Schreibe in deiner StudentDB eine Methode printIds welche alle Ids auf der Konsole ausgibt. Nutze anstelle eine for schleife foreach.
+Schreibe in deiner StudentDB eine Methode printIds(), welche alle Ids auf der Konsole ausgibt. Nutze anstelle eine for schleife foreach.
 
 ---
 
-# Freitagsaufgabe
+# Freitagsaufgabe - Problemstellung
 
-Schreibe ein Bestellsystem (**mit Tests!**).
+Der Auftraggeber wünscht sich einen Shop-Service, um seine Produkt-Bestellungen verwalten zu können.
+Er möchte auf der Konsole ausgeben lassen können: 
+- ein einzelnes Produkt 
+- alle Produkte
+
+Zusätzlich kann er eine neue Bestellung aufgeben. Für jede neue Bestellung möchte er die entsprechenden Produkt-Ids mitangeben.
+Weiterhin möchte er: 
+- sich eine einzelne Bestellung anhand ihrer id ausgeben lassen.
+- alle Bestellungen ausgeben lassen können.
+
+
+Dafür gibt er euch den ganzen Freitag Zeit.
+
+---
+
+# Freitagsaufgabe - Tips zum Vorgehen
+
+Implementiere das Bestellsystem (**natürlich mit Tests!**).
+
+1. Erstelle eine Klasse `ProductRepo`, die eine `Product` Liste enthält.
+2. Erstelle eine Klasse `OrderRepo`, die eine `Order` Liste enthält
+3. Erstelle eine Klasse `ShopService`, über die wir eine neue `Order` aufgeben können.
+4. `throw` eine Exception, wenn Produkte bestellt werden die nicht existieren.
+
+
+6. 🏋BONUS: Nutze für die `get` Methoden als Rückgabewert ein `Optional`
+7. 🏋BONUS: Nutze anstelle einer `Product` Klasse ein Interface und implementiere verschiedene Ausführungen
+8. 🏋BONUS: Schaue dir `hamcrest` an und nutze die hamcrest matchers in deinen Tests
+
+---
 
 ![](img/order-system.png)
 
 ---
-
-# Freitagsaufgabe
-
-Schreibe ein Bestellsystem (**mit Tests!**).
-
-1. Verwalte zu bestellende Produkte in einer `ProductDb` (muss nicht veränderbar sein)
-2. Gib alle Produkte in der `AppMain` aus
-3. Verwalte Bestellungen über eine `OrderDb`
-4. Füge eine Bestellung über einen `OrderService` hinzu
-5. Gib alle Bestellungen aus
-6. nutze für die `get` Methoden als Rückgabewert ein `Optional`
-7. `throw` eine Exception wenn Produkte bestellt werden sollen die nicht existieren
-8. Nutze anstelle einer `Product` Klasse ein Interface und implementiere verschiedene Ausführungen
-
----
-
-# Freitagsaufgabe: Bonus
-
-- schaue dir `hamcrest` an und nutze die hamcrest matchers in deinen Tests

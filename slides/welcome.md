@@ -33,7 +33,7 @@ title: Java Bootcamp - Welcome
 
 - Täglich Neues, viel Stoff
 - Einzel-, Paar- und Gruppenaufgaben
-- Selbständig Arbeiten und Lernen
+- Selbständiges Arbeiten und Lernen
 - Stress, schlaflose Nächte, Zweifel
 - Misserfolge, Frust, schlechte Laune
 - Erfolge, Erkenntnisse, Selbstvertrauen
@@ -80,7 +80,7 @@ title: Java Bootcamp - Welcome
 
 - 09:00 Protokoll Besprechung
 - 09:30 Theorie & Übungen
-- 13:00 Mittag
+- 13:00 Mittagspause
 - 14:00 Theorie & Übungen
 - Flexibel Übungen
 
@@ -98,25 +98,18 @@ Gründerin & CEO
 
 ---
 
-## Stefan Lautner
+## Matthias Hiemer 
 
 Freiberuflicher IT-Berater / Coach
 
-![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U0241K3U1E3-4491f8071e2c-512)
-
----
-
-## Jan Robert
-
-Coach bei Neue Fische
-
-![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U017Z3Z7K1D-186af2d9a067-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U029AMKSS9Y-3e4a26cb5da3-512)
 
 ---
 
 ## Christopher Siem
 
-Coach bei Neue Fische
+Coach bei neue fische
+
 ![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01CR83AB08-51a7515bb12a-512)
 
 ---
@@ -150,3 +143,4 @@ Manager Career Services & Partner Management
 - Wie heißt du?
 - Was hast du vor dem Bootcamp gemacht?
 - Warum machst du diesen Kurs?
+- Was erwartest du vom Bootcamp?

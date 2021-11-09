@@ -11,24 +11,11 @@ title: Java Bootcamp - Template
 
 ## Wochenübersicht
 
-- **Montag**: Feiertag
-- **Dienstag**: Freitagsaufgabe, Team-Projekt start
-- **Mittwoch**: Container Technology, Docker, App in Docker, Spring Config, Heroku, Continuous Deployment
-- **Donnerstag**: Datenbanken Intro, Mongo Intro, Careere Session
-- **Freitag**: Mongo mit Spring, Spring config Mongo, Deploy Heroku mit Mongo
-
----
-
-# Team Projekt: GitHub Roulette
-
-**User stories**
-
-- Als Nutzer möchte ich meinen PR einstellen können
-- Als Nutzer möchte ich alle offenen PRs sehen
-- Als Nutzer möchte ich mir einen PR zuweisen lassen können
-- Als Nutzer möchte ich einen PR als “on review” markieren können
-- Als Nutzer möchte ich das closed PRs nicht mehr angezeigt werden
-- Als Nutzer möchte ich mein Review Karma sehen (reviewed vs eingestellt)
+- **Montag**: Team-Projekt, Docker
+- **Dienstag**: Heroku, Continuous Deployment
+- **Mittwoch**: Datenbanken, MongoDB, Robo3T
+- **Donnerstag**: MongoDB Atlas, Spring Config
+- **Freitag**: Aufgabe Teamprojekt
 
 ---
 
@@ -231,7 +218,7 @@ FROM openjdk:15
 
 ENV ENVIRONMENT=prod
 
-MAINTAINER Fabian Schmauder <fabian.schmauder@gmail.com>
+MAINTAINER Matthias Hiemer <matthias.hiemer@neuefische.de>
 
 ADD backend/target/app.jar app.jar
 
@@ -276,7 +263,7 @@ Hosting Provider.
 
 **Vorteile**
 
-- Vereinfacht Hosting von Anwendungen, also auch ohne groß Kenntnis nutzbar
+- Vereinfacht Hosting von Anwendungen, also auch ohne große Kenntnisse nutzbar
 - Kosten transparent
 
 **Nachteile**
@@ -422,9 +409,8 @@ Neo4J, ArangoDB, Amazon Neptune
 
 ```json
 {
-    "_id" : "test-id",
-    "name" : "Frank",
-    "matrikelnummer" : NumberLong(3)
+  "_id": "test-id",
+  "name": "Frank"
 }
 ```
 
@@ -457,7 +443,7 @@ Neo4J, ArangoDB, Amazon Neptune
 
 ## MongoDB Compass
 
-[Download](https://downloads.mongodb.com/compass/mongodb-compass-1.26.1-darwin-x64.dmg)
+[Download](https://www.mongodb.com/try/download/compass)
 
 Grafikoberfläche für Interaktionen:
 
@@ -485,20 +471,20 @@ db.students.insertOne({
 ## CRUD: Read
 
 ```javascript
-db.collection.find({ name: { $eq: "Frank" } }).limit(5);
+db.collection.find({ name: { $eq: 'Frank' } }).limit(5)
 ```
 
 - `find` gibt Liste zurück
 - über `query` kann Ergebnis eingegrenzt werden
 - `limit` setzt maximale Anzahl an zurückgegebenen Dokumenten
-- `projection` ermöglicht nur Teile zurück zu geben
+- `projection` ermöglicht nur Teile zurückzugeben
 
 ---
 
 ## CRUD: Update
 
 ```javascript
-db.students.updateMany({ name: { $eq: "Frank" } }, { $set: { name: "Franz" } });
+db.students.updateMany({ name: { $eq: 'Frank' } }, { $set: { name: 'Franz' } })
 ```
 
 - update von ein oder mehreren Dokumenten
@@ -510,7 +496,7 @@ db.students.updateMany({ name: { $eq: "Frank" } }, { $set: { name: "Franz" } });
 ## CRUD: Delete
 
 ```javascript
-db.students.deleteOne({ name: { $eq: "Frank" } });
+db.students.deleteOne({ name: { $eq: 'Frank' } })
 ```
 
 - Löschen von Dokumenten auf Basis einer Query
@@ -521,12 +507,12 @@ db.students.deleteOne({ name: { $eq: "Frank" } });
 ## Aufgabe: MongoDB
 
 1. Lade dir MongoDB Compass herunter
-2. Lasse ein docker image mit mongodb laufen
-3. Erstelle eine DB **githubRoulette** und eine Collection **repos**
+2. Lasse ein Docker-Image mit mongodb laufen
+3. Erstelle eine DB **devQuiz** und eine Collection **questions**
 4. Füge ein Dokument über MongoDB Compass und ein Dokument über die CLI hinzu
-5. Ändere den Namen eines Repos, indem du einmal MongoDB Compass und einmal die CLI verwendest
-6. Lösche ein Repo aus der Datenbank
-7. Füge mindestens 5 Repos hinzu mit verschiedenen Ownern und stelle eine Abfrage die nach einem Owner filtert
+5. Ändere die Frage einer `Question`, indem du einmal MongoDB Compass und einmal die CLI verwendest
+6. Lösche eine `Question` aus der Datenbank
+7. Füge mindestens 5 `Questions` hinzu und stelle eine Abfrage die nach einer `Question` filtert
 
 ---
 
@@ -557,7 +543,7 @@ db.students.deleteOne({ name: { $eq: "Frank" } });
 ## MongoDB Repository
 
 ```java
-public interface TodoRepository extends PagingAndSortingRepository<TodoItem, String> {}
+public interface TodoRepository extends PagingAndSortingRepository<Todo, String> {}
 ```
 
 - Interface wird durch Spring implementiert und bereitgestellt
@@ -572,7 +558,7 @@ public interface TodoRepository extends PagingAndSortingRepository<TodoItem, Str
 
 ## Aufgabe: Mongo Data
 
-Füge zum Projekt ein Repository hinzu, welches repos
+Füge zum Projekt ein Repository hinzu, welche Questions
 
 - in die MongoDB speichert
 - aus der DB abfragt
@@ -593,13 +579,6 @@ Füge zum Projekt ein Repository hinzu, welches repos
    <scope>test</scope>
 </dependency>
 ```
-
----
-
-## Aufgabe: Repository Test
-
-- Schreibe Integration Tests welche repos in die Datenbank speichern
-- Schreibe Integration Tests welche repos aus der Datenbank holt
 
 ---
 
