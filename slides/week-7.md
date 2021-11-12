@@ -11,46 +11,11 @@ title: Java Bootcamp - Template
 
 ## Wochenübersicht
 
-- **Montag**: MongoDB Atlas, Streams, Enums, Generics, Swagger
+- **Montag**: Code Reviews, Swagger, Builder pattern, Generics, Enums
 - **Dienstag**: Spring boot security, security configuration, basic auth
 - **Mittwoch**: JWT, login, protected routes, context API
-- **Donnerstag**: OAuth, Login with GitHub
-- **Freitag**: GithubRoulette
-
----
-
-# Mongo und Heroku
-
----
-
-## Wo hosten wir unsere MongoDB
-
-- [mongodb altas](https://www.mongodb.com)
-- hosten von mongo cluster
-- kostenlos bis zu einem gewissen Kontingent
-
----
-
-## Konfiguration
-
-![bg right contain 75%](img/mongo-atlas.png)
-
-```
-mongodb+srv://user:password@clusterurl/db
-```
-
-`MONGODB_URI` muss in heroku konfiguriert werden und über docker an die App gegeben werden.
-
-In mongoDb atlas muss heroku erlaubt werden eine Verbindung aufzubauen.
-
----
-
-## Aufgabe: MongoDB Atlas
-
-1. Erstelle dir einen MongoDb atlas account
-2. Lege einen MongoDb cluster an
-3. Erlaube heroku auf deine mongoDb zuzugreifen
-4. Konfiguriere die MongoDB uri und deploye deine application
+- **Donnerstag**: TBD
+- **Freitag**: Gruppenaufgabe
 
 ---
 
@@ -80,6 +45,143 @@ public class ReactRoutingForwarding {
 - matching path wird abgefangen, wenn durch Restcontroller dieser durch den Controller nicht bedient wird
 - request wird weitergeleitet
 - durch forward wird Route nicht verändert
+
+---
+
+# Swagger
+
+---
+
+## Swagger client
+
+- Swagger gibt Übersicht über Endpunkte
+- [https://swagger.io/tools/swagger-ui/](https://swagger.io/tools/swagger-ui/)
+- Ausführung ähnlich zu Postman
+
+---
+
+<!-- _class: hsplit-->
+
+## Swagger Setup
+
+<div>
+
+- Maven dependency
+- Config
+- [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+```xml
+<dependency>
+   <groupId>io.springfox</groupId>
+   <artifactId>springfox-swagger2</artifactId>
+   <version>2.9.2</version>
+</dependency>
+<dependency>
+   <groupId>io.springfox</groupId>
+   <artifactId>springfox-swagger-ui</artifactId>
+   <version>2.9.2</version>
+</dependency>
+```
+
+</div>
+
+```java
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+
+ @Bean
+ public Docket api(){
+ return new Docket(DocumentationType.SWAGGER_2)
+     .select()
+     .apis(RequestHandlerSelectors.any())
+     .paths(PathSelectors.any())
+     .build();
+ }
+}
+```
+
+---
+
+## Aufgabe: Swagger
+
+1. Binde Swagger in unser Gruppenprojekt ein und rufe die Endpunkte auf
+
+---
+
+# Enums
+
+---
+
+<!-- _class: hsplit-->
+
+## Enum
+
+- feste Anzahl von Ausprägungen
+- häufig mit switch oder if/else
+- Ausprägungen können Member und Methoden haben
+- Konstruktor ist nicht public
+
+```Java
+public enum Directions {
+   NORTH("N"),
+   EAST("E"),
+   SOUTH("S"),
+   WEST("W");
+
+   public final String abbreviation;
+
+   Directions(String abbreviation){
+       this.abbreviation = abbreviation;
+   }
+}
+```
+
+---
+
+## Aufgabe: Enums
+
+1. Ersetze im [streams-exercises Repository](https://github.com/christophersiem/streams-exercises) im Student & StudentDto model den Typ der location durch ein Enum und passe den restlichen Code entsprechend an.
+2. Erweitere das Enum um eine Membervariable `int population`
+
+---
+
+# Generics
+
+---
+
+## Generic function
+
+- Ermöglicht Methode für unterschiedliche Objekte zu schreiben
+- Angabe durch Typparameter `<T>`
+- Buchstabe frei wählbar, best practice: T,U,V..
+- `T extends Student` => T muss Interface oder Klasse Student implementieren
+
+```Java
+private <T> T someGenericFunction(T value){
+ // some code
+ return value;
+}
+
+private <T extends Student> T someGenericFunction(T value){
+```
+
+---
+
+## Generic Class/Interface
+
+Ermöglicht Klassen für mehrere Objekte zu definieren.
+
+```Java
+public class HashMap<K,V>
+```
+
+---
+
+## Aufgabe: Generics
+
+1. Schaue dir die ArrayList Klasse an und versuche nachzuvollziehen wie Generics verwendet werden
+2. Erstelle eine generische Klasse und rufe sie auf
 
 ---
 
@@ -185,143 +287,6 @@ Clone das Repo [streams-exercises](https://github.com/christophersiem/streams-ex
 
 ---
 
-# Enums
-
----
-
-<!-- _class: hsplit-->
-
-## Enum
-
-- feste Anzahl von Ausprägungen
-- häufig mit switch oder if/else
-- Ausprägungen können Member und Methoden haben
-- Konstruktor ist nicht public
-
-```Java
-public enum Directions {
-   NORTH("N"),
-   EAST("E"),
-   SOUTH("S"),
-   WEST("W");
-
-   public final String abbreviation;
-
-   Directions(String abbreviation){
-       this.abbreviation = abbreviation;
-   }
-}
-```
-
----
-
-## Aufgabe: Enums
-
-1. Ersetze im [streams-exercises Repository](https://github.com/christophersiem/streams-exercises) im Student & StudentDto model den Typ der location durch ein Enum und passe den restlichen Code entsprechend an.
-2. Erweitere das Enum um eine Membervariable `int population`
-
----
-
-# Generics
-
----
-
-## Generic function
-
-- Ermöglicht Methode für unterschiedliche Objekte zu schreiben
-- Angabe durch Typparameter `<T>`
-- Buchstabe frei wählbar, best practice: T,U,V..
-- `T extends Student` => T muss Interface oder Klasse Student implementieren
-
-```Java
-private <T> T someGenericFunction(T value){
- // some code
- return value;
-}
-
-private <T extends Student> T someGenericFunction(T value){
-```
-
----
-
-## Generic Class/Interface
-
-Ermöglicht Klassen für mehrere Objekte zu definieren.
-
-```Java
-public class HashMap<K,V>
-```
-
----
-
-## Aufgabe: Generics
-
-1. Schaue dir die ArrayList Klasse an und versuche nachzuvollziehen wie Generics verwendet werden
-2. Erstelle eine generische Klasse und rufe sie auf
-
----
-
-# Swagger
-
----
-
-## Swagger client
-
-- Swagger gibt Übersicht über Endpunkte
-- [https://swagger.io/tools/swagger-ui/](https://swagger.io/tools/swagger-ui/)
-- Ausführung ähnlich zu Postman
-
----
-
-<!-- _class: hsplit-->
-
-## Swagger Setup
-
-<div>
-
-- Maven dependency
-- Config
-- [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-
-```xml
-<dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger2</artifactId>
-   <version>2.9.2</version>
-</dependency>
-<dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger-ui</artifactId>
-   <version>2.9.2</version>
-</dependency>
-```
-
-</div>
-
-```java
-@Configuration
-@EnableSwagger2
-public class SwaggerConfig {
-
- @Bean
- public Docket api(){
- return new Docket(DocumentationType.SWAGGER_2)
-     .select()
-     .apis(RequestHandlerSelectors.any())
-     .paths(PathSelectors.any())
-     .build();
- }
-}
-```
-
----
-
-## Aufgabe: Swagger
-
-1. Binde Swagger in unser Gruppenprojekt ein und rufe die Endpunkte auf
-
----
-
 # Spring boot security
 
 ---
@@ -335,7 +300,7 @@ public class SwaggerConfig {
 </dependency>
 ```
 
-- Dependency reicht um Endpunkte abzusichern.
+- Dependency reicht, um Endpunkte abzusichern.
 - [Docs](https://docs.spring.io/spring-security/site/docs/5.4.0-M1/reference/html5/)
 - [Video Tutorial](https://www.youtube.com/watch?v=sm-8qfMWEV8&list=PLqq-6Pq4lTTYTEooakHchTGglSvkZAjnE)
 
@@ -548,10 +513,10 @@ Cookie: JSESSIONID 1A6A3EBA81C6A738A18D736AA838587A
 
 ---
 
-## Nachtteile
+## Nachteile
 
 - Cookies müssen akzeptiert werden
-- Wenn Server neu startet ist die Session nicht mehr vorhanden oder muss irgendwo abgelegt werden
+- Wenn Server neu startet, ist die Session nicht mehr vorhanden oder muss irgendwo abgelegt werden
 - Bei mehreren Servern/Containern/Services muss die Session geteilt werden
 
 ---
@@ -614,7 +579,7 @@ JV_adQssw5c
 
 1. Login endpunkt bauen/erreichbar machen
 2. Password validieren
-3. Jwt erzeugen und zurück geben
+3. Jwt erzeugen und zurückgeben
 4. Filter erzeugen um request zu validieren
 
 ---
@@ -699,7 +664,7 @@ public class LoginController {
 @Service
 public class JWTUtils {
 
-    private String secret = "secret-token";
+    private final String secret = "secret-token";
 
     public String createToken(Map<String, Object> claims, String subject) {
         return Jwts.builder()
@@ -731,7 +696,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ---
 
-## Revmove session state
+## Remove session state
 
 - Session state mit JWT nicht mehr nötig
 - in config updaten
@@ -803,7 +768,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
 ---
 
-## jwt Metods
+## jwt Methods
 
 ```java
 

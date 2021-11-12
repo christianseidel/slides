@@ -63,7 +63,7 @@ title: Java Bootcamp - Week 1
 | `echo "Hey"`           | Gibt "Hey" aus                             |
 | `mkdir my-folder`      | Legt den Ordner `my-folder` an             |
 | `rm -rf my-folder`     | Löscht `my-folder` und alle Unterordner    |
-| `sh ./script.sh`       | Führt das Skrip `script.sh` aus            |
+| `sh ./script.sh`       | Führt das Skript `script.sh` aus            |
 
 ---
 
@@ -72,7 +72,7 @@ title: Java Bootcamp - Week 1
 - Befehlsabfolge automatisieren
 - Dateiendung .sh
 
-1. Script erstellen indem Ausgabe in Datei umgeleitet wird (`>>`)
+1. Script erstellen, indem Ausgabe in Datei umgeleitet wird (`>>`)
 
    ```shell
    echo “echo Hallo” >> script.sh
@@ -125,8 +125,11 @@ title: Java Bootcamp - Week 1
 - Versionen wieder herstellen
 - Zwischen Versionen wechseln
 - Versionen mit anderen Entwicklern teilen
+- Frage: Was würde passieren, wenn wir kein Git und keine Versionierung verwenden würden?
 
 [Video: Git Basics](https://www.youtube.com/watch?v=8oRjP8yj2Wo)
+
+[Offizielle Git-Doku](https://git-scm.com/book/de/v2)
 
 ---
 
@@ -137,7 +140,6 @@ title: Java Bootcamp - Week 1
 ## Repository
 
 Ordner mit Versionsverwaltung. Der _root_ - Ordner des Projekts.
-
 ---
 
 ## Commit
@@ -176,10 +178,12 @@ Head-Label zeigt auf momentane Ordnerversion
 verschiebbares Label
 
 - Verweist auf einen commit
-- Die Standardbranch wird meist **main** oder **master** genannt
+- Der Standard-Branch wird meist **main** oder **master** genannt
 - Vereinfacht die Navigation im Baum
 - Meistens wird ein checkout von Branches gemacht
 - Entwickelt wird auf einem Branch
+
+![bg right w:400px h:400px](img/git-tree.png)
 
 ---
 
@@ -231,7 +235,7 @@ Alle Files:
 git add .
 ```
 
-Commit “zusammenbauen” indem mehrere Änderungen zusammengefasst werden.
+Commit “zusammenbauen”, indem mehrere Änderungen zusammengefasst werden.
 
 ---
 
@@ -365,6 +369,10 @@ Sendet Änderungen Richtung remote
 
 ---
 
+![bg contain center](img/git-overview.png)
+
+---
+
 ## Git workflow (Feature branch)
 
 1.  pull main
@@ -492,7 +500,7 @@ public class AppMain {
 javac AppMain.java
 ```
 
-**javac** Compiler nutzen um ein class file zu erzeugen
+**javac** Compiler nutzen, um ein class file zu erzeugen
 
 ```shell
 java AppMain
@@ -662,7 +670,7 @@ boolean someBoolean = false;
 
 - `==`, `!=`, `<`, `>`, `<=`, `>=`
 - nur auf primitiven Typen möglich
-- Typen werden von einen in den anderen Typen “überführt” (Casting)
+- Typen werden von einem in den anderen Typen “überführt” (Casting)
 
 ```java
 boolean result = someInt < someOtherInt;
@@ -718,7 +726,7 @@ int result = duplicate(3);
 - int dup...: Rückgabetyp
 - `duplicate`: Name der Methode
 - `int value`: Eingabeparameter
-- { Funktions Code}
+- { Funktions-Code}
 - `return`: Rückgabe von Ergebnis
 
 ---
@@ -832,8 +840,8 @@ Sicherstellen von
 
 # J-Unit
 
-- Meist genutzes Unit-Testing Framework
-- stellt Funktionalität bereit um einfach Tests zu schreiben
+- Meist genutztes Unit-Testing Framework
+- stellt Funktionalität bereit, um einfach Tests zu schreiben
 - Integration in Entwicklungsumgebung
 
 ---
@@ -860,8 +868,8 @@ public void shouldAnswerWithTrue()
 
 Schreibe Unit-Tests für
 
-1.  deine addieren Methode
-2.  eine Methode die Prüft ob ein Wert größer als 100 ist
+1.  deine Addieren-Methode
+2.  eine Methode die prüft, ob ein Wert größer als 100 ist
 
 ---
 
@@ -992,7 +1000,7 @@ while(isNiceWeather()){
 
 ## Aufgabe: Fakultät while
 
-Schreibe die Fakultätsfunktion mit Hilfe einer `while` Schleife. Nutze die vorhandenen Tests.
+Schreibe die Fakultätsfunktion mithilfe einer `while` Schleife. Nutze die vorhandenen Tests.
 
 ---
 
@@ -1056,7 +1064,7 @@ System.out.println(someArray[0]);
 1. Erstelle ein `String` Array und fülle es mit Werten
 2. Nutze zum Befüllen des Arrays eine `for` Schleife. Die Werte sollen wie folgt aussehen `“Student <index>”`.
 
-Nutze Tests um die Funktionalität zu überprüfen
+Nutze Tests, um die Funktionalität zu überprüfen
 
 ---
 
@@ -1107,6 +1115,6 @@ Schreibe eine Passwortvalidierung. Validiere, ob ein eingegebenes Passwort die S
 
 **Bonus**:
 
-- Checke ob kleine/große Buchstaben enthalten sind
+- Checke, ob kleine/große Buchstaben enthalten sind
 - Schaffe die Möglichkeit, eine Liste von Passwörtern zu validieren
 - Schaue dir auf GitHub Labs weitere Einsteigervideos an
