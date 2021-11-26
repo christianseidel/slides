@@ -614,22 +614,57 @@ public class SwaggerConfig {
 ## Enum
 
 - feste Anzahl von Ausprägungen
-- häufig mit switch
+
+```Java
+public enum TimeUnit {
+    WEEKS,
+    DAYS,
+    HOURS
+}
+```
+
+---
+
+## Mögliche Verwendung von enums
+
+```java
+public static long determineMilliseconds(int value, TimeUnit timeUnit) {
+    switch (timeUnit) {
+        case WEEKS:
+            return value * 1000 * 60 * 60 * 24 * 7;
+        case DAYS:
+            return value * 1000 * 60 * 60 * 24;
+        case HOURS:
+            return value * 1000 * 60 * 60;
+    }
+}
+```
+
+---
+
+<!-- _class: hsplit-->
+
+## Lieber so (Open-Closed-Principle)
+
 - Ausprägungen können Member und Methoden haben
 - nicht public Konstruktor
 
-```Java
-public enum Directions {
-   NORTH("N"),
-   EAST("E"),
-   SOUTH("S"),
-   WEST("W");
+```java
+public enum TimeUnit {
+	
+    WEEKS(1000 * 60 * 60 * 24 * 7),
+    DAYS(1000 * 60 * 60 * 24),
+    HOURS(1000 * 60 * 60);
+	
+    private long base;
 
-   public final String abbreviation;
+    TimeUnit(long base) {
+        this.base = base;
+    }
 
-   Directions(String abbreviation){
-       this.abbreviation = abbreviation;
-   }
+    public long determineMilliseconds(int number) {
+        return base * number;
+    }
 }
 ```
 
