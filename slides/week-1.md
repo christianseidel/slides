@@ -614,6 +614,29 @@ String castResult = "Ergebnis" + 9;
 
 ---
 
+<!-- _class: hsplit-->
+
+## var keyword
+
+- Seit Java 9 Bestandteil der Sprache
+- Datentyp in der Deklaration nicht mehr nötig
+- Trotzdem noch streng typisiert
+
+```java
+var s1 = "erste Zeichenkette";
+var s2 = "zweite Zeichenkette";
+
+var i1 = 1;
+var i2 = 2;
+var i3 = i1 + i2;
+
+var whatAmI; // Fehler! Datentyp kann nicht inferiert werden
+i1 = "neue Zeichenkette"; // Fehler! Datentyp darf sich nicht ändern
+i1 = s1; // Fehler! Datentyp darf sich nicht ändern
+```
+
+---
+
 ## Aufgabe: Operatoren
 
 1. Lege zwei Variablen mit `int` Werten an
