@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "marp --input-dir slides --html true",
+    "build:watch": "marp --input-dir slides --html true --watch",
     "deploy": "npm run build && gh-pages -d slides"
   },
   "repository": {
