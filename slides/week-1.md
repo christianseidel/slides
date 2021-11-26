@@ -901,7 +901,7 @@ Schreibe Unit-Tests für
 
 ## Veränderung des Programmverlaufs basierend auf Daten
 
-- if /else
+- if/else
 - switch
 - for
 - while
@@ -979,12 +979,12 @@ Schreibe jeweils **erst** einen Test und dann die entsprechende Funktionalität
 ## for
 
 ```java
-for(int i = 0; i< 100; i++){
+for(int i = 0; i < 100; i++) {
   // code runs 100 times
 }
 ```
 
-- `i=0` => Initialisierung
+- `i = 0` => Initialisierung
 - `i < 100` => Abbruchbedingung, bei der Schleife beendet wird
 - `i++` => bei jedem Durchlauf wird i um 1 erhöht
 - wenn `i` größer gleich 100 wird die Schleife nicht mehr
@@ -1009,7 +1009,7 @@ Starte mit den Tests für folgende Fälle
 ## while
 
 ```java
-while(isNiceWeather()){
+while(isNiceWeather()) {
   // ...code
 }
 ```
@@ -1041,9 +1041,9 @@ Schreibe die Fakultätsfunktion mithilfe einer `while` Schleife. Nutze die vorha
 
 ```java
 public int calculateSum(int value){
-  if(value < 1){
+  if(value < 1) {
     return 0;
-    }
+  }
   return calculateSum(value - 1) + value;
 }
 ```
