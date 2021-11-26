@@ -879,10 +879,9 @@ Sicherstellen von
 
 ```java
 @Test
-public void shouldAnswerWithTrue()
-{
-     assertTrue( true );
- }
+public void shouldAnswerWithTrue() {
+    assertTrue( true );
+}
 ```
 
 ---
@@ -914,7 +913,7 @@ Schreibe Unit-Tests für
 Abzweigungen und bedingte Ausführung
 
 ```java
-if (i > 0){
+if (i > 0) {
   // dann...
 } else {
   // sonst...
