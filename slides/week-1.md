@@ -880,7 +880,7 @@ Sicherstellen von
 ```java
 @Test
 public void shouldAnswerWithTrue() {
-    assertTrue( true );
+    assertTrue(true);
 }
 ```
 
