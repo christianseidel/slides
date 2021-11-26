@@ -689,13 +689,13 @@ Refactor die Alarm-Klasse aus Woche 1 und nutze ein Enum statt String-Konstanten
 
 ```Java
 List list = new ArrayList();
-        list.add("hello");
-        String s = (String) list.get(0);
+list.add("hello");
+String s = (String) list.get(0);
 ```
 ```Java
 List<String> list = new ArrayList<String>();
-        list.add("hello");
-        String s = list.get(0);   // no cast
+list.add("hello");
+String s = list.get(0);   // no cast
 ```
 
 ---
