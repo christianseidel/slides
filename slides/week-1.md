@@ -927,7 +927,7 @@ if (i > 0){
 
 Schreibe eine Funktion die überprüft, ob zu viele Personen im Laden sind
 
-1. Wenn die Anzahl über 30 liegt, gib den String “Zu viele Personen zurück”
+1. Wenn die Anzahl über 30 liegt, gib den String “Zu viele Personen" zurück
 2. Wenn die Anzahl unter 30 liegt, gib den String “Maximale Personenzahl
    nicht überschritten” zurück
 
