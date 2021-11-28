@@ -569,7 +569,6 @@ Unit Test:
 ## Test-Pyramide
 
 ![](img/test-pyramide.png)
-Link
 
 ---
 
@@ -750,11 +749,15 @@ public class HashMap<K,V>
 - Seit Java 1.8
 - Operationen auf Iterable
 - Functional Programming (FP) Ansatz
-
+- Streams sind lazy (terminal vs. intermediate operations)
 ```java
-list.stream().filter(element -> element.contains("sub"));
+// Keine terminale Operation => hier passiert nicht viel
+Stream<String> intermediate = list.stream().filter(element -> element.contains("sub"));
 ```
-
+```java
+// toList ist eine terminale Operation => alles wird ausgeführt
+List<String> result = list.stream().filter(element -> element.contains("sub")).toList();
+```
 ---
 
 ## Stream Methods
