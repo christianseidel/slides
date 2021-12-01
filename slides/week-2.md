@@ -411,7 +411,7 @@ Erstelle eine Klasse StudentDB mit folgenden Eigenschaften
 5. Die Methode `toString()` gibt alle Studenten formatiert als String zurück
 6. Die Methode `randomStudent()` gibt einen zufälligen Studenten zurück (Nutze für den Zufall `Math.random()`)
 
-Schreibe für alle Methoden Tests (bis auf randomStudent() )
+Schreibe für alle Methoden Tests (bis auf `randomStudent()` )
 
 **Bonus**: Schreibe eine `add` und eine `remove` Methode, um Studenten hinzuzufügen und zu entfernen
 
