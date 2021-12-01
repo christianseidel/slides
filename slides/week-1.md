@@ -614,6 +614,29 @@ String castResult = "Ergebnis" + 9;
 
 ---
 
+<!-- _class: hsplit-->
+
+## var keyword
+
+- Seit Java 9 Bestandteil der Sprache
+- Datentyp in der Deklaration nicht mehr nötig
+- Trotzdem noch streng typisiert
+
+```java
+var s1 = "erste Zeichenkette";
+var s2 = "zweite Zeichenkette";
+
+var i1 = 1;
+var i2 = 2;
+var i3 = i1 + i2;
+
+var whatAmI; // Fehler! Datentyp kann nicht inferiert werden
+i1 = "neue Zeichenkette"; // Fehler! Datentyp darf sich nicht ändern
+i1 = s1; // Fehler! Datentyp darf sich nicht ändern
+```
+
+---
+
 ## Aufgabe: Operatoren
 
 1. Lege zwei Variablen mit `int` Werten an
@@ -761,19 +784,6 @@ Schreibe eine Methode, die prüft, ob ein String
 
 ---
 
-# Testing / JUnit
-
----
-
-## Motivation
-
-Sicherstellen von korrektem Verhalten der Anwendung
-
-- bei der Entwicklung von neuen Features
-- nach Änderungen des Codes
-
----
-
 # Maven
 
 ---
@@ -856,10 +866,9 @@ Sicherstellen von
 
 ```java
 @Test
-public void shouldAnswerWithTrue()
-{
-     assertTrue( true );
- }
+public void shouldAnswerWithTrue() {
+    assertTrue(true);
+}
 ```
 
 ---
@@ -879,7 +888,7 @@ Schreibe Unit-Tests für
 
 ## Veränderung des Programmverlaufs basierend auf Daten
 
-- if /else
+- if/else
 - switch
 - for
 - while
@@ -891,7 +900,7 @@ Schreibe Unit-Tests für
 Abzweigungen und bedingte Ausführung
 
 ```java
-if (i > 0){
+if (i > 0) {
   // dann...
 } else {
   // sonst...
@@ -904,7 +913,7 @@ if (i > 0){
 
 Schreibe eine Funktion die überprüft, ob zu viele Personen im Laden sind
 
-1. Wenn die Anzahl über 30 liegt, gib den String “Zu viele Personen zurück”
+1. Wenn die Anzahl über 30 liegt, gib den String “Zu viele Personen" zurück
 2. Wenn die Anzahl unter 30 liegt, gib den String “Maximale Personenzahl
    nicht überschritten” zurück
 
@@ -957,12 +966,12 @@ Schreibe jeweils **erst** einen Test und dann die entsprechende Funktionalität
 ## for
 
 ```java
-for(int i = 0; i< 100; i++){
+for(int i = 0; i < 100; i++) {
   // code runs 100 times
 }
 ```
 
-- `i=0` => Initialisierung
+- `i = 0` => Initialisierung
 - `i < 100` => Abbruchbedingung, bei der Schleife beendet wird
 - `i++` => bei jedem Durchlauf wird i um 1 erhöht
 - wenn `i` größer gleich 100 wird die Schleife nicht mehr
@@ -987,7 +996,7 @@ Starte mit den Tests für folgende Fälle
 ## while
 
 ```java
-while(isNiceWeather()){
+while(isNiceWeather()) {
   // ...code
 }
 ```
@@ -1019,9 +1028,9 @@ Schreibe die Fakultätsfunktion mithilfe einer `while` Schleife. Nutze die vorha
 
 ```java
 public int calculateSum(int value){
-  if(value < 1){
+  if(value < 1) {
     return 0;
-    }
+  }
   return calculateSum(value - 1) + value;
 }
 ```
