@@ -323,17 +323,95 @@ public static void main(String[] args) {
 
 ---
 
+<!-- _class: hsplit -->
+
+## Records
+
+- Seit Java 14 Bestandteil der Sprache
+- Records sind wie Klassen, mit der Ausnahme, dass sie nicht verändert werden können (immutability)
+- `hashCode`, `equals` und `toString` werden automatisch generiert
+
+```java
+package model;
+
+record Student(String firstname, String lastname) {
+
+    public String fullName() {
+        return firstname + " " + lastname;
+    }
+}
+
+// in main
+var student = new Student("Jane", "Doe");
+System.out.println(student.firstname()); // Jane
+System.out.println(student.lastname());  // Doe
+System.out.println(student.fullName());  // Jane Doe
+
+System.out.println(student.hashCode()); // z.B. 71408012
+System.out.println(student.equals(new Student("Jane", "Doe"))); // true
+System.out.println(student.equals(new Student("John", "Doe"))); // false
+System.out.println(student.toString()); // Student[firstname=Jane, lastname=Doe]
+```
+
+---
+
+<!-- _class: hsplit -->
+
+## Wie ändere ich den Namen?
+
+```java
+record Student(String firstname, String lastname) {
+
+    public Student changeFirstname(String newFirstname) {
+        return new Student(newFirstname, lastname);
+    }
+
+    public Student changeLastname(String newLastname) {
+        return new Student(firstname, newLastname);
+    }
+
+    public String fullName() {
+        return firstname + " " + lastname;
+    }
+}
+```
+
+```java
+// in main
+var student = new Student("Jane", "D.");
+System.out.println(student.firstname()); // Jane
+System.out.println(student.lastname());  // D.
+System.out.println(student.fullName());  // Jane D.
+
+student = student.changeLastname("Doe");
+System.out.println(student.firstname()); // Jane
+System.out.println(student.lastname());  // Doe
+System.out.println(student.fullName());  // Jane Doe
+
+var newStudent = student.changeFirstname("Mary");
+System.out.println(newStudent.firstname()); // Mary
+System.out.println(newStudent.lastname());  // Doe
+System.out.println(newStudent.fullName());  // Mary Doe
+
+System.out.println(student.firstname());    // Jane
+System.out.println(student.lastname());     // Doe
+System.out.println(student.fullName());     // Jane Doe
+```
+
+---
+
 ## Aufgabe: Random Student
 
 Erstelle eine Klasse StudentDB mit folgenden Eigenschaften
 
-1. Der Konstruktor nimmt ein Array von Studenten entgegen
-2. Jeder Student hat einen Namen und eine Id
-3. Die Methode `list` gibt alle Studenten zurück
-4. Die Methode `toString()` gibt alle Studenten formatiert als String zurück
-5. Die Methode `randomStudent()` gibt einen zufälligen Studenten zurück (Nutze für den Zufall `Math.random()`)
+1. Mach aus deinem Studenten ein `record`
+2. Der Konstruktor nimmt ein Array von Studenten entgegen
+3. Jeder Student hat einen Namen und eine Id
+4. Die Methode `list` gibt alle Studenten zurück
+5. Die Methode `toString()` gibt alle Studenten formatiert als String zurück
+6. Die Methode `randomStudent()` gibt einen zufälligen Studenten zurück (Nutze für den Zufall `Math.random()`)
 
-Schreibe für alle Methoden Tests (bis auf randomStudent() )
+Schreibe für alle Methoden Tests (bis auf `randomStudent()` )
 
 **Bonus**: Schreibe eine `add` und eine `remove` Methode, um Studenten hinzuzufügen und zu entfernen
 
@@ -784,6 +862,10 @@ public Optional<Student> method(int value) {
 //...
 
 return Optional.of(student);
+
+// ...
+
+return Optional.ofNullable(methodThatMightReturnNull());
 
 // ...
 
