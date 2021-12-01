@@ -784,19 +784,6 @@ Schreibe eine Methode, die prüft, ob ein String
 
 ---
 
-# Testing / JUnit
-
----
-
-## Motivation
-
-Sicherstellen von korrektem Verhalten der Anwendung
-
-- bei der Entwicklung von neuen Features
-- nach Änderungen des Codes
-
----
-
 # Maven
 
 ---
