@@ -443,7 +443,7 @@ class ApplicationTest {
 
 <!-- _class: hsplit-->
 
-## Controller Unit Test
+## Controller-Test per Annotation (`@WebMvcTest`)
 
 - Spring web layer wird getestet ohne Server zu starten
 
@@ -526,11 +526,12 @@ TodoRepository repository;
 
 
 when(repository.findById("someId"))
-.thenReturn(Optional.of(value));
+    .thenReturn(Optional.of(value));
 
 
 verify(repository).save(
-  eq(new TodoItem("someId", "some desc", TodoStatus.DONE)));
+    eq(new TodoItem("someId", "some desc", TodoStatus.DONE))
+);
 ```
 
 ---
@@ -597,14 +598,14 @@ Unit Test:
 
 ```xml
 <dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger2</artifactId>
-   <version>2.9.2</version>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
 </dependency>
 <dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger-ui</artifactId>
-   <version>2.9.2</version>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
 </dependency>
 ```
 
