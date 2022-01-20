@@ -220,7 +220,7 @@ public class DemoApplication {
 
 ```java
 @RestController
-@RequestMapping("student")
+@RequestMapping("students")
 public class StudentController {
 
     @GetMapping
@@ -298,7 +298,8 @@ public List<Student> search(@RequestParam String q) {
 ## REST Controller Post
 
 1.  Füge einen GET Endpunkt hinzu, der einen spezifischen Studenten zurückgibt
-2.  Füge einen PUT Endpunkt hinzu, um einen Studenten hinzuzufügen
+2.  Füge einen GET Endpunkt hinzu, der alle Studenten
+3.  Füge einen POST Endpunkt hinzu, um einen Studenten hinzuzufügen
 
 ---
 
@@ -431,9 +432,9 @@ public ApiData getApiData() {
 @SpringBootTest
 class ApplicationTest {
 
- @Test
- void contextLoads() {
- }
+    @Test
+    void contextLoads() {
+    }
 
 }
 ```
@@ -472,8 +473,7 @@ class TodoControllerTest {
 - Endpunkt startet mit einem zufälligen Port
 
 ```java
-@SpringBootTest(webEnvironment =
-  SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class TodoControllerIntegrationTest {
     @LocalServerPort
     private int port;
@@ -778,10 +778,6 @@ Quelle: toptal
 
 ## Aufgabe: ToDo - Backend
 
-1.  Mache ein `fork` vom todo repo
-2.  Setze ein Spring Projekt im Unterordner `backend` auf
-3.  Installiere dir `node` um das Frontend bauen zu können
-4.  Baue das Frontend mittels des shell scripts
-5.  Starte den Server und rufe ihn im Browser auf
-6.  Versuche herauszufinden, welche Endpunkte das Frontend anspricht.
-7.  Implementiere die entsprechende Backendlogik in deinem Spring server
+1.  Nutze [spring-boot-react-bundle](https://github.com/gossie/spring-boot-react-bundle) als Projektvorlage
+2.  Setze auf dem Spring Projekt im Unterordner `backend` auf
+3.  Implementiere im Backend die Funktionalität, die für eine ToDo App benötigt wird. Denke an die Aufteilung in `Controller`, `Service` und `Repository`.
