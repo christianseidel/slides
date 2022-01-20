@@ -220,7 +220,7 @@ public class DemoApplication {
 
 ```java
 @RestController
-@RequestMapping("student")
+@RequestMapping("students")
 public class StudentController {
 
     @GetMapping
@@ -298,7 +298,8 @@ public List<Student> search(@RequestParam String q) {
 ## REST Controller Post
 
 1.  Füge einen GET Endpunkt hinzu, der einen spezifischen Studenten zurückgibt
-2.  Füge einen PUT Endpunkt hinzu, um einen Studenten hinzuzufügen
+2.  Füge einen GET Endpunkt hinzu, der alle Studenten
+3.  Füge einen POST Endpunkt hinzu, um einen Studenten hinzuzufügen
 
 ---
 
@@ -401,9 +402,9 @@ verify(productDbMock).getById("someId");
 
 ```java
 public ApiData getApiData() {
- RestTemplate template = new RestTemplate();
- ResponseEntity<ApiResponse> response =  template.getForEntity(API_URL, ApiResponse.class);
- return response.getBody();
+    RestTemplate template = new RestTemplate();
+    ResponseEntity<ApiResponse> response =  template.getForEntity(API_URL, ApiResponse.class);
+    return response.getBody();
 }
 ```
 
@@ -431,10 +432,33 @@ public ApiData getApiData() {
 @SpringBootTest
 class ApplicationTest {
 
- @Test
- void contextLoads() {
- }
+    @Test
+    void contextLoads() {
+    }
 
+}
+```
+
+---
+
+<!-- _class: hsplit-->
+
+## Controller-Test per Annotation (`@WebMvcTest`)
+
+- Spring web layer wird getestet ohne Server zu starten
+
+```java
+@WebMvcTest
+class TodoControllerTest {
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testSomething() {
+        mockMvc
+            .perform(get("/"))
+            .andExpect(status().isOk());
+    }
 }
 ```
 
@@ -449,23 +473,22 @@ class ApplicationTest {
 - Endpunkt startet mit einem zufälligen Port
 
 ```java
-@SpringBootTest(webEnvironment =
-  SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class TodoControllerIntegrationTest {
- @LocalServerPort
- private int port;
+    @LocalServerPort
+    private int port;
 
- @Autowired
- private TestRestTemplate restTemplate;
-
+    @Autowired
+    private TestRestTemplate restTemplate;
 ...
 
 // WHEN
 ResponseEntity<TodoItem> response =
-  restTemplate.postForEntity(
-    new URL(baseUrl()).toString(),
-    new AddTodoItemData("some description"),
-    TodoItem.class);
+    restTemplate.postForEntity(
+        new URL(baseUrl()).toString(),
+        new AddTodoItemData("some description"),
+        TodoItem.class
+    );
 ```
 
 ---
@@ -485,8 +508,8 @@ ResponseEntity<TodoItem> response =
 @SpringBootTest(classes = TodoService.class)
 class TodoServiceTest {
 
- @Autowired
- TodoService todoService;
+    @Autowired
+    TodoService todoService;
 ```
 
 ---
@@ -503,11 +526,12 @@ TodoRepository repository;
 
 
 when(repository.findById("someId"))
-.thenReturn(Optional.of(value));
+    .thenReturn(Optional.of(value));
 
 
 verify(repository).save(
-  eq(new TodoItem("someId", "some desc", TodoStatus.DONE)));
+    eq(new TodoItem("someId", "some desc", TodoStatus.DONE))
+);
 ```
 
 ---
@@ -574,14 +598,14 @@ Unit Test:
 
 ```xml
 <dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger2</artifactId>
-   <version>2.9.2</version>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
 </dependency>
 <dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger-ui</artifactId>
-   <version>2.9.2</version>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
 </dependency>
 ```
 
@@ -614,22 +638,57 @@ public class SwaggerConfig {
 ## Enum
 
 - feste Anzahl von Ausprägungen
-- häufig mit switch
+
+```Java
+public enum TimeUnit {
+    WEEKS,
+    DAYS,
+    HOURS
+}
+```
+
+---
+
+## Mögliche Verwendung von enums
+
+```java
+public static long determineMilliseconds(int value, TimeUnit timeUnit) {
+    switch (timeUnit) {
+        case WEEKS:
+            return value * 1000 * 60 * 60 * 24 * 7;
+        case DAYS:
+            return value * 1000 * 60 * 60 * 24;
+        case HOURS:
+            return value * 1000 * 60 * 60;
+    }
+}
+```
+
+---
+
+<!-- _class: hsplit-->
+
+## Lieber so (Open-Closed-Principle)
+
 - Ausprägungen können Member und Methoden haben
 - nicht public Konstruktor
 
-```Java
-public enum Directions {
-   NORTH("N"),
-   EAST("E"),
-   SOUTH("S"),
-   WEST("W");
+```java
+public enum TimeUnit {
+	
+    WEEKS(1000 * 60 * 60 * 24 * 7),
+    DAYS(1000 * 60 * 60 * 24),
+    HOURS(1000 * 60 * 60);
+	
+    private long base;
 
-   public final String abbreviation;
+    TimeUnit(long base) {
+        this.base = base;
+    }
 
-   Directions(String abbreviation){
-       this.abbreviation = abbreviation;
-   }
+    public long determineMilliseconds(int number) {
+        return base * number;
+    }
 }
 ```
 
@@ -654,13 +713,13 @@ Refactor die Alarm-Klasse aus Woche 1 und nutze ein Enum statt String-Konstanten
 
 ```Java
 List list = new ArrayList();
-        list.add("hello");
-        String s = (String) list.get(0);
+list.add("hello");
+String s = (String) list.get(0);
 ```
 ```Java
 List<String> list = new ArrayList<String>();
-        list.add("hello");
-        String s = list.get(0);   // no cast
+list.add("hello");
+String s = list.get(0);   // no cast
 ```
 
 ---
@@ -691,11 +750,15 @@ public class HashMap<K,V>
 - Seit Java 1.8
 - Operationen auf Iterable
 - Functional Programming (FP) Ansatz
-
+- Streams sind lazy (terminal vs. intermediate operations)
 ```java
-list.stream().filter(element -> element.contains("sub"));
+// Keine terminale Operation => hier passiert nicht viel
+Stream<String> intermediate = list.stream().filter(element -> element.contains("sub"));
 ```
-
+```java
+// toList ist eine terminale Operation => alles wird ausgeführt
+List<String> result = list.stream().filter(element -> element.contains("sub")).toList();
+```
 ---
 
 ## Stream Methods
@@ -716,10 +779,6 @@ Quelle: toptal
 
 ## Aufgabe: ToDo - Backend
 
-1.  Mache ein `fork` vom todo repo
-2.  Setze ein Spring Projekt im Unterordner `backend` auf
-3.  Installiere dir `node` um das Frontend bauen zu können
-4.  Baue das Frontend mittels des shell scripts
-5.  Starte den Server und rufe ihn im Browser auf
-6.  Versuche herauszufinden, welche Endpunkte das Frontend anspricht.
-7.  Implementiere die entsprechende Backendlogik in deinem Spring server
+1.  Nutze [spring-boot-react-bundle](https://github.com/gossie/spring-boot-react-bundle) als Projektvorlage
+2.  Setze auf dem Spring Projekt im Unterordner `backend` auf
+3.  Implementiere im Backend die Funktionalität, die für eine ToDo App benötigt wird. Denke an die Aufteilung in `Controller`, `Service` und `Repository`.
