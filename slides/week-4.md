@@ -78,25 +78,25 @@ Einbinden über `link` Tag im `head` des html Dokuments.
 
 ```css
 body {
-  font-size: 112.5%;
-  font-family: sans-serif;
-  background: #333;
-  color: whitesmoke;
+    font-size: 112.5%;
+    font-family: sans-serif;
+    background: #333;
+    color: whitesmoke;
 }
 
 .box {
-  width: 100px;
-  height: 100px;
-  background: hotpink;
-  border: 25px solid limegreen;
+    width: 100px;
+    height: 100px;
+    background: hotpink;
+    border: 25px solid limegreen;
 }
 
 .border-box {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .content-box {
-  box-sizing: content-box;
+    box-sizing: content-box;
 }
 ```
 
@@ -187,6 +187,26 @@ Einbinden über `script` Tag im `head` des HTML Dokuments
 
 ---
 
+<!-- _class: hsplit -->
+
+## TypeScript
+
+- Wurde 2012 von Microsoft entwickelt
+- JavaScript mit Typen
+
+```typescript
+let i: number;     // Der Typ wird explizit angegeben
+const s = "Hallo"; // Der Typ wird automatisch inferiert
+```
+
+---
+
+## React
+
+- create-react-app
+
+---
+
 ## JS Aufgabe 3 - Array Methods
 
 Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentation/#character) API (erstmal Antwort einfach als json speichern)
@@ -214,9 +234,9 @@ Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) API mit fe
 
 Baue das Frontend der Todo-App.
 
-1. Forke dir das repo `git@github.com:christophersiem/rem-21-4-todo-app.git`
+1. Nutze das Repository in dem du letzte Woche das Backend implementiert hast
 2. Erstelle eine neue React App im `frontend` Ordner.
-3. Füge in der `package.json` den Eintrag ` "proxy": "http://localhost:8080"` hinzu.
+3. Füge in der `package.json` den Eintrag ` "proxy": "http://localhost:8080"` hinzu. <-- Was macht das?
 
 **Tip:** Mach dir ein Scribble vom Interface.
 
