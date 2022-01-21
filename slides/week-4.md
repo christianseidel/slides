@@ -249,8 +249,8 @@ Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) API mit fe
 Baue das Frontend der Todo-App.
 
 1. Nutze das Repository in dem du letzte Woche das Backend implementiert hast
-2. Erstelle eine neue React App im `frontend` Ordner.
-3. Füge in der `package.json` den Eintrag ` "proxy": "http://localhost:8080"` hinzu. <-- Was macht das?
+2. Setze auf die React App im `frontend` Ordner auf
+3. Füge in der `package.json` den Eintrag ` "proxy": "http://localhost:8080"` hinzu
 
 **Tip:** Mach dir ein Scribble vom Interface.
 
