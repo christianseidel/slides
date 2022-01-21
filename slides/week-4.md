@@ -195,15 +195,29 @@ Einbinden über `script` Tag im `head` des HTML Dokuments
 - JavaScript mit Typen
 
 ```typescript
-let i: number;     // Der Typ wird explizit angegeben
-const s = "Hallo"; // Der Typ wird automatisch inferiert
+let i1: number;     // Der Typ wird explizit angegeben
+let i2: number = 2; // Der Typ wird explizit angegeben
+const s = "Hallo";  // Der Typ wird automatisch inferiert
+
+
+function myMethod(numericValue: number, stringValue: string = 'name'): string {
+    return `${stringValue} ${numericValue}`;
+}
+console.log(myMethod(1, 'value')); // prints "value 1"
+console.log(myMethod(2));          // prints "name 2"
+
+
+enum Direction {
+    TOP, DOWN, LEFT, RIGHT
+}
 ```
 
 ---
 
 ## React
 
-- create-react-app
+[create-react-app](https://create-react-app.dev/)
+`npx create-react-app <app name>`
 
 ---
 
