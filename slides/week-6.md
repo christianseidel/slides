@@ -112,7 +112,7 @@ Projekt aufsetzen
 ## run
 
 ```shell
-docker run --name some-mongo -p 37017:27017 -d mongo:latest
+docker run --name db -p 37017:27017 -d mongo:latest
 ```
 
 `docker run` startet einen Container mit einem Image
@@ -436,7 +436,7 @@ Neo4J, ArangoDB, Amazon Neptune
 ## MongoDB laufen lassen
 
 ```shell
-   docker run --name some-mongo -p 27017:27017 -d mongo
+   docker run --name db -p 27017:27017 -d mongo
 ```
 
 ---
@@ -450,6 +450,20 @@ Grafikoberfläche für Interaktionen:
 - Verbinden
 - Erstellen
 - Abfragen
+
+---
+
+## MongoDB shell
+
+- Falls die Datenbank in einem Docker Container läuft, mit diesem verbinden:
+  ```shell
+  docker exec -it <containerName> mongosh
+  ```
+
+- Zur gewünschten Datenbank wechseln:
+  ```javascript
+  use <dbName>
+  ```
 
 ---
 
@@ -692,6 +706,41 @@ Erlauben in mongoDb atlas das heroku eine verbindung aufbauen kann.
 2. Lege einen MongoDb cluster an
 3. Erlaube heroku auf deine mongoDb zuzugreifen
 4. Konfiguriere die MongoDB uri und deploye deine application
+
+---
+
+<!-- _class: hsplit-->
+
+# Docker Compose
+
+- Mehrere Container orchestriert laufen lassen
+
+```yml
+version: '2'
+services:
+    db:
+        image: mongo:latest
+        expose:
+            - 27017
+        ports:
+            - 27017:27017
+        environment:
+        restart: unless-stopped
+        
+    quiz-server:
+        build: .
+        depends_on:
+            - db
+        expose:
+            - 5000
+        ports:
+            - 5000:5000
+        environment:
+            - DATABASE_URL=postgresql://db:5432/quiz
+            - DATABASE_USER=quiz
+            - DATABASE_PASSWORD=quiz
+        restart: unless-stopped
+```
 
 ---
 
