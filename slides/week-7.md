@@ -390,7 +390,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 ## Aufgabe: Spring Security 2
 
 1. Fügt eine SecurityConfig hinzu
-2. Setzt den passwort encoder
+2. Setzt den `PasswordEncoder`
 3. Konfiguriert die abgesicherten Endpunkte
 
 ---
@@ -430,18 +430,15 @@ public class MongoUserDetailsService implements UserDetailsService {
 
     private final UserRepository repository;
 
-    @Autowired
     public MongoUserDetailsService(UserRepository repository) {
         this.repository = repository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserMongo user = repository.findByUsername(username);
-        if(user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
-        return new User(user.getUsername(), user.getPassword(), List.of(new SimpleGrantedAuthority("user")));
+        return repository.findByUsername(username)
+                .map(user -> new User(user.getUsername(), user.getPassword(), List.of(new SimpleGrantedAuthority("user"))))
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 }
 ```
