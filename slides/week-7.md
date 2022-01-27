@@ -11,40 +11,11 @@ title: Java Bootcamp - Template
 
 ## Wochenübersicht
 
-- **Montag**: Code Reviews, Swagger, Builder pattern, Generics, Enums
+- **Montag**: Code Reviews, Swagger, Builder pattern
 - **Dienstag**: Spring boot security, security configuration, basic auth
 - **Mittwoch**: JWT, login, protected routes, context API
 - **Donnerstag**: TBD
 - **Freitag**: Gruppenaufgabe
-
----
-
-# React Routing fix
-
----
-
-## Spring web server
-
-![](img/request-mapping.png)
-
----
-
-## Forward to index.html
-
-```java
-@Controller
-public class ReactRoutingForwarding {
-
-    @RequestMapping(value = "/**/{[path:[^\\.]*}")
-    public String forwardToRoutUrl() {
-        return "forward:/";
-    }
-}
-```
-
-- matching path wird abgefangen, wenn durch Restcontroller dieser durch den Controller nicht bedient wird
-- request wird weitergeleitet
-- durch forward wird Route nicht verändert
 
 ---
 
@@ -106,82 +77,6 @@ public class SwaggerConfig {
 ## Aufgabe: Swagger
 
 1. Binde Swagger in unser Gruppenprojekt ein und rufe die Endpunkte auf
-
----
-
-# Enums
-
----
-
-<!-- _class: hsplit-->
-
-## Enum
-
-- feste Anzahl von Ausprägungen
-- häufig mit switch oder if/else
-- Ausprägungen können Member und Methoden haben
-- Konstruktor ist nicht public
-
-```Java
-public enum Directions {
-   NORTH("N"),
-   EAST("E"),
-   SOUTH("S"),
-   WEST("W");
-
-   public final String abbreviation;
-
-   Directions(String abbreviation){
-       this.abbreviation = abbreviation;
-   }
-}
-```
-
----
-
-## Aufgabe: Enums
-
-1. Ersetze im [streams-exercises Repository](https://github.com/christophersiem/streams-exercises) im Student & StudentDto model den Typ der location durch ein Enum und passe den restlichen Code entsprechend an.
-2. Erweitere das Enum um eine Membervariable `int population`
-
----
-
-# Generics
-
----
-
-## Generic function
-
-- Ermöglicht Methode für unterschiedliche Objekte zu schreiben
-- Angabe durch Typparameter `<T>`
-- Buchstabe frei wählbar, best practice: T,U,V..
-- `T extends Student` => T muss Interface oder Klasse Student implementieren
-
-```Java
-private <T> T someGenericFunction(T value){
- // some code
- return value;
-}
-
-private <T extends Student> T someGenericFunction(T value){
-```
-
----
-
-## Generic Class/Interface
-
-Ermöglicht Klassen für mehrere Objekte zu definieren.
-
-```Java
-public class HashMap<K,V>
-```
-
----
-
-## Aufgabe: Generics
-
-1. Schaue dir die ArrayList Klasse an und versuche nachzuvollziehen wie Generics verwendet werden
-2. Erstelle eine generische Klasse und rufe sie auf
 
 ---
 
@@ -256,34 +151,6 @@ Query.query(Criteria.where("user").is("test")), update, Idea.class);
 
 1. Füge zur PullRequest Klasse ein int Feld “watchedBy” hinzu
 2. Schreibe eine Methode welche dir alle Pull Requests zurückgibt, die von x gewatched wurden
-
----
-
-# Java Streams
-
----
-
-## Übersicht
-
-- Seit Java 1.8
-- Operationen auf Iterable
-- Functional Programming (FP) Ansatz
-
-```java
-list.stream().filter(element -> element.contains("sub"));
-```
-
----
-
-## Stream Methods
-
-`forEach`, `map`, `collect`, `filter`, `findFirst`, `peek`, `sorted`, `min`, `max`, `distinct`, and _many_ more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
-
----
-
-## Aufgabe: Streams
-
-Clone das Repo [streams-exercises](https://github.com/christophersiem/streams-exercises) und löse die Aufgaben in der Klasse StudentService
 
 ---
 
