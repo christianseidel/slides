@@ -301,7 +301,6 @@ const App = () => {
 
 `@import 'styles/colors.scss';`
 
-
 ---
 
 ## SCSS Aufgaben

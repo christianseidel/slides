@@ -15,7 +15,7 @@ title: Java Bootcamp - Template
 - **Dienstag**: Spring boot security, security configuration, basic auth
 - **Mittwoch**: JWT, login, protected routes, context API
 - **Donnerstag**: TBD
-- **Freitag**: Gruppenaufgabe
+- **Freitag**: Projektaufgabe
 
 ---
 
