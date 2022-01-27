@@ -673,6 +673,56 @@ public class SomeConfiguration {
 
 ---
 
+# Alles auf einmal lokal starten
+
+---
+
+<!-- _class: hsplit-->
+
+## Docker Compose
+
+- Mehrere Container orchestriert laufen lassen
+- `docker-compose up -d` startet alle container
+  - Falls die images neu gebaut werden sollen, ist noch ein `--build` nötig
+- `docker-compose down` fährt alles wieder runter
+
+```yml
+version: '2'
+services:
+    db:
+        image: mongo:latest
+        expose:
+            - 27017
+        ports:
+            - 27017:27017
+        restart: unless-stopped
+        
+    app:
+        build: .
+        depends_on:
+            - db
+        expose:
+            - 8080
+        ports:
+            - 8080:8080
+        environment:
+            - DATABASE_NAME=<dbName>
+            - DATABASE_HOST=db
+            - DATABASE_PORT=27017
+        restart: unless-stopped
+```
+
+## Umgebungsspezifische properties
+
+- `application-docker.properties`
+```
+spring.data.mongodb.database=${DATABASE_NAME}
+spring.data.mongodb.host=${DATABASE_HOST}
+spring.data.mongodb.port=${DATABASE_PORT}
+```
+
+---
+
 # Mongo und Heroku
 
 ---
@@ -705,39 +755,6 @@ Erlauben in mongoDb atlas das heroku eine verbindung aufbauen kann.
 2. Lege einen MongoDb cluster an
 3. Erlaube heroku auf deine mongoDb zuzugreifen
 4. Konfiguriere die MongoDB uri und deploye deine application
-
----
-
-<!-- _class: hsplit-->
-
-# Alles auf einmal lokal starten => Docker Compose
-
-- Mehrere Container orchestriert laufen lassen
-- `docker-compose up -d` startet alle container
-  - Falls die images neu gebaut werden sollen, ist noch ein `--build` nötig
-- `docker-compose down` fährt alles wieder runter
-
-```yml
-version: '2'
-services:
-    db:
-        image: mongo:latest
-        expose:
-            - 27017
-        ports:
-            - 27017:27017
-        restart: unless-stopped
-        
-    app:
-        build: .
-        depends_on:
-            - db
-        expose:
-            - 8080
-        ports:
-            - 8080:8080
-        restart: unless-stopped
-```
 
 ---
 
