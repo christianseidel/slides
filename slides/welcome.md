@@ -98,43 +98,35 @@ Gründerin & CEO
 
 ---
 
-## Matthias Hiemer 
+## André Schreck 
 
-Freiberuflicher IT-Berater / Coach
+Freelance Software-Engineer
 
-![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U029AMKSS9Y-3e4a26cb5da3-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U02M0V45PBK-d0f6d10fac69-512)
 
 ---
 
-## Christopher Siem
+## Thomas Kittlaus
 
 Coach bei neue fische
 
-![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01CR83AB08-51a7515bb12a-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U026NEVTSKV-0de8ddb5394a-512)
 
 ---
 
-## Oliver Fohrmann
+## Sina Stulpe
 
-Manager Student Services & Partner Management
+Admission & Student Services Managerin
 
-![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01D4U9FGG7-fa88a7c96ee1-512)
-
----
-
-## Shari Holte
-
-Student Service & Admissions
-
-![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01C35GU36U-ae1d2b910988-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01677P02KW-705a3d94fdbe-512)
 
 ---
 
-## Andre Vennemann
+## Benny Schumann
 
 Manager Career Services & Partner Management
 
-![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01CUKLFY69-489a35d639e6-512)
+![bg right 75%](https://ca.slack-edge.com/TTHG21AH3-U01R1AUENG6-42fd5c8aade3-512)
 
 ---
 
