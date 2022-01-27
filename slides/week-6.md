@@ -112,7 +112,7 @@ Projekt aufsetzen
 ## run
 
 ```shell
-docker run --name some-mongo -p 37017:27017 -d mongo:latest
+docker run --name db -p 37017:27017 -d mongo:latest
 ```
 
 `docker run` startet einen Container mit einem Image
@@ -436,7 +436,7 @@ Neo4J, ArangoDB, Amazon Neptune
 ## MongoDB laufen lassen
 
 ```shell
-   docker run --name some-mongo -p 27017:27017 -d mongo
+   docker run --name db -p 27017:27017 -d mongo
 ```
 
 ---
@@ -450,6 +450,20 @@ Grafikoberfläche für Interaktionen:
 - Verbinden
 - Erstellen
 - Abfragen
+
+---
+
+## MongoDB shell
+
+- Falls die Datenbank in einem Docker Container läuft, mit diesem verbinden:
+  ```shell
+  docker exec -it <containerName> mongosh
+  ```
+
+- Zur gewünschten Datenbank wechseln:
+  ```javascript
+  use <dbName>
+  ```
 
 ---
 
@@ -534,7 +548,6 @@ db.students.deleteOne({ name: { $eq: 'Frank' } })
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-data-mongodb</artifactId>
-    <version>2.5.0</version>
 </dependency>
 ```
 
@@ -657,6 +670,58 @@ public class SomeConfiguration {
 1. Konfiguriere deinen Serverport über eine application.yml
 2. Konfiguriere deinen Serverport über eine Environment variable
 3. Ändere dein Dashboard code, sodass die api url über das environment gesetzt werden kann
+
+---
+
+# Alles auf einmal lokal starten
+
+---
+
+<!-- _class: hsplit-->
+
+## Docker Compose
+
+- Mehrere Container orchestriert laufen lassen
+- `docker-compose up -d` startet alle container
+  - Falls die images neu gebaut werden sollen, ist noch ein `--build` nötig
+- `docker-compose down` fährt alles wieder runter
+
+```yml
+version: '2'
+services:
+    db:
+        image: mongo:latest
+        expose:
+            - 27017
+        ports:
+            - 27017:27017
+        restart: unless-stopped
+        
+    app:
+        build: .
+        depends_on:
+            - db
+        expose:
+            - 8080
+        ports:
+            - 8080:8080
+        environment:
+            - DATABASE_NAME=<dbName>
+            - DATABASE_HOST=db
+            - DATABASE_PORT=27017
+        restart: unless-stopped
+```
+
+---
+
+## Umgebungsspezifische properties
+
+- `application-docker.properties`
+```
+spring.data.mongodb.database=${DATABASE_NAME}
+spring.data.mongodb.host=${DATABASE_HOST}
+spring.data.mongodb.port=${DATABASE_PORT}
+```
 
 ---
 
