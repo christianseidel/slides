@@ -712,6 +712,8 @@ services:
         restart: unless-stopped
 ```
 
+---
+
 ## Umgebungsspezifische properties
 
 - `application-docker.properties`
