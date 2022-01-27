@@ -13,9 +13,9 @@ title: Java Bootcamp - Template
 
 **Mittwoch:** Local Storage, SCSS, TypeScript
 
-**Donnerstag:** Einkaufslisten-App in TypeScript
+**Donnerstag:** Todo-App in TypeScript
 
-**Freitag:** Einkaufslisten-App in TypeScript
+**Freitag:** Todo-App in TypeScript
 
 ---
 
@@ -219,7 +219,7 @@ function NameForm(props) {
 
 ## Aufgabe Router/Forms
 
-1. Nutze React Router um in der Einkaufslisten-App die Eingabe und Änderungen über eine eigene Seite durchzuführen.
+1. Nutze React Router um in der Todo-App die Eingabe und Änderungen über eine eigene Seite durchzuführen.
 1. Beschränke die Textlänge auf 1000 und gib einen Fehler aus wenn sie überschritten wird.
 
 ---
@@ -306,5 +306,5 @@ const App = () => {
 
 ## SCSS Aufgaben
 
-1. Binde SCSS in die Einkaufslisten-App ein
+1. Binde SCSS in die Todo-App ein
 1. Versuche dein CSS durch SCSS zu verbessern
