@@ -548,7 +548,6 @@ db.students.deleteOne({ name: { $eq: 'Frank' } })
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-data-mongodb</artifactId>
-    <version>2.5.0</version>
 </dependency>
 ```
 
@@ -711,9 +710,12 @@ Erlauben in mongoDb atlas das heroku eine verbindung aufbauen kann.
 
 <!-- _class: hsplit-->
 
-# Docker Compose
+# Alles auf einmal lokal starten => Docker Compose
 
 - Mehrere Container orchestriert laufen lassen
+- `docker-compose up -d` startet alle container
+  - Falls die images neu gebaut werden sollen, ist noch ein `--build` nötig
+- `docker-compose down` fährt alles wieder runter
 
 ```yml
 version: '2'
@@ -724,21 +726,16 @@ services:
             - 27017
         ports:
             - 27017:27017
-        environment:
         restart: unless-stopped
         
-    quiz-server:
+    app:
         build: .
         depends_on:
             - db
         expose:
-            - 5000
+            - 8080
         ports:
-            - 5000:5000
-        environment:
-            - DATABASE_URL=postgresql://db:5432/quiz
-            - DATABASE_USER=quiz
-            - DATABASE_PASSWORD=quiz
+            - 8080:8080
         restart: unless-stopped
 ```
 
