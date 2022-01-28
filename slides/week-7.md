@@ -31,52 +31,25 @@ title: Java Bootcamp - Template
 
 ---
 
-<!-- _class: hsplit-->
-
 ## Swagger Setup
 
-<div>
-
 - Maven dependency
-- Config
-- [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+- `@EnableWebMvc` Annotation an der Application hinzufügen
+- [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 ```xml
 <dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger2</artifactId>
-   <version>2.9.2</version>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-boot-starter</artifactId>
+    <version>3.0.0</version>
 </dependency>
-<dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger-ui</artifactId>
-   <version>2.9.2</version>
-</dependency>
-```
-
-</div>
-
-```java
-@Configuration
-@EnableSwagger2
-public class SwaggerConfig {
-
- @Bean
- public Docket api(){
- return new Docket(DocumentationType.SWAGGER_2)
-     .select()
-     .apis(RequestHandlerSelectors.any())
-     .paths(PathSelectors.any())
-     .build();
- }
-}
 ```
 
 ---
 
 ## Aufgabe: Swagger
 
-1. Binde Swagger in unser Gruppenprojekt ein und rufe die Endpunkte auf
+1. Binde Swagger ins Projekt ein und rufe die Endpunkte auf
 
 ---
 
