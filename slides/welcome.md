@@ -32,7 +32,7 @@ title: Java Bootcamp - Welcome
 ## Was erwartet euch? 😱
 
 - Täglich Neues, viel Stoff
-- Einzel-, Paar- und Gruppenaufgaben
+- Einzel- und Gruppenaufgaben
 - Selbständiges Arbeiten und Lernen
 - Stress, schlaflose Nächte, Zweifel
 - Misserfolge, Frust, schlechte Laune
