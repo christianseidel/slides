@@ -548,7 +548,7 @@ führt die main Methode auf der JVM aus
 - beim Anlegen muss der Type angegeben werden (muss eindeutig sein)
 - Variablen können nur passenden Typen zugewiesen werden
 
-```Java
+```java
 String someVariable;
 someVariable = "Hallo Kurs!";
 
