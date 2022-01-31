@@ -141,8 +141,9 @@ Query.query(Criteria.where("user").is("test")), update, Idea.class);
 ```
 
 - Dependency reicht, um Endpunkte abzusichern.
+- [Spring Guide](https://spring.io/guides/gs/securing-web/)
 - [Docs](https://docs.spring.io/spring-security/site/docs/5.4.0-M1/reference/html5/)
-- [Video Tutorial](https://www.youtube.com/watch?v=sm-8qfMWEV8&list=PLqq-6Pq4lTTYTEooakHchTGglSvkZAjnE)
+- ([Video Tutorial](https://www.youtube.com/watch?v=sm-8qfMWEV8&list=PLqq-6Pq4lTTYTEooakHchTGglSvkZAjnE))
 
 > user:user
 > passwort: siehe logs
