@@ -624,15 +624,6 @@ i1 = s1; // Fehler! Datentyp darf sich nicht ändern
 
 ---
 
-# Übersicht Mittwoch
-
-- Protocol
-- Methoden
-- Testing
-- Maven
-
----
-
 <!-- _class: hsplit-->
 
 # Primitive Typen
@@ -690,6 +681,15 @@ boolean result = someInt < someOtherInt;
 
 ---
 
+# Übersicht Mittwoch
+
+- Protocol
+- Methoden
+- Maven
+- Testing
+
+---
+
 # Methoden
 
 ---
@@ -699,7 +699,7 @@ boolean result = someInt < someOtherInt;
 ## Methoden
 
 - kapseln Logik
-- Eingabe Parameter und Rückgabe Parameter
+- Eingabeparameter und Rückgabewerte
 - Wiederverwendbar
 
 ![](img/methode.png)
@@ -823,6 +823,9 @@ Sicherstellen von
 - Fehler können teuer sein z.B. [Ariane 5 Flight 501](https://www-users.math.umn.edu/~arnold/disasters/ariane.html)
   - 8 Milliarden Dollar
   - 64-bit nummer in einem 16-bit Feld
+- [Mars Climate Orbiter](https://de.wikipedia.org/wiki/Mars_Climate_Orbiter#Verlust)
+  - Metric vs. imperial unit system
+  - Ca. 200 Millionen Dollar
 
 ---
 
@@ -857,6 +860,16 @@ Schreibe Unit-Tests für
 
 1.  deine Addieren-Methode
 2.  eine Methode die prüft, ob ein Wert größer als 100 ist
+
+---
+
+# Übersicht Donnerstag
+
+- Protocol
+- Control-flow
+- Schleifen und Rekursion
+- Arrays
+- Continuous Integration
 
 ---
 
