@@ -414,28 +414,6 @@ Sendet Änderungen Richtung remote
 
 ---
 
-# Webapp Architektur
-
----
-
-<!-- _class: hsplit-->
-
-## Wie funktioniert das Internet?
-
-- [Short intro](https://www.youtube.com/watch?v=7_LPdttKXPc)
-- Netzwerk aus Servern
-- Server bekommen IP Adressen
-
-![](img/internet.png)
-
----
-
-## Webanwendung
-
-![](img/web-architecture.png)
-
----
-
 # Java Basic Intro
 
 ---
@@ -548,7 +526,7 @@ führt die main Methode auf der JVM aus
 - beim Anlegen muss der Type angegeben werden (muss eindeutig sein)
 - Variablen können nur passenden Typen zugewiesen werden
 
-```Java
+```java
 String someVariable;
 someVariable = "Hallo Kurs!";
 
@@ -646,15 +624,6 @@ i1 = s1; // Fehler! Datentyp darf sich nicht ändern
 
 ---
 
-# Übersicht Mittwoch
-
-- Protocol
-- Methoden
-- Testing
-- Maven
-
----
-
 <!-- _class: hsplit-->
 
 # Primitive Typen
@@ -712,6 +681,15 @@ boolean result = someInt < someOtherInt;
 
 ---
 
+# Übersicht Mittwoch
+
+- Protocol
+- Methoden
+- Maven
+- Testing
+
+---
+
 # Methoden
 
 ---
@@ -721,7 +699,7 @@ boolean result = someInt < someOtherInt;
 ## Methoden
 
 - kapseln Logik
-- Eingabe Parameter und Rückgabe Parameter
+- Eingabeparameter und Rückgabewerte
 - Wiederverwendbar
 
 ![](img/methode.png)
@@ -845,6 +823,9 @@ Sicherstellen von
 - Fehler können teuer sein z.B. [Ariane 5 Flight 501](https://www-users.math.umn.edu/~arnold/disasters/ariane.html)
   - 8 Milliarden Dollar
   - 64-bit nummer in einem 16-bit Feld
+- [Mars Climate Orbiter](https://de.wikipedia.org/wiki/Mars_Climate_Orbiter#Verlust)
+  - Metric vs. imperial unit system
+  - Ca. 200 Millionen Dollar
 
 ---
 
@@ -879,6 +860,16 @@ Schreibe Unit-Tests für
 
 1.  deine Addieren-Methode
 2.  eine Methode die prüft, ob ein Wert größer als 100 ist
+
+---
+
+# Übersicht Donnerstag
+
+- Protocol
+- Control-flow
+- Schleifen und Rekursion
+- Arrays
+- Continuous Integration
 
 ---
 
