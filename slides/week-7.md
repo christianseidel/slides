@@ -11,40 +11,11 @@ title: Java Bootcamp - Template
 
 ## Wochenübersicht
 
-- **Montag**: Code Reviews, Swagger, Builder pattern, Generics, Enums
+- **Montag**: Code Reviews, Swagger, Builder pattern
 - **Dienstag**: Spring boot security, security configuration, basic auth
 - **Mittwoch**: JWT, login, protected routes, context API
 - **Donnerstag**: TBD
-- **Freitag**: Gruppenaufgabe
-
----
-
-# React Routing fix
-
----
-
-## Spring web server
-
-![](img/request-mapping.png)
-
----
-
-## Forward to index.html
-
-```java
-@Controller
-public class ReactRoutingForwarding {
-
-    @RequestMapping(value = "/**/{[path:[^\\.]*}")
-    public String forwardToRoutUrl() {
-        return "forward:/";
-    }
-}
-```
-
-- matching path wird abgefangen, wenn durch Restcontroller dieser durch den Controller nicht bedient wird
-- request wird weitergeleitet
-- durch forward wird Route nicht verändert
+- **Freitag**: Projektaufgabe
 
 ---
 
@@ -60,128 +31,25 @@ public class ReactRoutingForwarding {
 
 ---
 
-<!-- _class: hsplit-->
-
 ## Swagger Setup
 
-<div>
-
 - Maven dependency
-- Config
-- [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+- `@EnableWebMvc` Annotation an der Application hinzufügen
+- [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 ```xml
 <dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger2</artifactId>
-   <version>2.9.2</version>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-boot-starter</artifactId>
+    <version>3.0.0</version>
 </dependency>
-<dependency>
-   <groupId>io.springfox</groupId>
-   <artifactId>springfox-swagger-ui</artifactId>
-   <version>2.9.2</version>
-</dependency>
-```
-
-</div>
-
-```java
-@Configuration
-@EnableSwagger2
-public class SwaggerConfig {
-
- @Bean
- public Docket api(){
- return new Docket(DocumentationType.SWAGGER_2)
-     .select()
-     .apis(RequestHandlerSelectors.any())
-     .paths(PathSelectors.any())
-     .build();
- }
-}
 ```
 
 ---
 
 ## Aufgabe: Swagger
 
-1. Binde Swagger in unser Gruppenprojekt ein und rufe die Endpunkte auf
-
----
-
-# Enums
-
----
-
-<!-- _class: hsplit-->
-
-## Enum
-
-- feste Anzahl von Ausprägungen
-- häufig mit switch oder if/else
-- Ausprägungen können Member und Methoden haben
-- Konstruktor ist nicht public
-
-```Java
-public enum Directions {
-   NORTH("N"),
-   EAST("E"),
-   SOUTH("S"),
-   WEST("W");
-
-   public final String abbreviation;
-
-   Directions(String abbreviation){
-       this.abbreviation = abbreviation;
-   }
-}
-```
-
----
-
-## Aufgabe: Enums
-
-1. Ersetze im [streams-exercises Repository](https://github.com/christophersiem/streams-exercises) im Student & StudentDto model den Typ der location durch ein Enum und passe den restlichen Code entsprechend an.
-2. Erweitere das Enum um eine Membervariable `int population`
-
----
-
-# Generics
-
----
-
-## Generic function
-
-- Ermöglicht Methode für unterschiedliche Objekte zu schreiben
-- Angabe durch Typparameter `<T>`
-- Buchstabe frei wählbar, best practice: T,U,V..
-- `T extends Student` => T muss Interface oder Klasse Student implementieren
-
-```Java
-private <T> T someGenericFunction(T value){
- // some code
- return value;
-}
-
-private <T extends Student> T someGenericFunction(T value){
-```
-
----
-
-## Generic Class/Interface
-
-Ermöglicht Klassen für mehrere Objekte zu definieren.
-
-```Java
-public class HashMap<K,V>
-```
-
----
-
-## Aufgabe: Generics
-
-1. Schaue dir die ArrayList Klasse an und versuche nachzuvollziehen wie Generics verwendet werden
-2. Erstelle eine generische Klasse und rufe sie auf
+1. Binde Swagger ins Projekt ein und rufe die Endpunkte auf
 
 ---
 
@@ -259,34 +127,6 @@ Query.query(Criteria.where("user").is("test")), update, Idea.class);
 
 ---
 
-# Java Streams
-
----
-
-## Übersicht
-
-- Seit Java 1.8
-- Operationen auf Iterable
-- Functional Programming (FP) Ansatz
-
-```java
-list.stream().filter(element -> element.contains("sub"));
-```
-
----
-
-## Stream Methods
-
-`forEach`, `map`, `collect`, `filter`, `findFirst`, `peek`, `sorted`, `min`, `max`, `distinct`, and _many_ more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
-
----
-
-## Aufgabe: Streams
-
-Clone das Repo [streams-exercises](https://github.com/christophersiem/streams-exercises) und löse die Aufgaben in der Klasse StudentService
-
----
-
 # Spring boot security
 
 ---
@@ -301,8 +141,9 @@ Clone das Repo [streams-exercises](https://github.com/christophersiem/streams-ex
 ```
 
 - Dependency reicht, um Endpunkte abzusichern.
+- [Spring Guide](https://spring.io/guides/gs/securing-web/)
 - [Docs](https://docs.spring.io/spring-security/site/docs/5.4.0-M1/reference/html5/)
-- [Video Tutorial](https://www.youtube.com/watch?v=sm-8qfMWEV8&list=PLqq-6Pq4lTTYTEooakHchTGglSvkZAjnE)
+- ([Video Tutorial](https://www.youtube.com/watch?v=sm-8qfMWEV8&list=PLqq-6Pq4lTTYTEooakHchTGglSvkZAjnE))
 
 > user:user
 > passwort: siehe logs
@@ -390,7 +231,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 ## Aufgabe: Spring Security 2
 
 1. Fügt eine SecurityConfig hinzu
-2. Setzt den passwort encoder
+2. Setzt den `PasswordEncoder`
 3. Konfiguriert die abgesicherten Endpunkte
 
 ---
@@ -430,18 +271,15 @@ public class MongoUserDetailsService implements UserDetailsService {
 
     private final UserRepository repository;
 
-    @Autowired
     public MongoUserDetailsService(UserRepository repository) {
         this.repository = repository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserMongo user = repository.findByUsername(username);
-        if(user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
-        return new User(user.getUsername(), user.getPassword(), List.of(new SimpleGrantedAuthority("user")));
+        return repository.findByUsername(username)
+                .map(user -> new User(user.getUsername(), user.getPassword(), List.of(new SimpleGrantedAuthority("user"))))
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 }
 ```

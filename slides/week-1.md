@@ -684,9 +684,21 @@ boolean result = someInt < someOtherInt;
 # Übersicht Mittwoch
 
 - Protocol
+- Logische Operatoren
 - Methoden
 - Maven
 - Testing
+
+---
+
+# Logische Operatoren
+
+|  a  |  b  | |a && b| a \|\| b| !a  | !b  |
+|-----|-----|-|------|---------|-----|-----|
+|true |true | |true  |true     |false|false|
+|true |false| |false |true     |false|true |
+|false|true | |false |true     |true |false|
+|false|false| |false |false    |true |true |
 
 ---
 
@@ -768,6 +780,7 @@ Schreibe eine Methode, die prüft, ob ein String
 
 ## Project Management
 
+- Convention over configuration
 - pom.xml (Projekt Konfiguration)
 - project object model (pom)
 - dependencies
@@ -805,8 +818,7 @@ Archetyp für default Setup:
 ## Aufgabe: Maven
 
 1. Setze ein Maven Projekt auf
-2. lasse die main Methode laufen
-3. baue dein Projekt
+2. baue dein Projekt
 
 ---
 

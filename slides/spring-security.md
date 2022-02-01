@@ -120,7 +120,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 ## Aufgabe: Spring Security 2
 
 1. Fügt eine SecurityConfig hinzu
-2. Setzt den `PasswortEncoder`
+2. Setzt den `PasswordEncoder`
 3. Konfiguriert die abgesicherten Endpunkte
 
 ---

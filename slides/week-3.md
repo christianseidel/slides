@@ -9,11 +9,177 @@ title: Java Bootcamp - Week 3
 
 ---
 
-# Webapp Architektur
+# Enums
 
 ---
 
 <!-- _class: hsplit-->
+
+## Enum
+
+- feste Anzahl von Ausprägungen
+
+```Java
+public enum TimeUnit {
+    WEEKS,
+    DAYS,
+    HOURS
+}
+```
+
+---
+
+## Mögliche Verwendung von enums
+
+```java
+public static long determineMilliseconds(int value, TimeUnit timeUnit) {
+    switch (timeUnit) {
+        case WEEKS:
+            return value * 1000 * 60 * 60 * 24 * 7;
+        case DAYS:
+            return value * 1000 * 60 * 60 * 24;
+        case HOURS:
+            return value * 1000 * 60 * 60;
+    }
+}
+```
+
+---
+
+<!-- _class: hsplit-->
+
+## Lieber so (Open-Closed-Principle)
+
+- Ausprägungen können Member und Methoden haben
+- nicht public Konstruktor
+
+```java
+public enum TimeUnit {
+	
+    WEEKS(1000 * 60 * 60 * 24 * 7),
+    DAYS(1000 * 60 * 60 * 24),
+    HOURS(1000 * 60 * 60);
+	
+    private long base;
+
+    TimeUnit(long base) {
+        this.base = base;
+    }
+
+    public long determineMilliseconds(int number) {
+        return base * number;
+    }
+}
+```
+
+---
+
+## Aufgabe: Enums
+
+Refactor die Alarm-Klasse aus Woche 1 und nutze ein Enum statt String-Konstanten.
+
+---
+
+# Generics
+
+---
+
+<!-- _class: hsplit-->
+
+## Generic function
+
+- Ermöglicht Methode für unterschiedliche Objekte zu schreiben
+- Angabe durch Type-Parameter `<T>`
+- Buchstabe frei wählbar, best practice: T,U,V..
+- `T extends Student` => T muss Interface oder Klasse `Student` implementieren
+
+```Java
+private <T> boolean isNull(T value){
+    return value == null;
+}
+
+private <T extends Student> T enhanceStudent(T value) {
+    // your code
+    return value;
+}
+
+String value = determineValue();
+if (isNull(value)) {
+    // ...
+}
+
+Student student = determineStudent();
+student = enhanceStudent(student);
+```
+
+---
+
+## Generic Class/Interface
+
+Ermöglicht Klassen für mehrere Objekte zu definieren.
+
+```Java
+public class ArrayList<T>
+```
+```Java
+List list = new ArrayList();
+list.add("hello");
+String s = (String) list.get(0);
+```
+```Java
+List<String> list = new ArrayList<>();
+list.add("hello");
+String s = list.get(0);   // no cast
+```
+
+---
+
+## Aufgabe: Generics
+
+1. Schaue dir die ArrayList und HashMap Klassen an und versuche nachzuvollziehen wie Generics verwendet werden
+2. Schreibe deine LinkedList so um, dass sie Generics verwendet und somit jedes Objekt verwalten kann
+
+---
+
+# Java Streams
+
+---
+
+## Übersicht
+
+- Seit Java 1.8
+- Operationen auf Iterable
+- Functional Programming (FP) Ansatz
+- Streams sind lazy (terminal vs. intermediate operations)
+```java
+// Keine terminale Operation => hier passiert nicht viel
+Stream<String> intermediate = list.stream().filter(element -> element.contains("sub"));
+```
+```java
+// toList ist eine terminale Operation => alles wird ausgeführt
+List<String> result = list.stream().filter(element -> element.contains("sub")).toList();
+```
+---
+
+## Stream Methods
+
+`filter`, `map`, `collect`, `forEach`, `findFirst`, `peek`, `sorted`, `min`, `max`, `distinct`, and *many* more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
+
+![](img/stream-api.png)
+Quelle: toptal
+
+---
+
+## Aufgabe: Streams
+
+1. Nutze Streams um die `for` loops in der OrderDb zu ersetzen.
+2. Stelle einen Endpunkt um Produkte nach ihrem Namen zu suchen bereit, nutze die `filter` Methode.
+
+---
+
+# Webapp Architektur
+
+---
 
 ## Wie funktioniert das Internet?
 
@@ -592,210 +758,6 @@ Unit Test:
 ## Test-Pyramide
 
 ![](img/test-pyramide.png)
-
----
-
-# Swagger
-
----
-
-## Swagger client
-
-- Swagger gibt Übersicht über Endpunkte
-- [https://swagger.io/tools/swagger-ui/](https://swagger.io/tools/swagger-ui/)
-- Ausführung ähnlich zu Postman
-
----
-
-<!-- _class: hsplit-->
-
-## Swagger Setup
-
-<div>
-
-- Maven dependency
-- Config
-- [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-
-
-```xml
-<dependency>
-    <groupId>io.springfox</groupId>
-    <artifactId>springfox-swagger2</artifactId>
-    <version>2.9.2</version>
-</dependency>
-<dependency>
-    <groupId>io.springfox</groupId>
-    <artifactId>springfox-swagger-ui</artifactId>
-    <version>2.9.2</version>
-</dependency>
-```
-
-</div>
-
-
-```java
-@Configuration
-@EnableSwagger2
-public class SwaggerConfig {
-
- @Bean
- public Docket api(){
- return new Docket(DocumentationType.SWAGGER_2)
-     .select()
-     .apis(RequestHandlerSelectors.any())
-     .paths(PathSelectors.any())
-     .build();
- }
-}
-```
----
-
-# Enums
-
----
-
-<!-- _class: hsplit-->
-
-## Enum
-
-- feste Anzahl von Ausprägungen
-
-```Java
-public enum TimeUnit {
-    WEEKS,
-    DAYS,
-    HOURS
-}
-```
-
----
-
-## Mögliche Verwendung von enums
-
-```java
-public static long determineMilliseconds(int value, TimeUnit timeUnit) {
-    switch (timeUnit) {
-        case WEEKS:
-            return value * 1000 * 60 * 60 * 24 * 7;
-        case DAYS:
-            return value * 1000 * 60 * 60 * 24;
-        case HOURS:
-            return value * 1000 * 60 * 60;
-    }
-}
-```
-
----
-
-<!-- _class: hsplit-->
-
-## Lieber so (Open-Closed-Principle)
-
-- Ausprägungen können Member und Methoden haben
-- nicht public Konstruktor
-
-```java
-public enum TimeUnit {
-	
-    WEEKS(1000 * 60 * 60 * 24 * 7),
-    DAYS(1000 * 60 * 60 * 24),
-    HOURS(1000 * 60 * 60);
-	
-    private long base;
-
-    TimeUnit(long base) {
-        this.base = base;
-    }
-
-    public long determineMilliseconds(int number) {
-        return base * number;
-    }
-}
-```
-
----
-
-## Aufgabe: Enums
-
-Refactor die Alarm-Klasse aus Woche 1 und nutze ein Enum statt String-Konstanten.
-
----
-
-# Generics
-
----
-
-## Generic function
-
-- Ermöglicht Methode für unterschiedliche Objekte zu schreiben
-- Angabe durch Type-Parameter `<T>`
-- Buchstabe frei wählbar, best practice: T,U,V..
-- `T extends Student` => T muss Interface oder Klasse `Student` implementieren
-
-```Java
-List list = new ArrayList();
-list.add("hello");
-String s = (String) list.get(0);
-```
-```Java
-List<String> list = new ArrayList<String>();
-list.add("hello");
-String s = list.get(0);   // no cast
-```
-
----
-
-## Generic Class/Interface
-
-Ermöglicht Klassen für mehrere Objekte zu definieren.
-
-```Java
-public class HashMap<K,V>
-```
-
----
-
-## Aufgabe: Generics
-
-1. Schaue dir die ArrayList und HashMap Klassen an und versuche nachzuvollziehen wie Generics verwendet werden
-2. Schreibe deine LinkedList so um, dass sie Generics verwendet und somit jedes Objekt verwalten kann
-
----
-
-# Java Streams
-
----
-
-## Übersicht
-
-- Seit Java 1.8
-- Operationen auf Iterable
-- Functional Programming (FP) Ansatz
-- Streams sind lazy (terminal vs. intermediate operations)
-```java
-// Keine terminale Operation => hier passiert nicht viel
-Stream<String> intermediate = list.stream().filter(element -> element.contains("sub"));
-```
-```java
-// toList ist eine terminale Operation => alles wird ausgeführt
-List<String> result = list.stream().filter(element -> element.contains("sub")).toList();
-```
----
-
-## Stream Methods
-
-`filter`, `map`, `collect`, `forEach`, `findFirst`, `peek`, `sorted`, `min`, `max`, `distinct`, and *many* more, see [Stream API](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html)
-
-![](img/stream-api.png)
-Quelle: toptal
-
----
-
-## Aufgabe: Streams
-
-1. Nutze Streams um die `for` loops in der OrderDb zu ersetzen.
-2. Stelle einen Endpunkt um Produkte nach ihrem Namen zu suchen bereit, nutze die `filter` Methode.
 
 ---
 
