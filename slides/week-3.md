@@ -9,6 +9,28 @@ title: Java Bootcamp - Week 3
 
 ---
 
+# Webapp Architektur
+
+---
+
+<!-- _class: hsplit-->
+
+## Wie funktioniert das Internet?
+
+- [Short intro](https://www.youtube.com/watch?v=7_LPdttKXPc)
+- Netzwerk aus Servern
+- Server bekommen IP Adressen
+
+![](img/internet.png)
+
+---
+
+## Webanwendung
+
+![](img/web-architecture.png)
+
+---
+
 ## Webanwendungen
 
 Wo stehen wir?
