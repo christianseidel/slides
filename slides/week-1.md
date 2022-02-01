@@ -768,6 +768,7 @@ Schreibe eine Methode, die prüft, ob ein String
 
 ## Project Management
 
+- Convention over configuration
 - pom.xml (Projekt Konfiguration)
 - project object model (pom)
 - dependencies
