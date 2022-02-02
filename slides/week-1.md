@@ -819,6 +819,7 @@ Archetyp für default Setup:
 
 1. Setze ein Maven Projekt auf
 2. baue dein Projekt
+3. Überführe den Code aus der String-Methoden Aufgabe in dein Maven Projekt
 
 ---
 
