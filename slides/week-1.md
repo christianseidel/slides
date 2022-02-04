@@ -1120,8 +1120,7 @@ jobs:
 
 Schreibe eine Passwortvalidierung. Validiere, ob ein eingegebenes Passwort die Sicherheitsbestimmungen erfüllt oder nicht.
 
-- Lege dir ein neues Java Github Projekt an
-- Klont das Repsotory
+- Lege dir ein neues Java Github Projekt an und klont das Repsotory
 - Erzeugt euch in dem Repository ein neues Maven Projekt
 - Überlege dir, wie die Methoden aussehen müssen.
 - Schreibe jeweils einen Test **und dann** die Funktionalität
