@@ -316,7 +316,7 @@ public static void main(String[] args) {
 
 ---
 
-## Aufgabe: Objekt-Methoden
+## Aufgabe: Object-Methoden
 
 1. Implementiere für deine Klasse `equals` und `hashCode`
 2. Nutze die `equals` Methode im Test
@@ -649,6 +649,15 @@ class Main {
 
 ---
 
+# Übersicht Mittwoch
+
+1. Collections
+   1. LinkedList
+   2. ArrayList
+   3. Map
+
+---
+
 # Collections
 
 ---
@@ -783,6 +792,14 @@ Student studentFromMap = mapOfStudents.get("MNR0002");
 
 - Ersetzte in deiner StudentDb die Liste durch eine Map
 - Überlege was für eine Map und was für eine Arraylist spricht
+
+---
+
+# Übersicht Donnerstag
+
+1. Exceptions
+2. Optional
+3. forEach
 
 ---
 
