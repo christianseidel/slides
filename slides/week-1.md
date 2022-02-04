@@ -1120,7 +1120,7 @@ jobs:
 
 Schreibe eine Passwortvalidierung. Validiere, ob ein eingegebenes Passwort die Sicherheitsbestimmungen erfüllt oder nicht.
 
-- Lege dir ein neues Java Github Projekt an (Tipp: beim erstellen des Repositories auf GitHub kann man sich eine .gitignore Datei generieren lassen und angeben, dass es sich um ein maven Projekt handeln soll. Dann spart ihr euch ein bisschen Arbeit.)
+- Lege dir ein neues Java Github Projekt an
 - Klont das Repsotory
 - Erzeugt euch in dem Repository ein neues Maven Projekt
 - Überlege dir, wie die Methoden aussehen müssen.
@@ -1133,3 +1133,9 @@ Schreibe eine Passwortvalidierung. Validiere, ob ein eingegebenes Passwort die S
 - Checke, ob kleine/große Buchstaben enthalten sind
 - Schaffe die Möglichkeit, eine Liste von Passwörtern zu validieren
 - Schaue dir auf GitHub Labs weitere Einsteigervideos an
+
+---
+
+# Tipps
+
+Beim erstellen des Repositories auf GitHub kann man sich eine .gitignore Datei generieren lassen und angeben, dass es sich um ein maven Projekt handeln soll. Dann spart ihr euch ein bisschen Arbeit.
