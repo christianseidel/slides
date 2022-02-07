@@ -65,7 +65,7 @@ Student student = new Student();
 
 ## Variablen
 
-Objekte können Variablen enthalten.
+Objekte können Attribute enthalten. Attribute sind quasi Variablen, die zu einer Instanz gehören.
 
 ```Java
 class Student {
