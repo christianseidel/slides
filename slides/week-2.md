@@ -55,7 +55,7 @@ class Student {
   // body
 }
 
-// in main
+// in einer anderen Methode
 Student student = new Student();
 ```
 
@@ -72,7 +72,7 @@ class Student {
     String name = "Name";
 }
 
-// in main
+// in einer anderen Methode
 Student student = new Student();
 
 System.out.println(student.name);
@@ -95,7 +95,7 @@ class Student {
     }
 }
 
-// in main
+// in einer anderen Methode
 Student student = new Student();
 
 System.out.println(student.getName());
@@ -124,7 +124,7 @@ class Student {
     }
 }
 
-// in main
+// in einer anderen Methode
 Student student = new Student();
 
 System.out.println(student.getName());
@@ -152,7 +152,7 @@ class Student {
     }
 }
 
-// in main
+// in einer anderen Methode
 Student student = new Student();
 
 System.out.println(student.getName());
@@ -193,7 +193,7 @@ class Student {
     }
 }
 
-// in main
+// in einer anderen Methode
 Student student = new Student("Frank");
 
 System.out.println(student.getName());
@@ -273,7 +273,7 @@ class Student {
     }
 }
 
-// in main
+// in einer anderen Methode
 import model.Student;
 Student student = new Student("name");
 System.out.println(student.getName());
@@ -341,7 +341,7 @@ record Student(String firstname, String lastname) {
     }
 }
 
-// in main
+// in einer anderen Methode
 var student = new Student("Jane", "Doe");
 System.out.println(student.firstname()); // Jane
 System.out.println(student.lastname());  // Doe
@@ -377,7 +377,7 @@ record Student(String firstname, String lastname) {
 ```
 
 ```java
-// in main
+// in einer anderen Methode
 var student = new Student("Jane", "D.");
 System.out.println(student.firstname()); // Jane
 System.out.println(student.lastname());  // D.
