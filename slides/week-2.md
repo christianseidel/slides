@@ -404,16 +404,17 @@ System.out.println(student.fullName());     // Jane Doe
 
 Erstelle eine Klasse StudentDB mit folgenden Eigenschaften
 
-1. Mach aus deinem Studenten ein `record`
-2. Der Konstruktor nimmt ein Array von Studenten entgegen
-3. Jeder Student hat einen Namen und eine Id
-4. Die Methode `list` gibt alle Studenten zurück
-5. Die Methode `toString()` gibt alle Studenten formatiert als String zurück
-6. Die Methode `randomStudent()` gibt einen zufälligen Studenten zurück (Nutze für den Zufall `Math.random()`)
+1. Der Konstruktor nimmt ein Array von Studenten entgegen
+2. Jeder Student hat einen Namen und eine Id
+3. Die Methode `list` gibt alle Studenten zurück
+4. Die Methode `toString()` gibt alle Studenten formatiert als String zurück
+5. Die Methode `randomStudent()` gibt einen zufälligen Studenten zurück (Nutze für den Zufall `Math.random()`)
 
 Schreibe für alle Methoden Tests (bis auf `randomStudent()` )
 
-**Bonus**: Schreibe eine `add` und eine `remove` Methode, um Studenten hinzuzufügen und zu entfernen
+**Bonus**:
+- Schreibe eine `add` und eine `remove` Methode, um Studenten hinzuzufügen und zu entfernen
+- Schaue dir records an und mach aus deinem Studenten ein `record`
 
 ---
 
