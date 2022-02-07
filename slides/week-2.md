@@ -46,7 +46,7 @@ class Student {
 
 
 - Ein Objekt hat immer: 
-  - Identität
+  - Namen
   - Zustand
   - Verhalten
 
