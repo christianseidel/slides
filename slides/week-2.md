@@ -757,15 +757,11 @@ Ersetze in deiner StudentDB das Array durch eine `ArrayList`.
 
 ---
 
-<!-- _class: hsplit-->
-
 ## Key-Value Datenstruktur
 
 - `Map` Interface
 - `HashMap`
 - `Generic<K,V>` spezifiziert den Typ des Keys/Values
-
-![](img/map.png)
 
 ---
 
