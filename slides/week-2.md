@@ -769,11 +769,7 @@ Ersetze in deiner StudentDB das Array durch eine `ArrayList`.
 
 ---
 
-<!-- _class: hsplit-->
-
 ## Verwendung Hashmap
-
-![](img/hashmap.png)
 
 ```Java
 // create map
