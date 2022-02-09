@@ -733,7 +733,7 @@ ArrayList<Student> students =
 
 // Hinzufügen
 students.add(
-  new ComputerScienceStudent("Student")
+  new ComputerScienceStudent("Hans Meier")
 );
 
 // Zugriff
