@@ -925,7 +925,7 @@ Schreibe in deiner StudentDB eine Methode printIds(), welche alle Ids auf der Ko
 # Freitagsaufgabe - Problemstellung
 
 Der Auftraggeber wünscht sich einen Shop-Service, um seine Produkt-Bestellungen verwalten zu können.
-Er möchte auf der Konsole ausgeben lassen können: 
+Er möchte folgendes abfragen können: 
 - ein einzelnes Produkt 
 - alle Produkte
 
