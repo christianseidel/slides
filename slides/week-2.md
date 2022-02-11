@@ -951,7 +951,7 @@ Implementiere das Bestellsystem (**natürlich mit Tests!**).
 
 6. 🏋BONUS: Nutze für die `get` Methoden als Rückgabewert ein `Optional`
 7. 🏋BONUS: Nutze anstelle einer `Product` Klasse ein Interface und implementiere verschiedene Ausführungen
-8. 🏋BONUS: Schaue dir `hamcrest` an und nutze die hamcrest matchers in deinen Tests
+8. 🏋BONUS: Schaue dir `assertj` an und versuche es in deinen Tests zu nutzen
 
 ---
 
