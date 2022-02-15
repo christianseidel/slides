@@ -1093,6 +1093,7 @@ Nutze Tests, um die Funktionalität zu überprüfen
 - Tests können automatisiert laufen
 - vor merge werden Tests ausgeführt
 - Deployment kann automatisiert erfolgen
+- Doku: [GitHub Actions](https://docs.github.com/en/actions)
 
 ```yml
 name: Build project with maven
@@ -1108,7 +1109,7 @@ jobs:
       - name: Set up JDK 15
         uses: actions/setup-java@v2
         with:
-          java-version: "15"
+          java-version: "17"
           distribution: "adopt"
       - name: Build with Maven
         run: mvn -B package --file pom.xml
