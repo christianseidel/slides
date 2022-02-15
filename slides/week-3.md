@@ -321,10 +321,11 @@ Wo stehen wir?
 
 ## Aufgabe REST Postman
 
-Corona API: https://documenter.getpostman.com/view/10808728/SzS8rjbc
+Github API: https://docs.github.com/en/rest
 
-1.  Lade die Corona API Dokumentation in deinen Postman
-2.  Frage die Daten für Deutschland der letzten 7 Tage ab
+1.  Lade dein einges Profil auf GitHub
+2.  Finde das Repo mit der Freitagsaufgabe von heute
+3.  Versuche auf unser TaskRepo zuzugreifen
 
 ---
 
