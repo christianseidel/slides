@@ -76,7 +76,7 @@ public enum TimeUnit {
 
 ## Aufgabe: Enums
 
-Refactor die Alarm-Klasse aus Woche 1 und nutze ein Enum statt String-Konstanten.
+Refactor die Alarm-Klasse aus Woche 1 und nutze ein Enum statt statt Strings für die Alarmstufen.
 
 ---
 
