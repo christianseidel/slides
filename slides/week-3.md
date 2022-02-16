@@ -563,7 +563,7 @@ ProductDb productDbMock = mock(ProductDb.class);
 ...
 
 when(productDbMock.getById("someId"))
-.thenReturn(Optional.of(new Product("someId", "Some Name")));
+    .thenReturn(Optional.of(new Product("someId", "Some Name")));
 
 ...
 
@@ -601,8 +601,8 @@ public ApiData getApiData() {
 
 ## Aufgabe REST Template
 
-1. Nutze das Rest Template, um Daten von der Covid API abzurufen. 
-2. Stelle einen Endpunkt bereit, der zu jedem Datum die Anzahl der Covid-Infektionen ausgibt. 
+1. Nutze das Rest Template, um Daten von der GitHub API abzurufen. 
+2. Stelle einen Endpunkt bereit, der zu einem gegebenen User, die Namen der Repositories zurückgibt. 
 
 ---
 
@@ -632,7 +632,7 @@ class ApplicationTest {
 
 <!-- _class: hsplit-->
 
-## Controller-Test per Annotation (`@WebMvcTest`)
+## Controller Integration Test
 
 - Spring web layer wird getestet ohne Server zu starten
 
