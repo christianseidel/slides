@@ -634,29 +634,6 @@ class ApplicationTest {
 
 ## Controller Integration Test
 
-- Spring web layer wird getestet ohne Server zu starten
-
-```java
-@WebMvcTest
-class TodoControllerTest {
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Test
-    void testSomething() {
-        mockMvc
-            .perform(get("/"))
-            .andExpect(status().isOk());
-    }
-}
-```
-
----
-
-<!-- _class: hsplit-->
-
-## Controller Integration Test
-
 - Integrations-Test startet den Spring context
 - Sendet Rest Request an Server
 - Endpunkt startet mit einem zufälligen Port
@@ -684,7 +661,7 @@ ResponseEntity<TodoItem> response =
 
 ## Controller Test
 
-- Schreibe für deinen Covid Controller Integrations-Tests
+- Schreibe für deinen GitHub Controller Integrations-Tests
 
 ---
 
