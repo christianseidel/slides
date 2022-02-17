@@ -150,15 +150,6 @@ String s = list.get(0);   // no cast
 - Seit Java 1.8
 - Operationen auf Iterable
 - Functional Programming (FP) Ansatz
-- Streams sind lazy (terminal vs. intermediate operations)
-```java
-// Keine terminale Operation => hier passiert nicht viel
-Stream<String> intermediate = list.stream().filter(element -> element.contains("sub"));
-```
-```java
-// toList ist eine terminale Operation => alles wird ausgeführt
-List<String> result = list.stream().filter(element -> element.contains("sub")).toList();
-```
 ---
 
 ## Stream Methods
@@ -167,6 +158,22 @@ List<String> result = list.stream().filter(element -> element.contains("sub")).t
 
 ![](img/stream-api.png)
 Quelle: toptal
+
+---
+
+## Eigenschaften von Streams
+
+- Streams verändern die zugrunde liegende Collection nicht
+- Streams sind lazy (terminal vs. intermediate operations)
+
+```java
+// Keine terminale Operation => hier passiert nicht viel
+Stream<String> intermediate = list.stream().filter(element -> element.contains("sub"));
+```
+```java
+// toList ist eine terminale Operation => alles wird ausgeführt
+List<String> result = list.stream().filter(element -> element.contains("sub")).toList();
+```
 
 ---
 
