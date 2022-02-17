@@ -704,12 +704,11 @@ verify(repository).save(
 
 ## Mock Bean
 
-Schreibe Tests für deinen Corona-Service, indem du
+Schreibe Tests für deinen GitHub-Controller, indem du
 
-- den Service über Autowire in deinen Test einbindest
-- für die Api Anbindung eine MockBean verwendest
-- verifizierst, dass die Api Klasse aufgerufen wird
-- verifizierst, dass die Daten korrekt zurückgegeben werden
+- die Anfrage-Logik an GitHub in einen Service auslagerst
+- den Controller über Autowire in deinen Test einbindest
+- für den Service im Test eine MockBean verwendest
 
 ---
 <!-- _class: hsplit-->
