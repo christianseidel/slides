@@ -164,10 +164,8 @@ Placeholder für die Bilder findest du bei
 Einbinden über `script` Tag im `head` des HTML Dokuments
 
 ```html
-<script type="module" src="js/script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 ```
-
-`module` type ermöglicht ES module syntax (später) und verzögert das Ausführen des Skripts bis das HTML vollständig geladen ist.
 
 ---
 
@@ -184,6 +182,29 @@ Einbinden über `script` Tag im `head` des HTML Dokuments
 - erstelle ein Studenten Array
 - schreibe eine function, die einen Studenten in einem Array findet und seinen Namen updated
 - verändere deine function so, dass das ursprüngliche Objekt nicht verändert, sondern ein neues erstellt wird
+
+---
+
+## JS Aufgabe 3 - Array Methods
+
+Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentation/#character) API (erstmal Antwort einfach als json speichern)
+
+- schreibe eine function, die ein neues Array nur mit den lebenden Menschen erstellt
+- schreibe eine function, die ein Array mit allen Namen zurückgibt
+- schreibe eine function, die ein Array mit Objekten der Form
+  ```jacascript
+  {
+      name: "some-name",
+      origin: "name-of-origin"
+  }
+  ```
+  zurückgibt
+
+---
+
+## JS Aufgabe 4 - fetch
+
+Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) API mit fetch ab und ersetze deine statischen Daten aus Aufgabe 3
 
 ---
 
@@ -218,29 +239,6 @@ enum Direction {
 
 [create-react-app](https://create-react-app.dev/)
 `npx create-react-app <app name>`
-
----
-
-## JS Aufgabe 3 - Array Methods
-
-Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentation/#character) API (erstmal Antwort einfach als json speichern)
-
-- schreibe eine function, die ein neues Array nur mit den lebenden Menschen erstellt
-- schreibe eine function, die ein Array mit allen Namen zurückgibt
-- schreibe eine function, die ein Array mit Objekten der Form
-  ```jacascript
-  {
-      name: "some-name",
-      origin: "name-of-origin"
-  }
-  ```
-  zurückgibt
-
----
-
-## JS Aufgabe 4 - fetch
-
-Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) API mit fetch ab und ersetze deine statischen Daten aus Aufgabe 3
 
 ---
 
