@@ -218,7 +218,7 @@ Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) API mit fe
 ```typescript
 let i1: number;     // Der Typ wird explizit angegeben
 let i2: number = 2; // Der Typ wird explizit angegeben
-const s = "Hallo";  // Der Typ wird automatisch inferiert
+let i3 = 3;         // Der Typ wird automatisch inferiert
 
 
 function myMethod(numericValue: number, stringValue: string = 'name'): string {
