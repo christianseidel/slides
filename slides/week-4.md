@@ -239,7 +239,10 @@ enum Direction {
 
 ## JS Aufgabe 4 - Komponenten
 
-Erstelle eine React Komponente, die Liste von Studenten erzeugt und eine, die einen Studenten darstellt. Nutze in der ersten Komponente die zweite Komponente.
+Nutze die Rick & Morty Daten um eine Gallerie der Charaktere zu erstellen.
+- Schreibe eine Komponente GaleryItem, die einen Charakter als prop übergeben bekommt und darstellt.
+- Schreibe eine Komponente Galery, die die GaleryItem Komponente verwendet.
+- Überlege, wie man die GaleryItem Komponente in weitere Komponenten unterteilen könnte.
 
 ---
 
