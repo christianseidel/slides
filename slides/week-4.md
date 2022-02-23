@@ -202,12 +202,6 @@ Nutze die Daten von der [Rick and Morty](https://rickandmortyapi.com/documentati
 
 ---
 
-## JS Aufgabe 4 - fetch
-
-Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) API mit fetch ab und ersetze deine statischen Daten aus Aufgabe 3
-
----
-
 <!-- _class: hsplit -->
 
 ## TypeScript
@@ -237,8 +231,27 @@ enum Direction {
 
 ## React
 
+[Offizielle Dokumentation](https://reactjs.org/)
 [create-react-app](https://create-react-app.dev/)
 `npx create-react-app <app name> --template typescript`
+
+---
+
+## JS Aufgabe 4 - Komponenten
+
+Erstelle eine React Komponente, die Liste von Studenten erzeugt und eine, die einen Studenten darstellt. Nutze in der ersten Komponente die zweite Komponente.
+
+---
+
+## JS Aufgabe 5 - useState
+
+Stelle ein Eingabefeld dar, in das ein GitHub Username eingegeben werden kann. Daneben soll ein Button sein, der beim Klick unseren GitHub Endpunkt von letzter Woche aufruft.
+
+---
+
+## JS Aufgabe 6 - useEffect & fetch
+
+Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) API mit fetch ab und ersetze deine statischen Daten aus Aufgabe 3
 
 ---
 
