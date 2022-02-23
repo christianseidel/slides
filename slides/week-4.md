@@ -238,7 +238,7 @@ enum Direction {
 ## React
 
 [create-react-app](https://create-react-app.dev/)
-`npx create-react-app <app name>`
+`npx create-react-app <app name> --template typescript`
 
 ---
 
