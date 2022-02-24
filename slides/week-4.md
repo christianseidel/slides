@@ -240,21 +240,30 @@ enum Direction {
 ## JS Aufgabe 4 - Komponenten
 
 Nutze die Rick & Morty Daten um eine Gallerie der Charaktere zu erstellen.
-- Schreibe eine Komponente GaleryItem, die einen Charakter als prop übergeben bekommt und darstellt.
-- Schreibe eine Komponente Galery, die die GaleryItem Komponente verwendet.
-- Überlege, wie man die GaleryItem Komponente in weitere Komponenten unterteilen könnte.
+- Schreibe eine Komponente GalleryItem, die einen Charakter als prop übergeben bekommt und darstellt.
+- Schreibe eine Komponente Gallery, die die GaleryItem Komponente verwendet.
+- Überlege, wie man die GalleryItem Komponente in weitere Komponenten unterteilen könnte.
 
 ---
 
 ## JS Aufgabe 5 - useState
 
-Stelle ein Eingabefeld dar, in das ein GitHub Username eingegeben werden kann. Daneben soll ein Button sein, der beim Klick unseren GitHub Endpunkt von letzter Woche aufruft.
+Erstelle ein Eingabefeld um die angezeigten Charaktere filtern zu können:
+- Binde in der Gallery-Komponente ein `input`-Element für den Suchbegriff ein.
+- Benutze `useState` um den Suchbegriff in der Komponente zu speichern.
+- Benutze den Suchbegriff um die Charaktere zu filtern.
 
 ---
 
 ## JS Aufgabe 6 - useEffect & fetch
 
 Frage die [Rick and Morty](https://rickandmortyapi.com/api/character) API mit fetch ab und ersetze deine statischen Daten aus Aufgabe 3
+
+---
+
+## JS Aufgabe 7 - Paging
+
+Nutze die Informationen aus der "Rick and Morty"-Response um zwischen den einzelnen Seiten von Charakteren zu wechseln.
 
 ---
 
