@@ -7,111 +7,63 @@ title: Java Bootcamp - Template
 
 ## Wochenübersicht
 
-**Montag:** React State, Hooks
+**Montag:** Freitagsaufgabe, Dataflow
 
-**Dienstag:** React Router, Formulare
+**Dienstag:** Fehlerbehandlung, React Router
 
-**Mittwoch:** Local Storage, SCSS, TypeScript
+**Mittwoch:** Local Storage, i18n
 
-**Donnerstag:** Todo-App in TypeScript
+**Donnerstag:** 
 
-**Freitag:** Todo-App in TypeScript
+**Freitag:** Todo-App
 
 ---
 
-## React State
+## Datflow
 
 <!-- _class: hsplit -->
 
-- Nur bei "stateful" Komponenten möglich
-- Ähnlich wie Props, aber können geändert werden
-- Änderung immer über `setState`
-- `setState` braucht nur die geänderten Werte (merge)
+- von oben nach unten über props
+- Von unten nach oben über Callback-Funktionen
 
 ```javascript
-class Clock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
-  }
+// Parent
 
-  tick() {
-    this.setState({
-      date: new Date()
-    });
-  }
+export default function Parent() {
+    const handleChildChange = () => {
+        // do what is needed to do
+    };
 
-  render() {
-    const time = this.state.date
-        .toLocaleTimeString();
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {time}.</h2>
-      </div>
-    );
-  }
+    return <Child onChildChange={handleChildChange} />;
+}
+
+// Child
+
+interface ChildProps {
+    onChildChange: () => void;
+}
+
+export default function Child(props: ChildProps) {
+    const doSomething = () => {
+        props.onChildChange();
+    };
+
+    return <button onClick={() => doSomething ()}>Click me</button>;
 }
 ```
 
 ---
 
-## React Conditional Rendering
+## Fehlerbehandlung beim fetch
 
 <!-- _class: hsplit -->
 
-- Erlaubt dynamische Webseiten
-- Um die Komponente gar nicht zu renden kann `null` zurück gegeben werden
-
 ```javascript
-function UserGreeting(props) {
-  return <h1>Welcome back!</h1>;
-}
 
-function GuestGreeting(props) {
-  return <h1>Please sign up.</h1>;
-}
-
-function Greeting(props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLogged) {
-    return <UserGreeting />;
-  } else {
-    return <GuestGreeting />;
-  }
-}
 ```
 
----
+```java
 
-## React Hooks
-
-<!-- _class: hsplit -->
-
-- Erlaubt einen `state` in function components
-- function components sind performanter als class components
-- `useState` ermöglicht eine einzelne Variable in den State zu packen
-- `useEffect` erlaubt Änderungen außerhalb der Komponente vorzunehmen 
-
-```javascript
-function Example() {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-        document.title = `You clicked ${count} times`;
-    });
-  
-    const increaseCount = () => setCount(count + 1)
-
-    return (
-        <div>
-            <p>You clicked {count} times</p>
-            <button onClick={increaseCount}>
-                Click me
-            </button>
-        </div>
-    );
-}
 ```
 
 ---
