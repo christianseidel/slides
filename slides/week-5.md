@@ -19,7 +19,7 @@ title: Java Bootcamp - Template
 
 ---
 
-## Datflow
+## Dataflow
 
 <!-- _class: hsplit -->
 
