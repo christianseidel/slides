@@ -59,11 +59,24 @@ export default function Child(props: ChildProps) {
 <!-- _class: hsplit -->
 
 ```javascript
-
+fetch(url)
+    .then(response => {
+        if (response.status === 200) {
+            return response.json();
+        }
+        throw new Error('My error message');
+    })
+    .then(todo => setTodo(todo))
+    .catch(e => setErrorMessage());
 ```
 
 ```java
-
+@GetMapping("/{id}")
+public Todo getToto(@PathVariable String id) {
+    Todo todo = service.findById(id);        // Nehmen wir an todo ist null
+    todo.performSomeMethodThatIsNecessary(); // Hier kommt es jetzt zur NullPointerException
+    return todo;
+}
 ```
 
 ---
