@@ -9,11 +9,11 @@ title: Java Bootcamp - Template
 
 **Montag:** Freitagsaufgabe, Dataflow
 
-**Dienstag:** Fehlerbehandlung, React Router
+**Dienstag:** Fehlerbehandlung beim `fetch`, Unit Tests im Frontend
 
-**Mittwoch:** Local Storage, i18n
+**Mittwoch:** React Router, CSS Framework einbinden
 
-**Donnerstag:** 
+**Donnerstag:** Umgebungsvariablen im Frontend, i18n, Local Storage
 
 **Freitag:** Todo-App
 
