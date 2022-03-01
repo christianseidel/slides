@@ -96,7 +96,7 @@ interface MyComponentProps {
 
 export default function MyComponent(props: MyComponentProps) {
     return (
-        <div data-testid="the-name">{name}</div>
+        <div data-testid="the-name">{props.name}</div>
     )
 }
 ```
@@ -106,7 +106,7 @@ import { render as rtlRender } from '@testing-library/react';
 import MyComponent from './MyComponent';
 
 test('that component is rendered correctly', () => {
-    const { getByTestId } = render(<MyComponente name="André" />);
+    const { getByTestId } = render(<MyComponent name="André" />);
 
     expect(getByTestId('the-name').textContent).toEqual('André');
 });
