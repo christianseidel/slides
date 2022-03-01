@@ -81,6 +81,45 @@ public Todo getToto(@PathVariable String id) {
 
 ---
 
+# Unit Tests im Frontend
+
+---
+
+## Inhalt einer Komponente testen
+
+<!-- _class: hsplit -->
+
+```javascript
+interface MyComponentProps {
+    name: string;
+}
+
+export default function MyComponent(props: MyComponentProps) {
+    return (
+        <div data-testid="the-name">{name}</div>
+    )
+}
+```
+
+```javascript
+import { render as rtlRender } from '@testing-library/react';
+import MyComponent from './MyComponent';
+
+test('that component is rendered correctly', () => {
+    const { getByTestId } = render(<MyComponente name="André" />);
+
+    expect(getByTestId('the-name').textContent).toEqual('André');
+});
+```
+
+---
+
+## Aufgabe
+
+Schreibe einen Test, der prüft, dass in der GalleryItem-Komponente (Rick & Morty) der richtige Inhalt angezeigt wird.
+
+---
+
 ## React Router
 
 <!-- _class: hsplit -->
