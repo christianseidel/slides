@@ -108,7 +108,7 @@ export default function MyComponent(props: MyComponentProps) {
 ```
 
 ```javascript
-import { render as rtlRender } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import MyComponent from './MyComponent';
 
 test('that component is rendered correctly', () => {
@@ -138,7 +138,10 @@ export default function MyInputComponent() {
     return (
         <div>
             <div>
-                <input data-testid="name-input" type="text" value={name} onChange={(ev) => setName(ev.target.value)} />
+                <input data-testid="name-input"
+                       type="text"
+                       value={name}
+                       onChange={(ev) => setName(ev.target.value)} />
             </div>
             <div>
                 <span data-testid="name-output">{name}</span>
@@ -155,7 +158,7 @@ import MyInputComponent from './MyInputComponent';
 test('that component is rendered correctly', () => {
     const { getByTestId } = render(<MyInputComponent />);
 
-    const nameField = getByTestId('name-input')  as HTMLInputElement;
+    const nameField = getByTestId('name-input') as HTMLInputElement;
     fireEvent.change(nameField, { target: { value: 'André' } });
 
     expect(getByTestId('name-output').textContent).toEqual('André');
