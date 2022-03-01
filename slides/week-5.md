@@ -186,7 +186,13 @@ export default function MyHTTPComponent() {
 
     return (
         <div>
-            {names.map((name, index) => <div key={name} data-testid={`name-${index}`}>{name}</div>)}
+            {
+                names.map((name, index) =>
+                    <div key={name}
+                         data-testid={`name-${index}`}>
+                        {name}
+                    </div>)
+            }
         </div>
     );
 }
