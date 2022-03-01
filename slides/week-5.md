@@ -198,7 +198,7 @@ test('that response is handled', async () => {
         return Promise.resolve({
             status: 200,
             json: () => Promise.resolve(['Thomas', 'André'])
-        });
+        } as Response);
     });
 
     const { getByTestId } = render(<MyHTTPComponent />);
