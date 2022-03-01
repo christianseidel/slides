@@ -126,6 +126,98 @@ Schreibe einen Test, der prüft, dass in der GalleryItem-Komponente (Rick & Mort
 
 ---
 
+## Interaktion mit der Komponente testen
+
+<!-- _class: hsplit -->
+
+```javascript
+import { useState } from "react";
+
+export default function MyInputComponent() {
+    const [name, setName] = useState('');
+    return (
+        <div>
+            <div>
+                <input data-testid="name-input" type="text" value={name} onChange={(ev) => setName(ev.target.value)} />
+            </div>
+            <div>
+                <span data-testid="name-output">{name}</span>
+            </div>
+        </div>
+    )
+}
+```
+
+```javascript
+import { render, fireEvent } from '@testing-library/react';
+import MyInputComponent from './MyInputComponent';
+
+test('that component is rendered correctly', () => {
+    const { getByTestId } = render(<MyInputComponent />);
+
+    const nameField = getByTestId('name-input')  as HTMLInputElement;
+    fireEvent.change(nameField, { target: { value: 'André' } });
+
+    expect(getByTestId('name-output').textContent).toEqual('André');
+});
+```
+
+---
+
+## Mocken einen HTTP Requests
+
+<!-- _class: hsplit -->
+
+```javascript
+import { useEffect, useState } from "react";
+
+export default function MyHTTPComponent() {
+
+    const [names, setNames] = useState([] as Array<string>);
+
+    useEffect(() => {
+        fetch('http://my.awesome.api')
+            .then(response => response.json())
+            .then((names: Array<string>) => setNames(names))
+    }, [])
+
+    return (
+        <div>
+            {names.map((name, index) => <div key={name} data-testid={`name-${index}`}>{name}</div>)}
+        </div>
+    );
+}
+```
+
+```javascript
+import { render, waitFor } from '@testing-library/react';
+import MyHTTPComponent from './MyHTTPComponent';
+
+test('that response is handled', async () => {
+    jest.spyOn(global, 'fetch').mockImplementation(() => {
+        return Promise.resolve({
+            status: 200,
+            json: () => Promise.resolve(['Thomas', 'André'])
+        });
+    });
+
+    const { getByTestId } = render(<MyHTTPComponent />);
+
+    await waitFor(() =>{
+        expect(getByTestId('name-0').textContent).toEqual('Thomas');
+        expect(getByTestId('name-1').textContent).toEqual('André');
+    });
+});
+```
+
+---
+
+## Aufgabe
+
+Schreibt einen Test in dem ihr die Antwort der Rick & Morty API mockt und dann über das Suchfeld filtert. Stellt in dem Test sicher, dass die richtigen GalleryItems angezeigt werden.
+
+---
+
 ## React Router
 
 <!-- _class: hsplit -->
