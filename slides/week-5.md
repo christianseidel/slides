@@ -108,13 +108,13 @@ export default function MyComponent(props: MyComponentProps) {
 ```
 
 ```javascript
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import MyComponent from './MyComponent';
 
 test('that component is rendered correctly', () => {
-    const { getByTestId } = render(<MyComponent name="André" />);
+    render(<MyComponent name="André" />);
 
-    expect(getByTestId('the-name').textContent).toEqual('André');
+    expect(screengetByTestId('the-name').textContent).toEqual('André');
 });
 ```
 
@@ -152,16 +152,16 @@ export default function MyInputComponent() {
 ```
 
 ```javascript
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import MyInputComponent from './MyInputComponent';
 
 test('that component is rendered correctly', () => {
-    const { getByTestId } = render(<MyInputComponent />);
+    render(<MyInputComponent />);
 
-    const nameField = getByTestId('name-input') as HTMLInputElement;
+    const nameField = screen.getByTestId('name-input') as HTMLInputElement;
     fireEvent.change(nameField, { target: { value: 'André' } });
 
-    expect(getByTestId('name-output').textContent).toEqual('André');
+    expect(screen.getByTestId('name-output').textContent).toEqual('André');
 });
 ```
 
@@ -199,7 +199,7 @@ export default function MyHTTPComponent() {
 ```
 
 ```javascript
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import MyHTTPComponent from './MyHTTPComponent';
 
 test('that response is handled', async () => {
@@ -210,11 +210,11 @@ test('that response is handled', async () => {
         } as Response);
     });
 
-    const { getByTestId } = render(<MyHTTPComponent />);
+    render(<MyHTTPComponent />);
 
     await waitFor(() =>{
-        expect(getByTestId('name-0').textContent).toEqual('Thomas');
-        expect(getByTestId('name-1').textContent).toEqual('André');
+        expect(screen.getByTestId('name-0').textContent).toEqual('Thomas');
+        expect(screen.getByTestId('name-1').textContent).toEqual('André');
     });
 });
 ```
