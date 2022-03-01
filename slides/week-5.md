@@ -81,6 +81,12 @@ public Todo getToto(@PathVariable String id) {
 
 ---
 
+## Aufgabe
+
+Behandelt Fehler bei den `fetch`-Aufrufen in eurer Rick & Morty App.
+
+---
+
 # Unit Tests im Frontend
 
 ---
