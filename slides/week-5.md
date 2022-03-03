@@ -419,7 +419,16 @@ i18n
     .use(LanguageDetector)
     .init({
         detection: {
-            order: ['querystring', 'navigator', 'cookie', 'localStorage', 'sessionStorage', 'htmlTag', 'path', 'subdomain']
+            order: [
+                'querystring',
+                'navigator',
+                'cookie',
+                'localStorage',
+                'sessionStorage',
+                'htmlTag',
+                'path',
+                'subdomain'
+            ]
         },
         fallbackLng: 'en',
         debug: true,
