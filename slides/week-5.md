@@ -342,8 +342,19 @@ function NameForm(props) {
 ![](img/env.png)
 
 ```
-REACT_APP_BASE_URL=http://localhost:5000
+REACT_APP_BASE_URL=http://localhost:8080
 ```
+
+```javascript
+fetch(`${process.env.REACT_APP_BASE_URL}/api/todos`)
+    .then(...);
+```
+
+---
+
+## Aufgabe
+
+Benutze in der Todo-App Umgebungsvariablen für die Backend-URL.
 
 ---
 
@@ -377,6 +388,12 @@ const App = () => {
     );
 };
 ```
+
+---
+
+## Aufgabe
+
+Merke dir für die Rick & Morty App im LocalStorage die angezeigte Page um sie beim nächsten Besuch direkt wieder anzuzeigen.
 
 ---
 
