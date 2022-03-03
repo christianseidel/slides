@@ -342,10 +342,10 @@ function NameForm(props) {
 ![](img/env.png)
 
 ```
+// in der .env-Datei
 REACT_APP_BASE_URL=http://localhost:8080
-```
 
-```javascript
+// im Javascript Code
 fetch(`${process.env.REACT_APP_BASE_URL}/api/todos`)
     .then(...);
 ```
@@ -405,6 +405,10 @@ Merke dir für die Rick & Morty App im LocalStorage die angezeigte Page um sie b
 - z.B. Mehrsprachigkeit
 - Wir nutzen `react-i18next`
 - (https://react.i18next.com/)[https://react.i18next.com/]
+
+```javascript
+
+```
 
 ---
 
