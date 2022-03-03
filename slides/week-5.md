@@ -335,6 +335,18 @@ function NameForm(props) {
 
 ---
 
+## Umgebungsvariablen im Frontend
+
+<!-- _class: hsplit -->
+
+![](img/env.png)
+
+```
+REACT_APP_BASE_URL=http://localhost:5000
+```
+
+---
+
 ## Local Storage in React
 
 <!-- _class: hsplit -->
