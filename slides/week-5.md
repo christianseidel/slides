@@ -371,11 +371,11 @@ Benutze in der Todo-App Umgebungsvariablen für die Backend-URL.
 const App = () => {
     const STORAGE_KEY = 'myValueKey';
 
-    const [value, setValue] = React.useState(
+    const [value, setValue] = useState(
         localStorage.getItem(STORAGE_KEY) ?? ''
     );
 
-    React.useEffect(() => {
+    useEffect(() => {
         localStorage.setItem(STORAGE_KEY, value);
     }, [value]);
 
