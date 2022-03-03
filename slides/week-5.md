@@ -397,6 +397,17 @@ Merke dir für die Rick & Morty App im LocalStorage die angezeigte Page um sie b
 
 ---
 
+## i18n
+
+<!-- _class: hsplit -->
+
+- Steht für internationalization
+- z.B. Mehrsprachigkeit
+- Wir nutzen `react-i18next`
+- (https://react.i18next.com/)[https://react.i18next.com/]
+
+---
+
 ## SCSS
 
 <!-- _class: hsplit -->
