@@ -450,6 +450,15 @@ export default i18n;
 ```javascript
 // in der index.tsx
 import './i18n';
+
+ReactDOM.render(
+    <React.StrictMode>
+      <Suspense fallback="Loading...">
+        <App />
+      </Suspense>
+    </React.StrictMode>,
+  document.getElementById('root')
+);
 ```
 
 ```javascript
