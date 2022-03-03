@@ -366,14 +366,13 @@ Benutze in der Todo-App Umgebungsvariablen für die Backend-URL.
 - Daten werden nicht automatisch auf andere Geräte übertragen
 - **Kann nur Strings speichern** (JSON.stringify / JSON.parse)
 - Datenmenge ist begrenzt (je nach Einstellungen 5-10 MB)
-- Besser als Cookies
 
 ```javascript
 const App = () => {
     const STORAGE_KEY = 'myValueKey';
 
     const [value, setValue] = React.useState(
-        localStorage.getItem(STORAGE_KEY) || ''
+        localStorage.getItem(STORAGE_KEY) ?? ''
     );
 
     React.useEffect(() => {
