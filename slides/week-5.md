@@ -557,7 +557,7 @@ export default function Imprint() {
 Todo-App Part 3
 - Behandelt mögliche Fehler beim Aufruf eurer Backend-Endpoints.
 - Schreibt Frontend-Unittests um sicherzustellen, dass euer Frontend korrekt auf die Fehler reagiert (exemplarisch für einen Endpunkt reicht).
-- Baut den `react-router` in eure App ein.
+- Baut den `react-router` in eure App ein ([Dokumentation](https://reactrouter.com/docs/en/v6/getting-started/tutorial)).
 - Benutzt den LocalStorage um Werte in Eingabefeldern zu speichern, damit sie euren Nutzern wieder angezeigt werden können, falls z.B. aus Versehen der Browser geschlossen wurde.
 - Styling
 
