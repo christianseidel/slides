@@ -561,4 +561,4 @@ Todo-App Part 3
 - Benutzt den LocalStorage um Werte in Eingabefeldern zu speichern, damit sie euren Nutzern wieder angezeigt werden können, falls z.B. aus Versehen der Browser geschlossen wurde.
 - Styling
 
-Bonus: Internationalisierung und forms
+**Bonus:** Internationalisierung und forms
