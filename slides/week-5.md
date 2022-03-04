@@ -549,3 +549,15 @@ export default function Imprint() {
 
 1. Binde SCSS in die Todo-App ein
 1. Versuche dein CSS durch SCSS zu verbessern
+
+---
+
+## Freitagsaufgabe
+
+Todo-App Part 3
+- Behandelt mögliche Fehler beim Aufruf eurer Backend-Endpoints.
+- Schreibt Frontend-Unittests um sicherzustellen, dass euer Frontend korrekt auf die Fehler reagiert.
+- Baut den `react-router` in eure App ein.
+- Styling
+
+Bonus: Internationalisierung und forms
