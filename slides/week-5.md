@@ -558,6 +558,7 @@ Todo-App Part 3
 - Behandelt mögliche Fehler beim Aufruf eurer Backend-Endpoints.
 - Schreibt Frontend-Unittests um sicherzustellen, dass euer Frontend korrekt auf die Fehler reagiert.
 - Baut den `react-router` in eure App ein.
+- Benutzt den LocalStorage um Werte in Eingabefeldern zu speichern, damit sie euren Nutzern wieder angezeigt werden können, falls z.B. aus Versehen der Browser geschlossen wurde.
 - Styling
 
 Bonus: Internationalisierung und forms
