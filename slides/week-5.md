@@ -254,8 +254,8 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainPage />}>
-                <Route path="index" element={<Index />} />
-                <Route path="courses" element={<Courses />} />
+                    <Route path="index" element={<Index />} />
+                    <Route path="courses" element={<Courses />} />
                 </Route>
             </Routes>
         </BrowserRouter>
