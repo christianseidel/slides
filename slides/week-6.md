@@ -11,22 +11,11 @@ title: Java Bootcamp - Template
 
 ## Wochenübersicht
 
-- **Montag**: Team-Projekt, Docker
+- **Montag**: Freitagsaufgabe, Docker
 - **Dienstag**: Heroku, Continuous Deployment
 - **Mittwoch**: Datenbanken, MongoDB, Robo3T
 - **Donnerstag**: MongoDB Atlas, Spring Config
 - **Freitag**: Aufgabe Teamprojekt
-
----
-
-## Team Projekt: First Steps
-
-Projekt aufsetzen
-
-- Kanban erstellen
-- Backend initialisieren
-- Frontend initialisieren
-- Deployment
 
 ---
 
