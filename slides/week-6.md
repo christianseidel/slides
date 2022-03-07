@@ -207,7 +207,7 @@ FROM openjdk:15
 
 ENV ENVIRONMENT=prod
 
-LABEL Matthias Hiemer <matthias.hiemer@neuefische.de>
+LABEL Matthias Hiemer="matthias.hiemer@neuefische.de"
 
 ADD backend/target/app.jar app.jar
 
