@@ -207,7 +207,7 @@ FROM openjdk:15
 
 ENV ENVIRONMENT=prod
 
-MAINTAINER Matthias Hiemer <matthias.hiemer@neuefische.de>
+LABEL MatthiasHiemer="matthias.hiemer@neuefische.de"
 
 ADD backend/target/app.jar app.jar
 
@@ -218,7 +218,7 @@ CMD [ "sh", "-c", "java -jar /app.jar" ]
 | ---------- | -------------------- |
 | FROM       | Base image           |
 | ENV        | Environment variable |
-| MAINTAINER | Ersteller und Warter |
+| LABEL      | Ersteller und Warter |
 | ADD        | Fügt Datei hinzu     |
 | RUN        | Führt Befehl aus     |
 | CMD        | Startkommando        |
