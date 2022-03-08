@@ -15,7 +15,7 @@ title: Java Bootcamp - Template
 - **Dienstag**: Heroku, Continuous Deployment
 - **Mittwoch**: Datenbanken, MongoDB, Robo3T
 - **Donnerstag**: MongoDB Atlas, Spring Config
-- **Freitag**: Aufgabe Teamprojekt
+- **Freitag**: Freitagsaufgabe
 
 ---
 
@@ -267,59 +267,31 @@ Hosting Provider.
 
 - Heroku erwartet, dass Anwendung auf einem bestimmten Port startet.
 - Port wird über environment variable PORT bereitgestellt
-- Docker file:
+- application.properties:
   ```
-  -Dserver.port=$PORT
+  server.port=${PORT:8080}
   ```
-- `heroku.yml` spezifiziert docker environment
 
 ![bg right contain](img/heroku.png)
 
 ---
 
-## Aufgabe: Heroku
+## Aufgabe: Heroku 1
 
-1. Melde dich bei Heroku an
-2. Installiere dir die CLI
-3. Lies dir die _Heroku docker Getting started_ durch
-4. Deploy deine Java Anwendung
-
----
-
-# CD Pipeline
+1. Erzeuge eine neue Spring Boot Anwendung
+2. Schreibe einen RestController, den du aufrufen kannst
+3. Push den Code auf GitHub
+4. Melde dich bei Heroku an
+5. Deploy deine Java Anwendung auf Heroku
+6. Freue dich, dass die Applikation
 
 ---
 
-## Motivation
+## Aufgabe: Heroku 2
 
-- Deployment should be easy
-- Automation prevents errors
-
----
-
-## Github Action
-
-Führe bei einem push ein deployment aus.
-
-```yml
-on:
- push:
-   branches: [ master ]
-
-- name: Login to Heroku Container registry
- env:
-   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
- run: heroku container:login
-- name: Build and push
- env:
-   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
- run: heroku container:push -a nf-todo-app web
-- name: Release
- env:
-   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
- run: heroku container:release -a nf-todo-app web
-
-```
+1. Installiere die [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
+2. Erzeuge dir über die CLI eine neue App ([Dokumentation](https://devcenter.heroku.com/articles/git))
+3. Deploye deine Anwendung per CLI nach Heroku
 
 ---
 
