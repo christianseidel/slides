@@ -283,7 +283,7 @@ Hosting Provider.
 3. Push den Code auf GitHub
 4. Melde dich bei Heroku an
 5. Deploy deine Java Anwendung auf Heroku
-6. Freue dich, dass die Applikation
+6. Freue dich, dass die Applikation jetzt im Internet ist
 
 ---
 
@@ -491,6 +491,15 @@ db.students.deleteOne({ name: { $eq: 'Frank' } })
 
 ---
 
+# Previously on Java
+
+- Klassen, Attribute, Methoden, Instanzen/Objekte
+- Interfaces für Abstraktion
+- Maven als Build-Management-Tool
+- Spring, Spring Boot und Dependency Injection
+
+---
+
 # Spring Data
 
 ---
@@ -530,12 +539,24 @@ public interface TodoRepository extends PagingAndSortingRepository<Todo, String>
 
 ---
 
+## Verbindung zur Datenbank
+
+- Über Konfigurationen in der application.properties
+
+```
+spring.data.mongodb.database=todo
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+```
+
+---
+
 ## Aufgabe: Mongo Data
 
-Füge zum Projekt ein Repository hinzu, welche Questions
-
-- in die MongoDB speichert
-- aus der DB abfragt
+- Erstellt euch ein Spring Boot Projekt mit Spring Web und Spring Data Mongo als dependencies (oder nehmt das von gestern und fügt die Spring Data dependency manuell hinzu)
+- Implementiert euch Controller und Service so, dass
+  - ihr eine Question Objekt in der Datenbank speichern
+  - und wieder auslesen könnt
 
 ---
 
@@ -545,6 +566,7 @@ Füge zum Projekt ein Repository hinzu, welche Questions
 - Wenn Repository im Test Context
   - Datenbank wird vor Test hochgefahren
   - Nach Test runtergefahren
+- Damit flapdoodle hochfährt, muss ein Property `src/test/resources/application.properties` gesetzt werden: spring.mongodb.embedded.version=3.0.0
 
 ```xml
 <dependency>
@@ -553,6 +575,69 @@ Füge zum Projekt ein Repository hinzu, welche Questions
    <scope>test</scope>
 </dependency>
 ```
+
+---
+
+## Aufgabe: Integrationstest mit Datenbank
+
+- Bindet flapdoodle als Test-Dependency ein
+- Schreibt einen Integrationstest, der über das `TestRestTemplate` eine `Question` anlegt und wieder ausgibt
+
+---
+
+# Alles auf einmal lokal starten
+
+---
+
+<!-- _class: hsplit-->
+
+## Docker Compose
+
+- Mehrere Container orchestriert laufen lassen
+- `docker-compose up -d` startet alle container
+  - Falls die images neu gebaut werden sollen, ist noch ein `--build` nötig
+- `docker-compose down` fährt alles wieder runter
+
+```yml
+version: '2'
+services:
+    db:
+        image: mongo:latest
+        expose:
+            - 27017
+        ports:
+            - 27017:27017
+        restart: unless-stopped
+        
+    app:
+        build: .
+        depends_on:
+            - db
+        expose:
+            - 8080
+        ports:
+            - 8080:8080
+        environment:
+            - DATABASE_NAME=<dbName>
+            - DATABASE_HOST=db
+            - DATABASE_PORT=27017
+        restart: unless-stopped
+```
+
+---
+
+## Umgebungsspezifische properties
+
+- `application-docker.properties`
+```
+spring.data.mongodb.database=${DATABASE_NAME}
+spring.data.mongodb.host=${DATABASE_HOST}
+spring.data.mongodb.port=${DATABASE_PORT}
+```
+
+---
+
+## Aufgabe: Docker Compose
 
 ---
 
@@ -631,58 +716,6 @@ public class SomeConfiguration {
 1. Konfiguriere deinen Serverport über eine application.yml
 2. Konfiguriere deinen Serverport über eine Environment variable
 3. Ändere dein Dashboard code, sodass die api url über das environment gesetzt werden kann
-
----
-
-# Alles auf einmal lokal starten
-
----
-
-<!-- _class: hsplit-->
-
-## Docker Compose
-
-- Mehrere Container orchestriert laufen lassen
-- `docker-compose up -d` startet alle container
-  - Falls die images neu gebaut werden sollen, ist noch ein `--build` nötig
-- `docker-compose down` fährt alles wieder runter
-
-```yml
-version: '2'
-services:
-    db:
-        image: mongo:latest
-        expose:
-            - 27017
-        ports:
-            - 27017:27017
-        restart: unless-stopped
-        
-    app:
-        build: .
-        depends_on:
-            - db
-        expose:
-            - 8080
-        ports:
-            - 8080:8080
-        environment:
-            - DATABASE_NAME=<dbName>
-            - DATABASE_HOST=db
-            - DATABASE_PORT=27017
-        restart: unless-stopped
-```
-
----
-
-## Umgebungsspezifische properties
-
-- `application-docker.properties`
-```
-spring.data.mongodb.database=${DATABASE_NAME}
-spring.data.mongodb.host=${DATABASE_HOST}
-spring.data.mongodb.port=${DATABASE_PORT}
-```
 
 ---
 
