@@ -639,6 +639,8 @@ spring.data.mongodb.port=${DATABASE_PORT}
 
 ## Aufgabe: Docker Compose
 
+Erstellt ein `docker-compose`-file für eure Anwendung von gestern.
+
 ---
 
 # Spring Configuration
