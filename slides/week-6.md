@@ -786,7 +786,7 @@ Erlauben in mongoDb atlas das heroku eine verbindung aufbauen kann.
 public class ReactRoutingForwarding {
 
     @RequestMapping(value = "/**/{[path:[^\\.]*}")
-    public String forwardToRoutUrl() {
+    public String forwardToRouteUrl() {
         return "forward:/";
     }
 }
