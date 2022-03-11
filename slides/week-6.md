@@ -756,6 +756,17 @@ Erlauben in mongoDb atlas das heroku eine verbindung aufbauen kann.
 
 ---
 
+# Freitagsaufgabe
+
+- Baue Spring Data in die TodoApp ein, so dass die TODOs in einer richtigen Datenbank gespeichert werden.
+- Da keine neue Logik hinzukommt, müssen keine neuen Tests geschrieben werden. Die bestehenden sollen aber noch funktionieren.
+  - Mocke in Unit Tests das Repository
+  - Benutze flapdoodle, damit die Intgrationstests weiterhin laufen.
+  - Du hast noch keine Tests in der TodoApp? Dann wird es aber Zeit.
+- Bringe deine TodoApp auf Heroku und verknüpfe sie mit Atlas.
+  - **Hinweis 1:** Denk an die `.production.env`-Datei im Frontend
+  - **Hinweis 2:** Pass denn Dateinamen in der `Procfile`-Datei an
+
 # React Routing fix
 
 ---
@@ -782,3 +793,4 @@ public class ReactRoutingForwarding {
 - matching path wird abgefangen, wenn durch Restcontroller dieser durch den Controller nicht bedient wird
 - request wird weitergeleitet
 - durch forward wird Route nicht verändert
+- In `src/main/resources`: `spring.mvc.pathmatch.matching-strategy=ant_path_matcher`
