@@ -795,4 +795,4 @@ public class ReactRoutingForwarding {
 - matching path wird abgefangen, wenn durch Restcontroller dieser durch den Controller nicht bedient wird
 - request wird weitergeleitet
 - durch forward wird Route nicht verändert
-- In `src/main/resources`: `spring.mvc.pathmatch.matching-strategy=ant_path_matcher`
+- In `src/main/resources/application.properties`: `spring.mvc.pathmatch.matching-strategy=ant_path_matcher`
