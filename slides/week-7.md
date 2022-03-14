@@ -11,45 +11,11 @@ title: Java Bootcamp - Template
 
 ## Wochenübersicht
 
-- **Montag**: Code Reviews, Swagger, Builder pattern
+- **Montag**: Freitagsaufgabe, CORS
 - **Dienstag**: Spring boot security, security configuration, basic auth
 - **Mittwoch**: JWT, login, protected routes, context API
-- **Donnerstag**: TBD
+- **Donnerstag**: oauth
 - **Freitag**: Projektaufgabe
-
----
-
-# Swagger
-
----
-
-## Swagger client
-
-- Swagger gibt Übersicht über Endpunkte
-- [https://swagger.io/tools/swagger-ui/](https://swagger.io/tools/swagger-ui/)
-- Ausführung ähnlich zu Postman
-
----
-
-## Swagger Setup
-
-- Maven dependency
-- `@EnableWebMvc` Annotation an der Application hinzufügen
-- [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
-
-```xml
-<dependency>
-    <groupId>io.springfox</groupId>
-    <artifactId>springfox-boot-starter</artifactId>
-    <version>3.0.0</version>
-</dependency>
-```
-
----
-
-## Aufgabe: Swagger
-
-1. Binde Swagger ins Projekt ein und rufe die Endpunkte auf
 
 ---
 
@@ -60,70 +26,6 @@ title: Java Bootcamp - Template
 ## Webanwendung
 
 ![](img/wo-stehen-wir-6.png)
-
----
-
-# MongoDB query
-
----
-
-## MongoDB Repository
-
-- find by … Greater than …
-- keywords mappen auf Query
-- [Docs](https://docs.spring.io/spring-data/mongodb/docs/1.2.0.RELEASE/reference/html/mongo.repositories.html)
-- [Query blog artikel](https://www.baeldung.com/queries-in-spring-data-mongodb)
-
-```java
-public interface IdeaMongoDb extends PagingAndSortingRepository<Idea,String>{
-
-    List<Idea> findByStarsGreaterThan(int stars);
-
-}
-```
-
----
-
-## MongoDB Repository
-
-- Definition eigener query und Rückgabefelder
-- Placeholder werden durch Methodenparameter ersetzt
-
-```java
-public interface IdeaMongoDb extends PagingAndSortingRepository<Idea,String> {
-
- @Query(value="{ 'user' : ?0 }", fields="{ 'user' : 1, 'description' : 1}")
- List<Idea> otherQuery(String userValue);
-
-}
-```
-
----
-
-## Mongo Template
-
-- wenn standard queries nicht ausreichen
-- ermöglicht komplexe Abfragen
-- ermöglicht Updates
-- ermöglicht Aggregationen
-- kann injected werden
-
-[Tutorial](https://www.baeldung.com/spring-data-mongodb-tutorial)
-
-```java
-Update update = new Update();
-update.set("description", "fancy");
-
-template.updateFirst(
-Query.query(Criteria.where("user").is("test")), update, Idea.class);
-```
-
----
-
-## Aufgabe: MongoDB 2.0
-
-1. Füge zur PullRequest Klasse ein int Feld “watchedBy” hinzu
-2. Schreibe eine Methode welche dir alle Pull Requests zurückgibt, die von x gewatched wurden
 
 ---
 
