@@ -71,7 +71,7 @@ spring:
 ## Aufgabe: Spring Security 1
 
 1. Füge zu deiner Anwendung spring security hinzu
-2. logge dich über die Oberfläche ein
+2. Logge dich über die Oberfläche ein
 
 ---
 
@@ -91,9 +91,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication()
-        .withUser("frank")
-        .password("frank1").roles("ADMIN");
+        auth.inMemoryAuthentication()
+            .withUser("frank")
+            .password("frank1").roles("ADMIN");
     }
 
     @Bean
