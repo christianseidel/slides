@@ -580,5 +580,3 @@ private CorsConfigurationSource corsConfigurationSource() {
     return source;
 }
 ```
-
----
