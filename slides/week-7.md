@@ -545,3 +545,40 @@ public Idea addToDo(@RequestBody @Valid AddIdeaDto data, Principal principal) {
 ```
 
 ---
+
+## "Freitags"-Aufgabe
+
+- Macht eure Todo-App multi-user-fähig
+  - Registrierung und Login ermöglichen
+  - Baut Spring-Security für die Absicherung der Endpunkte ein
+  - Sorgt dafür, dass User nur ihre Todos sehen
+- Die Tests sollen weiterhin laufen
+- Sorgt dafür, dass die App produktiv auf Heroku läuft
+
+**Bonus**: Baut als zusätzliche Authentifizierung über GitHub ein
+
+---
+
+## CORS und Spring-Security
+
+```java
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http
+            .csrf().disable()
+            .cors().configurationSource(corsConfigurationSource())
+            //... more config
+}
+
+private CorsConfigurationSource corsConfigurationSource() {
+    CorsConfiguration configuration = new CorsConfiguration();
+    configuration.addAllowedOriginPattern("http://localhost:3000");
+    configuration.setAllowedMethods(List.of(CorsConfiguration.ALL));
+    configuration.setAllowedHeaders(List.of(CorsConfiguration.ALL));
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    source.registerCorsConfiguration("/**", configuration);
+    return source;
+}
+```
+
+---
