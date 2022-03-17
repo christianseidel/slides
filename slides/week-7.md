@@ -232,7 +232,7 @@ public GitHubUser getLoggedInUser(Principal principal){
 
 ## Aufgabe: Spring Security 4
 
-- Nutze BCrypt Verschlüsselung um die Passwörter zu hashen
+- Nutze BCrypt um die Passwörter zu hashen
 - Füge einen neuen GET Endpunkt /api/user/me hinzu, der den gerade eingeloggten User zurückgibt, ziehe den Namen des Users aus dem Principal.
 
 ---
